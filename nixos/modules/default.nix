@@ -13,6 +13,6 @@
     ./nix.nix
     ./timezone.nix
     ./user.nix
-    ./zram.nix
+    ./zapret.nix
   ];
 }

@@ -1,5 +1,5 @@
 { pkgs, inputs, ... }: {
-  imports = [ inputs.stylix.homeManagerModules.stylix ];
+  imports = [ inputs.stylix.homeModules.stylix ];
 
   home.packages = with pkgs; [
     dejavu_fonts
@@ -7,11 +7,11 @@
     noto-fonts
     noto-fonts-lgc-plus
     texlivePackages.hebrew-fonts
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     font-awesome
     powerline-fonts
     powerline-symbols
-    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+    nerd-fonts.symbols-only
   ];
 
   stylix = {
@@ -21,6 +21,7 @@
 
     targets = {
       neovim.enable = false;
+      nixvim.enable = false;
       waybar.enable = false;
       wofi.enable = false;
       hyprland.enable = false;
@@ -65,8 +66,8 @@
     };
 
     image = pkgs.fetchurl {
-      url = "https://codeberg.org/lunik1/nixos-logo-gruvbox-wallpaper/raw/branch/master/png/gruvbox-dark-rainbow.png";
-      sha256 = "036gqhbf6s5ddgvfbgn6iqbzgizssyf7820m5815b2gd748jw8zc";
+      url = "https://upload.wikimedia.org/wikipedia/commons/8/81/Charles-william-wyllie-rba_the-backwater_AID483012.jpg";
+      sha256 = "ad2274f37741071c2cb07e424c014f9d6ad001f7123af7d52b6528f5b39a42f0";
     };
   };
 }

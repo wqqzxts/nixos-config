@@ -13,12 +13,11 @@
         upd = "nh os switch --update";
         hms = "nh home switch";
 
-        pkgs = "nvim ${flakeDir}/nixos/packages.nix";
+        #pkgs = "nvim ${flakeDir}/nixos/packages.nix";
 
         r = "ranger";
         v = "nvim";
         se = "sudoedit";
-        microfetch = "microfetch && echo";
 
         gs = "git status";
         ga = "git add";
@@ -31,7 +30,7 @@
     history.size = 10000;
     history.path = "${config.xdg.dataHome}/zsh/history";
 
-    initExtra = ''
+    initContent = ''
       # Start Tmux automatically if not already running. No Tmux in TTY
       if [ -z "$TMUX" ] && [ -n "$DISPLAY" ]; then
         tmux attach-session -t default || tmux new-session -s default

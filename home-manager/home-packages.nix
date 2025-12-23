@@ -6,21 +6,22 @@
 
     # Desktop apps
     anki
-    code-cursor
+    firefox
     imv
+    libreoffice-qt-fresh
     mpv
     obs-studio
     obsidian
     pavucontrol
-    teams-for-linux
     telegram-desktop
-    vesktop
+    qbittorrent
 
     # CLI utils
     bc
     bottom
     brightnessctl
     cliphist
+    fastfetch
     ffmpeg
     ffmpegthumbnailer
     fzf
@@ -28,30 +29,25 @@
     grimblast
     htop
     hyprpicker
+    nitch
     ntfs3g
     mediainfo
-    microfetch
     playerctl
+    p7zip
     ripgrep
     showmethekey
     silicon
     udisks
     ueberzugpp
-    unzip
     w3m
     wget
     wl-clipboard
     wtype
     yt-dlp
-    zip
 
     # Coding stuff
-    openjdk23
-    nodejs
-    python311
 
     # WM stuff
-    libsForQt5.xwaylandvideobridge
     libnotify
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
