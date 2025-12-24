@@ -22,5 +22,17 @@
       ];
       command = "setlocal spell spelllang=en";
     }
+
+    # Trailing whitespace highlights
+    {
+      event = "FileType";
+      pattern = "dashboard";
+      callback.__raw = ''
+        function()
+          vim.fn.clearmatches()
+          vim.b.whitespace_disable = true
+        end
+      '';
+    }
   ];
 }
