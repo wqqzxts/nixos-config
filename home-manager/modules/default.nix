@@ -6,7 +6,7 @@
     ./git.nix
     ./hyprland
     ./lazygit.nix
-    ./nixvim.nix
+    ./nixvim
     ./ranger.nix
     ./starship.nix
     ./stylix.nix

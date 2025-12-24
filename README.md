@@ -1,8 +1,8 @@
-# NixOS Configuration with flakes and home-manager 🎨
+# 🎨 NixOS Configuration using Flakes
 
 [![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)](#)
 [![NixOS](https://img.shields.io/badge/NixOS-5277C3?logo=nixos&logoColor=fff)](#)
-![Hyprland](https://img.shields.io/badge/Hyprland-00add8?style=for-the-badge)
+![Wayland](https://img.shields.io/badge/Wayland-000000?style=for-the-badge&logo=wayland&logoColor=white)
 [![Alacritty](https://img.shields.io/badge/Alacritty-F46D01?logo=alacritty&logoColor=fff)](#)
 [![Zsh](https://img.shields.io/badge/Zsh-F15A24?logo=zsh&logoColor=fff)](#)
 [![tmux](https://img.shields.io/badge/tmux-1BB91F?logo=tmux&logoColor=fff)](#)
@@ -17,11 +17,10 @@ Welcome to redesigned [Ampersand's](https://www.youtube.com/@ampersand3636) NixO
 
 - ❄️ **[Flakes](https://wiki.nixos.org/wiki/Flakes)**: Configured NixOS flakes for maximum reproducibility.
 - 🏠 **[Home Manager Integration](https://nix-community.github.io/home-manager/)**: Configured for managing the home environment.
-- 🖥️ **Multiple Hosts Support**: Easy to configure for different hosts.
-- 🎨 **Gruvbox Theme**: A perfect blend of vibrant and subtle colors.
+- 🎨 **[Gruvbox Theme](https://github.com/morhetz/gruvbox)**: A perfect blend of vibrant and subtle colors.
 - 🚄 **[Alacritty](https://alacritty.org/):** A fast, GPU-accelerated terminal emulator with a Gruvbox theme and JetBrains Mono font.
-- 🧇 **Tmux**: With my own hotkeys.
-- 🌟 **Zsh + starship**: Efficient shell setup with lots of aliases.
+- 🧇 **[Tmux](https://github.com/tmux/tmux/wiki)**: With my own hotkeys.
+- 🌟 **[Zsh](https://wiki.archlinux.org/title/Zsh)**: Efficient shell setup with lots of aliases.
 - 📊 **[Waybar](https://github.com/Alexays/Waybar):** A highly customizable Wayland bar with Gruvbox themed modules.
 - 📨 **[Swaync](https://github.com/ErikReider/SwayNotificationCenter):** A simple notification daemon for Wayland, themed with Gruvbox.
 - 🔒 **[Hyprlock](https://hyprland.org/docs/ecosystem/hyprlock/):** The official screen locker for Hyprland, showing a blurred background and the current time.

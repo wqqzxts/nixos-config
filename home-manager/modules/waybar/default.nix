@@ -9,7 +9,7 @@
         height = 30;
         modules-left = ["hyprland/workspaces"];
         modules-center = ["tray"];
-        modules-right = ["hyprland/language" "custom/weather" "pulseaudio" "battery" "clock"];
+        modules-right = ["hyprland/language" "pulseaudio" "battery" "clock"];
         "hyprland/workspaces" = {
           disable-scroll = true;
           show-special = true;
@@ -36,12 +36,13 @@
           tooltip = false;
         };
 
-        "custom/weather" = {
-          format = " {} ";
-          exec = "curl -s 'wttr.in/Irkutsk?format=%c%t'";
-          interval = 300;
-          class = "weather";
-        };
+# not works in russia))))))))))))))))))
+#      "custom/weather" = {
+#        format = " {} ";
+#        exec = "curl -s 'wttr.in/Irkutsk?format=%c+%t'";
+#        interval = 3600;
+#        class = "weather";
+#      };
 
         "pulseaudio" = {
           format = "{icon} {volume}%";
