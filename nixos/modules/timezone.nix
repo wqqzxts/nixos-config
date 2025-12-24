@@ -1,3 +1,3 @@
 {
-  time.timeZone = "Asia/Irkutsk";
+  time.timeZone = "Asia/Hong_Kong";
 }

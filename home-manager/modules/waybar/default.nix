@@ -8,8 +8,8 @@
         position = "top";
         height = 30;
         modules-left = ["hyprland/workspaces"];
-        modules-center = ["hyprland/window"];
-        modules-right = ["hyprland/language" "custom/weather" "pulseaudio" "battery" "clock" "tray"];
+        modules-center = ["tray"];
+        modules-right = ["hyprland/language" "custom/weather" "pulseaudio" "battery" "clock"];
         "hyprland/workspaces" = {
           disable-scroll = true;
           show-special = true;
@@ -22,13 +22,10 @@
             "3" = "三";
             "4" = "四";
             "5" = "五";
-            "6" = "六";
-            "7" = "七";
-            "8" = "八";
           };
 
           persistent-workspaces = {
-            "*" = 8;
+            "*" = 5;
           };
         };
 
@@ -71,6 +68,7 @@
           format-charging = " {capacity}%";
           format-alt = "{time} {icon}";
           format-icons = ["" "" "" "" ""];
+          tooltip = false;
         };
 
         "clock" = {
@@ -79,8 +77,8 @@
         };
 
         "tray" = {
-          icon-size = 14;
-          spacing = 1;
+          icon-size = 20;
+          spacing = 3;
         };
       };
     };

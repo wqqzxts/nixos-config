@@ -1,6 +1,8 @@
 { pkgs, inputs, ... }: {
   imports = [ inputs.stylix.homeModules.stylix ];
 
+  fonts.fontconfig.enable = true;
+
   home.packages = with pkgs; [
     dejavu_fonts
     jetbrains-mono
@@ -53,8 +55,8 @@
       };
 
       sizes = {
-        terminal = 13;
-        applications = 11;
+        terminal = 14;
+        applications = 12;
       };
     };
 
