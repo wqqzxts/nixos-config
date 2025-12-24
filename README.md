@@ -1,19 +1,33 @@
-# ❄️ NixOS Config Reborn
+# NixOS Configuration with flakes and home-manager 🎨
 
-Welcome to my redesigned NixOS configuration built for efficiency and aesthetics. Right now I'm trying to commit something everyday. Let's see how long I can go.
+[![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)](#)
+[![NixOS](https://img.shields.io/badge/NixOS-5277C3?logo=nixos&logoColor=fff)](#)
+![Hyprland](https://img.shields.io/badge/Hyprland-00add8?style=for-the-badge)
+[![Alacritty](https://img.shields.io/badge/Alacritty-F46D01?logo=alacritty&logoColor=fff)](#)
+[![Zsh](https://img.shields.io/badge/Zsh-F15A24?logo=zsh&logoColor=fff)](#)
+[![tmux](https://img.shields.io/badge/tmux-1BB91F?logo=tmux&logoColor=fff)](#)
+[![Neovim](https://img.shields.io/badge/Neovim-57A143?logo=neovim&logoColor=fff)](#)
 
-![screenshot](./screenshots/screenshot1.png)
 
-You can still find my old configuration [here](https://github.com/Andrey0189/nixos-config)
+Welcome to redesigned [Ampersand's](https://www.youtube.com/@ampersand3636) NixOS configuration with unstable channel.
 
-## ✨ Features
+![screenshot](./screenshots/screenshot1.png) soon should be a showcase
 
+## 🖥️ Quick overview
+
+- ❄️ **[Flakes](https://wiki.nixos.org/wiki/Flakes)**: Configured NixOS flakes for maximum reproducibility.
+- 🏠 **[Home Manager Integration](https://nix-community.github.io/home-manager/)**: Configured for managing the home environment.
 - 🖥️ **Multiple Hosts Support**: Easy to configure for different hosts.
 - 🎨 **Gruvbox Theme**: A perfect blend of vibrant and subtle colors.
-- 🪟 **Hyprland + Waybar**: 10/10 window compositor on Wayland.
-- 🏠 **Home Manager Integration**: lots of stuff configured.
-- 🧇 **Tmux**: with my own hotkeys.
+- 🚄 **[Alacritty](https://alacritty.org/):** A fast, GPU-accelerated terminal emulator with a Gruvbox theme and JetBrains Mono font.
+- 🧇 **Tmux**: With my own hotkeys.
 - 🌟 **Zsh + starship**: Efficient shell setup with lots of aliases.
+- 📊 **[Waybar](https://github.com/Alexays/Waybar):** A highly customizable Wayland bar with Gruvbox themed modules.
+- 📨 **[Swaync](https://github.com/ErikReider/SwayNotificationCenter):** A simple notification daemon for Wayland, themed with Gruvbox.
+- 🔒 **[Hyprlock](https://hyprland.org/docs/ecosystem/hyprlock/):** The official screen locker for Hyprland, showing a blurred background and the current time.
+- 📁 **[Ranger](https://github.com/ranger/ranger):** A console file manager with VI key bindings and image previews.
+- 📖 **[Zathura](https://pwmt.org/projects/zathura/):** A highly customizable document viewer with VI-like keybindings and a Gruvbox theme.
+- 🦇 **[Bat](https://github.com/sharkdp/bat):** A `cat(1)` clone with wings, using the `gruvbox-dark` theme for syntax highlighting.
 
 ## 🚀 Installation
 
@@ -23,8 +37,8 @@ To get started with this setup, follow these steps:
 2. **Clone the Repository**:
 
 	```bash
-    git clone https://github.com/Andrey0189/nixos-config-reborn
-    cd nixos-config-reborn
+    https://github.com/wqqzxts/nixos-config.git
+    cd nixos-config
     ```
 
 3. **Copy one of the hosts configuration to set up your own**:
@@ -35,7 +49,7 @@ To get started with this setup, follow these steps:
     cd <your_hostname>
     ```
 
-4. **Put your `hardware-configuration.nix` file there**:
+4. **Put *your* `hardware-configuration.nix` file there**:
 
     ```bash
     cp /etc/nixos/hardware-configuration.nix ./
@@ -45,7 +59,7 @@ To get started with this setup, follow these steps:
 
     ```bash
     vim local-packages.nix
-    vim ../../nixos/packages.nix
+    vim ../../nixos/modules/filename.nix
     ```
 
 6. **Finally, edit the `flake.nix` file**:
@@ -70,15 +84,14 @@ To get started with this setup, follow these steps:
 
     ```bash
     cd nixos-config-reborn
-    git add .
-    nixos-rebuild switch --flake ./#<hostname>
-    # or nixos-install --flake ./#<hostname> if you are installing on a fresh system
-    home-manager switch
+    nixos-rebuild switch --flake path:./#<hostname>
+    # or nixos-install --flake path:./#<hostname> if you are installing on a fresh system
+    home-manager switch --flake path:.
     ```
 
 ## 😎 Enjoy!
 
-![screenshot](./screenshots/screenshot2.png)
+![screenshot](./screenshots/screenshot2.png) soon should be a showcase
 
 ## 🤝 Contributions
 
