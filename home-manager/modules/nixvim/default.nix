@@ -1,8 +1,12 @@
 { inputs, ... }: {
   imports = [
-    ./plugins
+    ./autocmds.nix
+    ./completion.nix
+    ./keymap.nix
+    ./keymap.nix
     ./options.nix
-    ./keymappings.nix
+    ./perfomance.nix
+    ./plugins
   ];
 
   programs.nixvim = {
