@@ -69,7 +69,7 @@
           "stall, 1, -0.1, 0.7, 0.85"
         ];
 
-	animation = [
+        animation = [
           "windowsIn, 1, 3, emphasizedDecel, popin 80%"
           "fadeIn, 1, 3, emphasizedDecel"
           "windowsOut, 1, 2, emphasizedDecel, popin 90%"
@@ -90,12 +90,13 @@
         kb_layout = "us,ru";
         kb_options = "grp:caps_toggle";
 
-	natural_scroll = false;
+      	natural_scroll = false;
       };
 
       gestures = {
-        workspace_swipe_invert = false;
-        workspace_swipe_forever	= true;
+        gesture = [
+          "4, horizontal, workspace"
+        ];
       };
 
       dwindle = {
