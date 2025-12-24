@@ -38,13 +38,13 @@
       trim = {
         enable = true;
         settings = {
-          highlight = true;
           ft_blocklist = [
+            "TelescopePrompt"
             "checkhealth"
+            "dashboard"
             "floaterm"
             "lspinfo"
             "neo-tree"
-            "TelescopePrompt"
           ];
         };
       };
