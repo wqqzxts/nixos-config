@@ -4,6 +4,7 @@
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
+    corefonts
     dejavu_fonts
     jetbrains-mono
     noto-fonts
@@ -67,6 +68,7 @@
       light = "Papirus-Light";
     };
 
+    # Backwater by William Wyllie
     image = pkgs.fetchurl {
       url = "https://upload.wikimedia.org/wikipedia/commons/8/81/Charles-william-wyllie-rba_the-backwater_AID483012.jpg";
       sha256 = "ad2274f37741071c2cb07e424c014f9d6ad001f7123af7d52b6528f5b39a42f0";

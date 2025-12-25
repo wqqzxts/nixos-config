@@ -17,6 +17,10 @@
         window = {
           width = 30;
           auto_expand_width = true;
+          mappings = {
+            "h" = "close_node";
+            "l" = "open";
+          };
         };
         filesystem = {
           filtered_items.hide_by_pattern = [

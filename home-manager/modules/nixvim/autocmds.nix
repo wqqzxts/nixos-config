@@ -22,5 +22,11 @@
       ];
       command = "setlocal spell spelllang=en";
     }
+    # Neo-tree hidden cursor
+    {
+      event = [ "FileType" ];
+      pattern = "neo-tree";
+      command = "setlocal guicursor-=a:block-NONE";
+    }
   ];
 }

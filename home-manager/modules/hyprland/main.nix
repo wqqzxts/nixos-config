@@ -95,7 +95,7 @@
 
       gestures = {
         gesture = [
-          "4, horizontal, workspace"
+          "3, horizontal, workspace"
         ];
       };
 
@@ -126,11 +126,15 @@
         "workspace 4,class:(zathura)"
         "workspace 1,class:(telegram)"
 
+        "opacity 1 override, class:^(firefox)$"
+        "opacity 1 override, class:^(libreoffice-writer)$"
+        "opacity 1 override, class:^(libreoffice-calc)$"
+        "opacity 1 override, class:^(libreoffice-impress)$"
+
         "suppressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
 
         "opacity 0.0 override, class:^(xwaylandvideobridge)$"
-        "opacity 1 override, class:^(firefox)$"
         "noanim, class:^(xwaylandvideobridge)$"
         "noinitialfocus, class:^(xwaylandvideobridge)$"
         "maxsize 1 1, class:^(xwaylandvideobridge)$"
