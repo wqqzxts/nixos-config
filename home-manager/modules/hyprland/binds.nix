@@ -19,43 +19,41 @@ in {
 
   wayland.windowManager.hyprland.settings = {
     bind = [
-      "$mainMod SHIFT, Return, exec, $terminal"
-      "$mainMod SHIFT, C, killactive,"
+      "$mainMod,       T, exec, $terminal"
+      "$mainMod,       Q, killactive,"
       "$mainMod SHIFT, Q, exit,"
       "$mainMod,       R, exec, $fileManager"
-      "$mainMod,       F, togglefloating,"
-      "$mainMod,       D, exec, $menu --show drun"
-      "$mainMod,       P, pin,"
-      "$mainMod,       J, togglesplit,"
+      "$mainMod,       D, togglefloating,"
+      "$mainMod,       SPACE, exec, $menu --show drun"
       "$mainMod,       E, exec, bemoji -cn"
       "$mainMod,       V, exec, cliphist list | $menu --dmenu | cliphist decode | wl-copy"
-      "$mainMod,       B, exec, pkill -SIGUSR2 waybar"
-      "$mainMod SHIFT, B, exec, pkill -SIGUSR1 waybar"
-      "$mainMod,       L, exec, loginctl lock-session"
+      "$mainMod,       B, exec, pkill -SIGUSR1 waybar"
+      "$mainMod SHIFT, B, exec, pkill -SIGUSR2 waybar"
+      "$mainMod,       S, exec, loginctl lock-session"
       "$mainMod,       P, exec, hyprpicker -an"
       "$mainMod,       N, exec, swaync-client -t"
       ", Print, exec, grimblast --notify --freeze copysave area"
       "$mainMod,       W, exec, ${booksScript}/bin/open_books"
 
-      # Moving focus
-      "$mainMod, left, movefocus, l"
-      "$mainMod, right, movefocus, r"
-      "$mainMod, up, movefocus, u"
-      "$mainMod, down, movefocus, d"
+      # moving focus
+      "$mainMod, h, movefocus, l"
+      "$mainMod, l, movefocus, r"
+      "$mainMod, k, movefocus, u"
+      "$mainMod, j, movefocus, d"
 
-      # Moving windows
-      "$mainMod SHIFT, left,  swapwindow, l"
-      "$mainMod SHIFT, right, swapwindow, r"
-      "$mainMod SHIFT, up,    swapwindow, u"
-      "$mainMod SHIFT, down,  swapwindow, d"
+      # moving windows
+      "$mainMod SHIFT, h,  swapwindow, l"
+      "$mainMod SHIFT, l, swapwindow, r"
+      "$mainMod SHIFT, k,    swapwindow, u"
+      "$mainMod SHIFT, j,  swapwindow, d"
 
-      # Resizeing windows                   X  Y
-      "$mainMod CTRL, left,  resizeactive, -60 0"
-      "$mainMod CTRL, right, resizeactive,  60 0"
-      "$mainMod CTRL, up,    resizeactive,  0 -60"
-      "$mainMod CTRL, down,  resizeactive,  0  60"
+      # resizing windows                 X  Y
+      "$mainMod CTRL, h,  resizeactive, -60 0"
+      "$mainMod CTRL, l, resizeactive,  60 0"
+      "$mainMod CTRL, k,    resizeactive,  0 -60"
+      "$mainMod CTRL, j,  resizeactive,  0  60"
 
-      # Switching workspaces
+      # switching workspaces
       "$mainMod, 1, workspace, 1"
       "$mainMod, 2, workspace, 2"
       "$mainMod, 3, workspace, 3"
@@ -67,7 +65,7 @@ in {
       "$mainMod, 9, workspace, 9"
       "$mainMod, 0, workspace, 10"
 
-      # Moving windows to workspaces
+      # noving windows to workspaces
       "$mainMod SHIFT, 1, movetoworkspacesilent, 1"
       "$mainMod SHIFT, 2, movetoworkspacesilent, 2"
       "$mainMod SHIFT, 3, movetoworkspacesilent, 3"
@@ -79,18 +77,18 @@ in {
       "$mainMod SHIFT, 9, movetoworkspacesilent, 9"
       "$mainMod SHIFT, 0, movetoworkspacesilent, 10"
 
-      # Scratchpad
-      "$mainMod,       S, togglespecialworkspace,  magic"
-      "$mainMod SHIFT, S, movetoworkspace, special:magic"
+      # scratchpad
+      "$mainMod,       F, togglespecialworkspace,  magic"
+      "$mainMod SHIFT, F, movetoworkspace, special:magic"
     ];
 
-    # Move/resize windows with mainMod + LMB/RMB and dragging
+    # move/resize windows with mainMod + lmb/rmb and dragging
     bindm = [
       "$mainMod, mouse:272, movewindow"
       "$mainMod, mouse:273, resizewindow"
     ];
 
-    # Laptop multimedia keys for volume and LCD brightness
+    # volume & brightness
     bindel = [
       ",XF86AudioRaiseVolume,  exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
       ",XF86AudioLowerVolume,  exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
@@ -100,7 +98,7 @@ in {
       "$mainMod, bracketleft,  exec, brightnessctl s 10%-"
     ];
 
-    # Audio playback
+    # audio playback
     bindl = [
       ", XF86AudioNext,  exec, playerctl next"
       ", XF86AudioPause, exec, playerctl play-pause"

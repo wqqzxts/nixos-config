@@ -12,11 +12,11 @@
   programs.nixvim = {
     enable = true;
 
-    colorschemes.gruvbox.enable = true;
+    colorschemes.gruvbox-material-nvim.enable = true;
 
     plugins = {
-      # Lazy loading
-      lz-n.enable = true;
+      # lazy loading
+      lz-n.enable = false;
 
       web-devicons.enable = true;
 

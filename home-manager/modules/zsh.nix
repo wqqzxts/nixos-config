@@ -13,7 +13,7 @@
         upd = "nh os switch --update";
         hms = "nh home switch";
 
-        #pkgs = "nvim ${flakeDir}/nixos/packages.nix";
+        pkgs = "nvim ${flakeDir}/nixos/packages.nix";
 
         r = "ranger";
         v = "nvim";
@@ -25,6 +25,11 @@
         gp = "git push";
 
         ".." = "cd ..";
+        "cl" = "clear";
+
+        ff = "fastfetch";
+        uf = "ufetch";
+        rf = "rxfetch";
       };
 
     history.size = 10000;

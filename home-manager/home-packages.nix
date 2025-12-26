@@ -2,58 +2,59 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-    # Packages in each category are sorted alphabetically
-
-    # Desktop apps
-    anki
+    # apps
     firefox
     imv
-    libreoffice-qt-fresh
     mpv
-    obs-studio
-    obsidian
     pavucontrol
-    telegram-desktop
     qbittorrent
 
-    # CLI utils
-    bc
-    bottom
+    # wayland
     brightnessctl
     cliphist
-    fastfetch
+    grimblast
+    hyprpicker
+    showmethekey
+    wl-clipboard
+    wtype
+
+    # multimedia
     ffmpeg
     ffmpegthumbnailer
-    fzf
-    git-graph
-    grimblast
-    htop
-    hyprpicker
-    nitch
-    ntfs3g
     mediainfo
     playerctl
+    yt-dlp
+
+    # file management
+    ntfs3g
     p7zip
-    ripgrep
-    showmethekey
-    silicon
     udisks
+
+    # cli utilities
+    bc
+    bottom
+    fzf
+    htop
+    ripgrep
+    silicon
     ueberzugpp
     w3m
     wget
-    wl-clipboard
-    wtype
-    yt-dlp
 
-    # Coding stuff
+    # development
+    git-graph
+    nix-prefetch-scripts
 
-    # WM stuff
+    # wm stuff
     libnotify
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
 
-    # Other
+    # entertainment
     bemoji
-    nix-prefetch-scripts
+    cava
+    fastfetch
+    nitch
+    ufetch
   ];
 }

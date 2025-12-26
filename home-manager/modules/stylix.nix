@@ -4,15 +4,18 @@
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
+    # text
     corefonts
     dejavu_fonts
     jetbrains-mono
+    nerd-fonts.hack
+    nerd-fonts.fira-code
+    nerd-fonts.meslo-lg
     noto-fonts
     noto-fonts-lgc-plus
-    texlivePackages.hebrew-fonts
     noto-fonts-color-emoji
+    # icons
     font-awesome
-    powerline-fonts
     powerline-symbols
     nerd-fonts.symbols-only
   ];
@@ -43,8 +46,14 @@
         package = pkgs.noto-fonts-color-emoji;
       };
       monospace = {
-        name = "JetBrains Mono";
-        package = pkgs.jetbrains-mono;
+        # name = "Jetbrains Mono";
+        # package = pkgs.jetbrains-mono;
+        name = "Hack Nerd Font Mono";
+        package = pkgs.nerd-fonts.hack;
+        # name = "FiraCode Nerd Font Mono";
+        # package = pkgs.nerd-fonts.fira-code;
+        # name = "MesloLGS Nerd Font Mono";
+        # package = pkgs.nerd-fonts.meslo-lg;
       };
       sansSerif = {
         name = "Noto Sans";
@@ -68,7 +77,7 @@
       light = "Papirus-Light";
     };
 
-    # Backwater by William Wyllie
+    # backwater by William Wyllie
     image = pkgs.fetchurl {
       url = "https://upload.wikimedia.org/wikipedia/commons/8/81/Charles-william-wyllie-rba_the-backwater_AID483012.jpg";
       sha256 = "ad2274f37741071c2cb07e424c014f9d6ad001f7123af7d52b6528f5b39a42f0";

@@ -1,19 +1,19 @@
 {
   programs.nixvim.autoCmd = [
-    # Vertically center document when entering insert mode
+    # vertically center document when entering insert mode
     {
       event = "InsertEnter";
       command = "norm zz";
     }
 
-    # Open help in a vertical split
+    # open help in a vertical split
     {
       event = "FileType";
       pattern = "help";
       command = "wincmd L";
     }
 
-    # Enable spellcheck for some filetypes
+    # enable spellcheck for some filetypes
     {
       event = "FileType";
       pattern = [
@@ -22,7 +22,7 @@
       ];
       command = "setlocal spell spelllang=en";
     }
-    # Neo-tree hidden cursor
+    # neo-tree hidden cursor
     {
       event = [ "FileType" ];
       pattern = "neo-tree";

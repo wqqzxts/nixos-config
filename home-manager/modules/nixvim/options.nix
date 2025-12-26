@@ -16,6 +16,7 @@
 
     opts = {
       updatetime = 100; # Faster completion
+      showmode = false;
 
       # Line numbers
       relativenumber = true; # Relative line numbers
@@ -33,8 +34,10 @@
       incsearch = true; # Incremental search: show match for partly typed search command
       inccommand = "split"; # Search and replace: preview changes in quickfix list
       ignorecase = true; # When the search query is lower-case, match both lower and upper-case
+
       #   patterns
       smartcase = true; # Override the 'ignorecase' option if the search pattern contains upper
+
       #   case characters
       scrolloff = 8; # Number of screen lines to show around the cursor
       cursorline = true; # Highlight the screen line of the cursor

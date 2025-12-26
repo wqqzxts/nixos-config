@@ -23,13 +23,12 @@
               Y = "y$";
 
               # back and fourth between the two most recent files
-              "<C-c>" = ":b#<CR>";
+              "<M-TAB>" = ":b#<CR>";
 
               # close by Ctrl+x
               "<C-x>" = ":close<CR>";
 
-              # save by Space+s or Ctrl+s
-              "<leader>s" = ":w<CR>";
+              # save by Ctrl+s
               "<C-s>" = ":w<CR>";
 
               # navigate to left/right window
@@ -40,11 +39,11 @@
               L = "$";
               H = "^";
 
-              # resize with arrows
-              "<C-Up>" = ":resize -2<CR>";
-              "<C-Down>" = ":resize +2<CR>";
-              "<C-Left>" = ":vertical resize +2<CR>";
-              "<C-Right>" = ":vertical resize -2<CR>";
+              # resize with
+              "<C-k>" = ":resize -2<CR>";
+              "<C-j>" = ":resize +2<CR>";
+              "<C-h>" = ":vertical resize +2<CR>";
+              "<C-l>" = ":vertical resize -2<CR>";
 
               # move current line up/down
               # M = Alt key

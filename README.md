@@ -19,12 +19,12 @@ Welcome to redesigned [Ampersand's](https://www.youtube.com/@ampersand3636) NixO
 - 🏠 **[Home Manager Integration](https://nix-community.github.io/home-manager/)**: Configured for managing the home environment.
 - 🎨 **[Gruvbox Theme](https://github.com/morhetz/gruvbox)**: A perfect blend of vibrant and subtle colors.
 - 🚄 **[Alacritty](https://alacritty.org/):** A fast, GPU-accelerated terminal emulator with a Gruvbox theme and JetBrains Mono font.
-- 🧇 **[Tmux](https://github.com/tmux/tmux/wiki)**: With my own hotkeys.
+- 🧇 **[Tmux](https://github.com/tmux/tmux/wiki)**: With convenient configured hotkeys.
 - 🌟 **[Zsh](https://wiki.archlinux.org/title/Zsh)**: Efficient shell setup with lots of aliases.
 - 📊 **[Waybar](https://github.com/Alexays/Waybar):** A highly customizable Wayland bar with Gruvbox themed modules.
-- 📨 **[Swaync](https://github.com/ErikReider/SwayNotificationCenter):** A simple notification daemon for Wayland, themed with Gruvbox.
-- 🔒 **[Hyprlock](https://hyprland.org/docs/ecosystem/hyprlock/):** The official screen locker for Hyprland, showing a blurred background and the current time.
-- 📁 **[Ranger](https://github.com/ranger/ranger):** A console file manager with VI key bindings and image previews.
+- 📨 **[Swaync](https://github.com/ErikReider/SwayNotificationCenter):** A notification daemon for Wayland, themed with Gruvbox.
+- 🔒 **[Hyprlock](https://hyprland.org/docs/ecosystem/hyprlock/):** The native screen locker for Hyprland, showing a blurred background and the current time.
+- 📁 **[Ranger](https://github.com/ranger/ranger):** A console file manager with VI key bindings and image previews, themed with gruvbox.
 - 📖 **[Zathura](https://pwmt.org/projects/zathura/):** A highly customizable document viewer with VI-like keybindings and a Gruvbox theme.
 - 🦇 **[Bat](https://github.com/sharkdp/bat):** A `cat(1)` clone with wings, using the `gruvbox-dark` theme for syntax highlighting.
 
@@ -95,4 +95,3 @@ To get started with this setup, follow these steps:
 ## 🤝 Contributions
 
 Feel free to fork the repository and submit pull requests if you'd like to contribute improvements. Open issues if you encounter any problems with the config or have ideas for new features.
-

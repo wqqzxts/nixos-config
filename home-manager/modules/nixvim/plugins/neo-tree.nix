@@ -15,6 +15,7 @@
       settings = {
         close_if_last_window = true;
         window = {
+          position = "right";
           width = 30;
           auto_expand_width = true;
           mappings = {

@@ -36,25 +36,14 @@
           tooltip = false;
         };
 
-# not works in russia))))))))))))))))))
-#      "custom/weather" = {
-#        format = " {} ";
-#        exec = "curl -s 'wttr.in/Irkutsk?format=%c+%t'";
-#        interval = 3600;
-#        class = "weather";
-#      };
-
         "pulseaudio" = {
           format = "{icon} {volume}%";
           format-bluetooth = "{icon} {volume}% ";
           format-muted = "";
           format-icons = {
             "headphones" = "";
-            "handsfree" = "";
-            "headset" = "";
             "phone" = "";
             "portable" = "";
-            "car" = "";
             "default" = ["" ""];
           };
           on-click = "pavucontrol";
