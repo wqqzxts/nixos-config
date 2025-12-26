@@ -8,7 +8,7 @@
 [![tmux](https://img.shields.io/badge/tmux-1BB91F?logo=tmux&logoColor=fff)](#)
 [![Neovim](https://img.shields.io/badge/Neovim-57A143?logo=neovim&logoColor=fff)](#)
 
-![showcase](./gallery/showcase.png)
+![showcase1](./gallery/showcase1.png)
 Welcome to redesigned by me [Ampersand's](https://www.youtube.com/@ampersand3636) NixOS configuration with unstable channel.
 
 ## 🖥️ Quick overview
