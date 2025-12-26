@@ -29,7 +29,7 @@
 
         ff = "fastfetch";
         uf = "ufetch";
-        rf = "rxfetch";
+        nf = "nitch";
       };
 
     history.size = 10000;

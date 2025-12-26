@@ -17,6 +17,7 @@
     opts = {
       updatetime = 100; # Faster completion
       showmode = false;
+      timeoutlen = 300;
 
       # Line numbers
       relativenumber = true; # Relative line numbers
