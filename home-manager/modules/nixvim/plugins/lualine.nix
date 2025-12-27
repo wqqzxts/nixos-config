@@ -19,7 +19,7 @@
         lualine_x = [
           "diagnostics"
 
-          # Show active language server
+          # show active language server
           {
             __unkeyed.__raw = ''
               function()
@@ -39,7 +39,7 @@
               end
             '';
             icon = "";
-            color.fg = "#ffffff";
+            color.fg = "#C0AF8B";
           }
           "encoding"
           "fileformat"
