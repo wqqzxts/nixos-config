@@ -3,6 +3,7 @@
     ./alacritty.nix
     ./bat.nix
     ./eza.nix
+    ./firefox.nix
     ./git.nix
     ./hyprland
     ./lazygit.nix

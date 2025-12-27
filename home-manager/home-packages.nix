@@ -3,7 +3,6 @@
 
   home.packages = with pkgs; [
     # apps
-    firefox
     imv
     mpv
     pavucontrol
