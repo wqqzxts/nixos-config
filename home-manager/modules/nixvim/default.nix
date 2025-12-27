@@ -45,6 +45,7 @@
             "floaterm"
             "lspinfo"
             "neo-tree"
+            "nvim-tree"
           ];
         };
       };

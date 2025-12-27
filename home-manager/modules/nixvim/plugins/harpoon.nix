@@ -13,7 +13,7 @@
         })
         {
           # add current file
-          "<leader>h" = "function() require'harpoon':list():add() end";
+          "<leader>a" = "function() require'harpoon':list():add() end";
 
           # open menu
           "<S-f>" = "function() require'harpoon'.ui:toggle_quick_menu(require'harpoon':list()) end";

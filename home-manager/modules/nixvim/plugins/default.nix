@@ -8,7 +8,8 @@
     ./lsp.nix
     ./lualine.nix
     ./markdown-preview.nix
-    ./neo-tree.nix
+    # ./neo-tree.nix
+    ./nvim-tree.nix
     ./telescope.nix
     ./treesitter.nix
   ];

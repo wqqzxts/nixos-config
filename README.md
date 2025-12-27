@@ -58,7 +58,7 @@ To get started with this setup, follow these steps:
 5. **Edit `nixos/modules/timezone.nix.example`, `home-manager/modules/git.nix.example`**:
 
     ```diff
-    // do not forget to change the name of file (delete .example)
+    // do not forget to change the name of timezone file (delete .example)
     {
     --  time.timeZone = "Europe/London";
     ++  time.timeZone = "<YourContinent>/<YourCity>";
@@ -66,7 +66,7 @@ To get started with this setup, follow these steps:
     ```
 
     ```diff
-    // do not forget to change the name of file (delete .example)
+    // do not forget to change the name of git file (delete .example)
     user = {
     --  name = "John Doe";
     ++  name = "YourName";
@@ -75,7 +75,7 @@ To get started with this setup, follow these steps:
     };
     ```
 
-6. **(optional for Russians) Edit `nixos/modules/zapret.nix.example` (if you have own strategy) and enable service in `nixos/modules/default.nix`**:
+6. **(optional) edit `nixos/modules/zapret.nix.example` (if you have own strategy) and enable service in `nixos/modules/default.nix`**:
     ```diff
     // do not forget to change the name of zapret file (delete .example)
     imports = [
@@ -93,7 +93,6 @@ To get started with this setup, follow these steps:
 8. **Finally, edit the `flake.nix` file**:
 
     ```diff
-    ...
       outputs = { self, nixpkgs, home-manager, ... }@inputs: let
         system = "x86_64-linux";
     --  homeStateVersion = "25.11";
@@ -104,7 +103,6 @@ To get started with this setup, follow these steps:
     --    { hostname = "14ec"; stateVersion = "25.11"; }
     ++    { hostname = "<your_hostname>"; stateVersion = "<your_state_version>"; }
         ];
-    ...
     ```
 
 9. **Build system**:

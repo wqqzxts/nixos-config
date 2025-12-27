@@ -47,8 +47,8 @@
 
               # move current line up/down
               # M = Alt key
-              "<M-k>" = ":move-2<CR>";
-              "<M-j>" = ":move+<CR>";
+              "<C-M-k>" = ":move-2<CR>";
+              "<C-M-j>" = ":move+<CR>";
 
             };
         visual =
