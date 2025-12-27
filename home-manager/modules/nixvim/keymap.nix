@@ -16,7 +16,7 @@
             {
               "<Space>" = "<NOP>";
 
-              # Esc to clear search results
+              # esc to clear search results
               "<esc>" = ":noh<CR>";
 
               # fix Y behaviour
@@ -35,7 +35,7 @@
               "<leader>h" = "<C-w>h";
               "<leader>l" = "<C-w>l";
 
-              # Press 'H', 'L' to jump to start/end of a line (first/last character)
+              # press 'H', 'L' to jump to start/end of a line (first/last character)
               L = "$";
               H = "^";
 
@@ -44,12 +44,6 @@
               "<C-j>" = ":resize +2<CR>";
               "<C-h>" = ":vertical resize +2<CR>";
               "<C-l>" = ":vertical resize -2<CR>";
-
-              # move current line up/down
-              # M = Alt key
-              "<C-M-k>" = ":move-2<CR>";
-              "<C-M-j>" = ":move+<CR>";
-
             };
         visual =
           lib.mapAttrsToList
@@ -70,6 +64,10 @@
 
               # sort
               "<leader>s" = ":sort<CR>";
+
+              # move current line up/down
+              "<leader>k" = ":move-2<CR>";
+              "<leader>j" = ":move+<CR>";
             };
       in
       config.lib.nixvim.keymaps.mkKeymaps { options.silent = true; } (normal ++ visual);
