@@ -63,11 +63,7 @@
               "J" = ":m '>+1<CR>gv=gv";
 
               # sort
-              "<leader>s" = ":sort<CR>";
-
-              # move current line up/down
-              "<leader>k" = ":move-2<CR>";
-              "<leader>j" = ":move+<CR>";
+            "<leader>s" = ":sort<CR>";
             };
       in
       config.lib.nixvim.keymaps.mkKeymaps { options.silent = true; } (normal ++ visual);

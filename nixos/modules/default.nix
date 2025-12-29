@@ -11,6 +11,7 @@
     ./net.nix
     ./nh.nix
     ./nix.nix
+    ./regreet.nix
     ./timezone.nix
     ./user.nix
     # ./zapret.nix # uncomment if you need dpi bypass

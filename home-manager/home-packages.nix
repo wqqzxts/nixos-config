@@ -13,7 +13,6 @@
     cliphist
     grimblast
     hyprpicker
-    showmethekey
     wl-clipboard
     wtype
 
@@ -39,15 +38,6 @@
     ueberzugpp
     w3m
     wget
-
-    # development
-    clang
-    git-graph
-    jdk21
-    nix-prefetch-scripts
-    nodejs_24
-    poetry
-    python313
 
     # wm stuff
     libnotify
