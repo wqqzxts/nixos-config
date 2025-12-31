@@ -1,6 +1,8 @@
 { pkgs, ... }: {
   nixpkgs.config.allowUnfree = true;
 
+  virtualisation.docker.enable = true;
+
   environment.systemPackages = with pkgs; [
     # apps
     anki
@@ -8,9 +10,11 @@
     obs-studio
     obsidian
     telegram-desktop
+    libpng
 
     # development
     clang
+    docker
     git-graph
     jdk21
     nix-prefetch-scripts

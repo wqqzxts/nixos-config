@@ -6,10 +6,10 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 30;
+        height = 50;
         modules-left = ["hyprland/workspaces"];
-        modules-center = ["tray"];
-        modules-right = ["hyprland/language" "pulseaudio" "battery" "clock"];
+        modules-center = ["clock"];
+        modules-right = ["hyprland/language" "pulseaudio" "battery" "tray"];
         "hyprland/workspaces" = {
           disable-scroll = true;
           show-special = true;
@@ -22,10 +22,13 @@
             "3" = "三";
             "4" = "四";
             "5" = "五";
+            "6" = "六";
+            "7" = "七";
+            "8" = "八";
           };
 
           persistent-workspaces = {
-            "*" = 5;
+            "*" = 8;
           };
         };
 
@@ -42,8 +45,6 @@
           format-muted = "";
           format-icons = {
             "headphones" = "";
-            "phone" = "";
-            "portable" = "";
             "default" = ["" ""];
           };
           on-click = "pavucontrol";

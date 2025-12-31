@@ -7,7 +7,7 @@
       u = "scroll half_up";
     };
     options = {
-      font = "JetBrains Mono Bold 13";
+      font = "FiraCode Nerd Font Mono 14";
     };
   };
 }

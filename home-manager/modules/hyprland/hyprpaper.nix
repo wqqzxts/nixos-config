@@ -1,5 +1,5 @@
 {
-  # Wallpaper is configured in ../stylix.nix
+  # wallpaper is configured in ../stylix.nix
   services.hyprpaper = {
     enable = true;
   };

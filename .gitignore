@@ -3,3 +3,4 @@ git.nix
 timezone.nix
 zapret.nix
 firefox.nix
+zsh.nix

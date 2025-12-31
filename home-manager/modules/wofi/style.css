@@ -3,7 +3,7 @@ window {
   border: 5px solid;
   border-image: linear-gradient(135deg, #d65d0e 0%, #98971a 100%) 1;
   background-color: #282828;
-  font-family: "JetBrains Mono";
+  font-family: "FiraCode Nerd Font Mono";
   font-weight: bold;
   font-size: 16px;
 }

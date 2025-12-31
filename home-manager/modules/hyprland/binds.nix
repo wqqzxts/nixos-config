@@ -21,7 +21,7 @@ in {
     bind = [
       "$mainMod,       T, exec, $terminal"
       "$mainMod,       Q, killactive,"
-      "$mainMod SHIFT, Q, exit,"
+      "$mainMod SHIFT, ESCAPE, exit,"
       "$mainMod,       R, exec, $fileManager"
       "$mainMod,       D, togglefloating,"
       "$mainMod,       SPACE, exec, $menu --show drun"
@@ -29,7 +29,7 @@ in {
       "$mainMod,       V, exec, cliphist list | $menu --dmenu | cliphist decode | wl-copy"
       "$mainMod,       B, exec, pkill -SIGUSR1 waybar"
       "$mainMod SHIFT, B, exec, pkill -SIGUSR2 waybar"
-      "$mainMod,       S, exec, loginctl lock-session"
+      "$mainMod,       ESCAPE, exec, loginctl lock-session"
       "$mainMod,       P, exec, hyprpicker -an"
       "$mainMod,       N, exec, swaync-client -t"
       ", Print, exec, grimblast --notify --freeze copysave area"
@@ -62,8 +62,7 @@ in {
       "$mainMod, 6, workspace, 6"
       "$mainMod, 7, workspace, 7"
       "$mainMod, 8, workspace, 8"
-      "$mainMod, 9, workspace, 9"
-      "$mainMod, 0, workspace, 10"
+      # "$mainMod, 9, workspace, 9"
 
       # noving windows to workspaces
       "$mainMod SHIFT, 1, movetoworkspacesilent, 1"
