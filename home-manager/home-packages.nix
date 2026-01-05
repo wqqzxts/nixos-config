@@ -7,6 +7,7 @@
     mpv
     pavucontrol
     qbittorrent
+    chromium
 
     # wayland
     brightnessctl
@@ -34,7 +35,6 @@
     fzf
     htop
     ripgrep
-    silicon
     ueberzugpp
     w3m
     wget

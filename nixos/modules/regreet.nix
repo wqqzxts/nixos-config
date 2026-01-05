@@ -22,7 +22,7 @@ in {
       };
       appearance = {
         # greeting_msg = "nixos.org ☺️ nixos.com 💀";
-        greeting_msg = "Welcome back ^^";
+        greeting_msg = "Night hums softly";
       };
     };
   };

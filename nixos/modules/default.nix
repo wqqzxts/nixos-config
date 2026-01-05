@@ -1,6 +1,5 @@
 {
   imports = [
-    ./appimage.nix
     ./audio.nix
     ./bluetooth.nix
     ./boot.nix
@@ -13,8 +12,9 @@
     ./nh.nix
     ./nix.nix
     ./regreet.nix
+    # ./throne.nix # uncomment if you need sing-box client
     ./timezone.nix
     ./user.nix
-    ./zapret.nix # uncomment if you need dpi bypass
+    # ./zapret.nix # uncomment if you need dpi bypass
   ];
 }

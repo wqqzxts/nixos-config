@@ -7,9 +7,7 @@
     # text
     corefonts
     dejavu_fonts
-    nerd-fonts.hack
     nerd-fonts.fira-code
-    nerd-fonts.meslo-lg
     noto-fonts
     noto-fonts-lgc-plus
     noto-fonts-color-emoji
@@ -38,9 +36,9 @@
     };
 
     cursor = {
-      name = "DMZ-Black";
-      size = 28;
-      package = pkgs.vanilla-dmz;
+      name = "Capitaine Cursors (Gruvbox)";
+      size = 32;
+      package = pkgs.capitaine-cursors-themed;
     };
 
     fonts = {
@@ -49,12 +47,8 @@
         package = pkgs.noto-fonts-color-emoji;
       };
       monospace = {
-        # name = "Hack Nerd Font Mono";
-        # package = pkgs.nerd-fonts.hack;
         name = "FiraCode Nerd Font Mono";
         package = pkgs.nerd-fonts.fira-code;
-        # name = "MesloLGS Nerd Font Mono";
-        # package = pkgs.nerd-fonts.meslo-lg;
       };
       sansSerif = {
         name = "Noto Sans";

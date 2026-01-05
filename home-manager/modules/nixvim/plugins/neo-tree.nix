@@ -9,7 +9,7 @@
       }
     ];
 
-    # i moved to nvim-tree, but kept the same neo-tree config in case you'd like to use neo ^^
+    # i moved to nvim-tree, but kept the neo-tree config in case you'd like to use neo ^^
     plugins.neo-tree = {
       enable = true;
 

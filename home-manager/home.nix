@@ -1,4 +1,4 @@
-{ homeStateVersion, user, ... }: {
+{ homeStateVersion, user, pkgs, lib, ... }: {
   imports = [
     ./modules
     ./home-packages.nix

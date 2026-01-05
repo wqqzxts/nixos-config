@@ -13,9 +13,9 @@
         text = "$TIME";
         font_size = 96;
         color = "rgba(235, 219, 178, 1.0)";
-        position = "0, 600";
+        position = "0, 200";
         halign = "center";
-        walign = "center";
+        valign = "center";
 
         shadow_passes = 1;
       };

@@ -9,8 +9,9 @@
     libreoffice-qt-fresh
     obs-studio
     obsidian
+    spotify
     telegram-desktop
-    libpng
+    vesktop
 
     # development
     clang

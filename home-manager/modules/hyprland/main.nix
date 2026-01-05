@@ -26,8 +26,8 @@
       ];
 
       general = {
-        gaps_in = 3;
-        gaps_out = 4;
+        gaps_in = 5;
+        "gaps_out" = "5,10,5,10";
 
         border_size = 5;
 
@@ -52,6 +52,7 @@
 
         blur = {
           enabled = true;
+          size = 16;
         };
       };
 
@@ -114,38 +115,6 @@
         force_default_wallpaper = 0;
         disable_hyprland_logo = true;
       };
-
-      windowrulev2 = [
-        "bordersize 0, floating:0, onworkspace:w[t1]"
-
-        "float,class:(mpv)|(imv)|(showmethekey-gtk)"
-        "move 990 60,size 900 170,pin,noinitialfocus,class:(showmethekey-gtk)"
-        "noborder,nofocus,class:(showmethekey-gtk)"
-
-        "workspace 4,class:(obsidian)"
-        "workspace 4,class:(zathura)"
-        "workspace 1,class:(telegram)"
-
-        "opacity 1 override, class:^(firefox)$"
-        "opacity 1 override, class:^(libreoffice-writer)$"
-        "opacity 1 override, class:^(libreoffice-calc)$"
-        "opacity 1 override, class:^(libreoffice-impress)$"
-
-        "suppressevent maximize, class:.*"
-        "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
-
-        "opacity 0.0 override, class:^(xwaylandvideobridge)$"
-        "noanim, class:^(xwaylandvideobridge)$"
-        "noinitialfocus, class:^(xwaylandvideobridge)$"
-        "maxsize 1 1, class:^(xwaylandvideobridge)$"
-        "noblur, class:^(xwaylandvideobridge)$"
-        "nofocus, class:^(xwaylandvideobridge)$"
-      ];
-
-      workspace = [
-        "w[tv1], gapsout:0, gapsin:0"
-        "f[1], gapsout:0, gapsin:0"
-      ];
     };
   };
 }
