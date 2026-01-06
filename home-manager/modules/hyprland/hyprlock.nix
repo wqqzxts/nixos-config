@@ -11,7 +11,9 @@
 
       label = {
         text = "$TIME";
-        font_size = 96;
+        font_family = "IosevkaTerm Nerd Font Mono";
+        font_weight = "bold";
+        font_size = 128;
         color = "rgba(235, 219, 178, 1.0)";
         position = "0, 200";
         halign = "center";

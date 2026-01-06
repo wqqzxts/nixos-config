@@ -8,15 +8,15 @@
         position = "top";
         height = 50;
         spacing = 5;
-        margin-left = 10;
-        margin-right = 10;
-        margin-top = 10;
+        margin-left = 3;
+        margin-right = 3;
+        margin-top = 7;
         modules-left = ["custom/launcher" "hyprland/workspaces" "mpris"];
         modules-center = ["clock"];
         modules-right = ["hyprland/language" "custom/weather" "pulseaudio" "battery" "tray"];
 
         "custom/launcher" = {
-          format = "";
+          format = "";
           on-click = "wofi -S drun";
           tooltip = false;
         };
@@ -46,7 +46,7 @@
           format-disconnected = "Disconnected";
           format-stopped = "{status_icon} Stopped";
           ellipsis = "…";
-          title-len = 20;
+          title-len = 15;
           player-icons = {
             default = "▶";
           };
@@ -61,6 +61,7 @@
         "clock" = {
           format = "{:%a %d | %I:%M %p}";
           interval = 1;
+          on-click = ../eww/calendar.sh;
           tooltip = false;
         };
 
@@ -73,7 +74,7 @@
 
         "custom/weather" = {
           format = " {} ";
-          exec = "curl -s 'wttr.in/Irkutsk?m&format=%c%t'";
+          exec = "curl -s 'wttr.in/Moscow?m&format=%t'";
           interval = 5000;
           class = "weather";
           tooltip = false;

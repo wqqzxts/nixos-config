@@ -7,7 +7,7 @@
     # text
     corefonts
     dejavu_fonts
-    nerd-fonts.fira-code
+    nerd-fonts.iosevka-term
     noto-fonts
     noto-fonts-lgc-plus
     noto-fonts-color-emoji
@@ -37,7 +37,7 @@
 
     cursor = {
       name = "Capitaine Cursors (Gruvbox)";
-      size = 32;
+      size = 40;
       package = pkgs.capitaine-cursors-themed;
     };
 
@@ -47,8 +47,8 @@
         package = pkgs.noto-fonts-color-emoji;
       };
       monospace = {
-        name = "FiraCode Nerd Font Mono";
-        package = pkgs.nerd-fonts.fira-code;
+        name = "IosevkaTerm Nerd Font Mono";
+        package = pkgs.nerd-fonts.iosevka-term;
       };
       sansSerif = {
         name = "Noto Sans";
@@ -59,8 +59,8 @@
         package = pkgs.noto-fonts;
       };
       sizes = {
-        terminal = 16;
-        applications = 14;
+        terminal = 20;
+        applications = 16;
       };
     };
 
@@ -71,13 +71,6 @@
       light = "Papirus-Light";
     };
 
-    # backwater by William Wyllie
-    # image = pkgs.fetchurl {
-    #   url = "https://upload.wikimedia.org/wikipedia/commons/8/81/Charles-william-wyllie-rba_the-backwater_AID483012.jpg";
-    #   sha256 = "ad2274f37741071c2cb07e424c014f9d6ad001f7123af7d52b6528f5b39a42f0";
-    # };
-
-    # lain
     image = ../../nixos/assets/wall-lain.jpg;
   };
 }

@@ -6,6 +6,7 @@
     ./firefox.nix
     ./git.nix
     ./hyprland
+    ./eww
     ./lazygit.nix
     ./nixvim
     ./ranger.nix

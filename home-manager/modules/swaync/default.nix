@@ -4,7 +4,7 @@
     settings = {
       positionX = "right";
       positionY = "top";
-      control-center-radius = 1;
+      control-center-radius = 0;
       fit-to-screen = true;
       layer-shell = true;
       layer = "overlay";

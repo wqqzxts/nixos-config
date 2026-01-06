@@ -1,7 +1,6 @@
 * {
-  font-family: "FiraCode Nerd Font Propo";
+  font-family: "IosevkaTerm Nerd Font Propo";
   font-weight: bold;
-  font-size: 20px;
   color: #bdaa89;
   text-shadow: none;
   transition: none;
@@ -39,15 +38,14 @@
 #custom-launcher {
     background-color: #ea6962;
     color: #1d2021;
-    border: solid 3px #e3433b;
+    border: solid 5px #e3433b;
     padding: 0 4px;
     margin: 0;
-    font-size: 30px;
 }
 
 #window {
     background-color: #1d2021;
-    border: solid 3px #83a598;
+    border: solid 5px #83a598;
     color: #bdaa89;
     border-radius: 0;
     padding: 0 6px;
@@ -75,7 +73,7 @@
 #workspaces button {
     padding: 0px 7px;
     margin: 0px 2px;
-    border: solid 3px #83a598;
+    border: solid 5px #83a598;
     background-color: transparent;
     color: #83a598;
     border-radius: 0;
@@ -93,7 +91,7 @@
 
 #mpris {
     background-color: #1d2021;
-    border: solid 3px #A9B665;
+    border: solid 5px #A9B665;
     color: #bdaa89;
     padding: 0 7px;
     margin: 0;
@@ -101,7 +99,7 @@
 
 #clock {
     color: #bdaa89;
-    border: solid 3px #ea6962;
+    border: solid 5px #ea6962;
     background-color: #1d2021;
     padding: 0 7px;
     margin: 0;
@@ -109,7 +107,7 @@
 
 #language {
   background-color: #1d2021;
-  border: solid 3px #a9b665;
+  border: solid 5px #a9b665;
   color: #bdaa89;
   padding: 0 7px;
   margin: 0;
@@ -117,7 +115,7 @@
 
 #custom-weather {
   background-color: #1d2021;
-  border: solid 3px #E78A4E;
+  border: solid 5px #E78A4E;
   color: #bdaa89;
   padding: 0 7px;
   margin: 0;
@@ -125,7 +123,7 @@
 
 #pulseaudio {
   background-color: #1d2021;
-  border: solid 3px #83a598;
+  border: solid 5px #83a598;
   color: #bdaa89;
   padding: 0 7px;
   margin: 0;
@@ -138,7 +136,7 @@
 
 #battery {
   background-color: #1d2021;
-  border: solid 3px #d3869b;
+  border: solid 5px #d3869b;
   color: #bdaa89;
   padding: 0 7px;
   margin: 0;
@@ -162,7 +160,7 @@
 
 #tray {
   background-color: #1d2021;
-  border: solid 3px #d8a657;
+  border: solid 5px #d8a657;
   color: #bdaa89;
   padding: 0 7px;
   margin: 0;

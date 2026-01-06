@@ -27,12 +27,12 @@
 
       general = {
         gaps_in = 5;
-        "gaps_out" = "5,10,5,10";
+        "gaps_out" = "5,7,5,7";
 
         border_size = 5;
 
-        "col.active_border" = "rgba(d65d0eff) rgba(98971aff) 45deg";
-        "col.inactive_border" = "rgba(3c3836ff)";
+        "col.active_border" = "rgba(bdaa89ff)";
+        "col.inactive_border" = "rgba(1d2021ff)";
 
         resize_on_border = true;
 
