@@ -24,11 +24,15 @@
 }
 
 #window,
+#custom-launcher,
 #mpris,
+#cava,
+#clock,
+#language,
+#weather,
 #pulseaudio,
 #battery,
-#clock,
-#custom-launcher {
+#tray {
     background-color: transparent;
     color: inherit;
     padding: 0 5px;
@@ -86,12 +90,20 @@
 
 #workspaces button.active label{
     background-color: #1d2021;
-    color: #EA6962;
+    color: #ea6962;
 }
 
 #mpris {
     background-color: #1d2021;
-    border: solid 5px #A9B665;
+    border: solid 5px #a9b665;
+    color: #bdaa89;
+    padding: 0 7px;
+    margin: 0;
+}
+
+#cava {
+    background-color: #1d2021;
+    border: solid 5px #a9b665;
     color: #bdaa89;
     padding: 0 7px;
     margin: 0;
@@ -115,7 +127,7 @@
 
 #custom-weather {
   background-color: #1d2021;
-  border: solid 5px #E78A4E;
+  border: solid 5px #e78a4e;
   color: #bdaa89;
   padding: 0 7px;
   margin: 0;

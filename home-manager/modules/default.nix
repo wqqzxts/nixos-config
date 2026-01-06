@@ -1,21 +1,21 @@
 {
   imports = [
     ./alacritty.nix
-    ./bat.nix
+    ./eww
     ./eza.nix
     ./firefox.nix
     ./git.nix
     ./hyprland
-    ./eww
     ./lazygit.nix
     ./nixvim
     ./ranger.nix
+    ./rofi
     ./starship.nix
     ./stylix.nix
     ./swaync
     ./tmux.nix
     ./waybar
-    ./wofi
+    ./wlogout
     ./zathura.nix
     ./zsh.nix
   ];

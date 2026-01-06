@@ -17,12 +17,13 @@
       "$mainMod" = "SUPER";
       "$terminal" = "alacritty";
       "$fileManager" = "$terminal -e sh -c 'ranger'";
-      "$menu" = "wofi";
+      "$menu" = "rofi -show drun";
 
       exec-once = [
         "waybar"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
+        "eww daemon"
       ];
 
       general = {
@@ -42,6 +43,7 @@
 
       decoration = {
         rounding = 0;
+        rounding_power = 1;
 
         active_opacity = 0.85;
         inactive_opacity = 0.85;

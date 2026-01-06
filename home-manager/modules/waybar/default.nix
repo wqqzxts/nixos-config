@@ -11,13 +11,13 @@
         margin-left = 3;
         margin-right = 3;
         margin-top = 7;
-        modules-left = ["custom/launcher" "hyprland/workspaces" "mpris"];
+        modules-left = ["custom/launcher" "hyprland/workspaces" "mpris" "cava"];
         modules-center = ["clock"];
         modules-right = ["hyprland/language" "custom/weather" "pulseaudio" "battery" "tray"];
 
         "custom/launcher" = {
           format = "";
-          on-click = "wofi -S drun";
+          on-click = "wlogout";
           tooltip = false;
         };
 
@@ -33,6 +33,7 @@
             "3" = "三";
             "4" = "四";
             "5" = "五";
+            "magic" = "上";
           };
 
           persistent-workspaces = {
@@ -46,16 +47,28 @@
           format-disconnected = "Disconnected";
           format-stopped = "{status_icon} Stopped";
           ellipsis = "…";
-          title-len = 15;
+          title-len = 17;
           player-icons = {
-            default = "▶";
+            default = "";
           };
           status-icons = {
             paused = "";
-            playing = "";
+            playing = "";
             stopped = "";
           };
           tooltip = false;
+        };
+
+        "cava" = {
+          framerate = 144;
+          bars = 4;
+          bar_delimiter = 0;
+          method = "pipewire";
+          noise_reduction = 0.85;
+          waves = true;
+          sleep_timer = 1;
+          hide_on_silence = true;
+          format-icons = [" " "▂" "▃" "▄" "▅" "▆" "▇" "█"];
         };
 
         "clock" = {
@@ -74,8 +87,8 @@
 
         "custom/weather" = {
           format = " {} ";
-          exec = "curl -s 'wttr.in/Moscow?m&format=%t'";
-          interval = 5000;
+          exec = "curl -s 'wttr.in/London?m&format=%t'";
+          interval = 600;
           class = "weather";
           tooltip = false;
         };
@@ -86,7 +99,7 @@
           format-muted = "";
           format-icons = {
             "headphones" = "";
-            "default" = ["" ""];
+            "default" = [""];
           };
           on-click = "pavucontrol";
           tooltip = false;

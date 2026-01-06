@@ -32,12 +32,12 @@
       neovim.enable = false;
       nixvim.enable = false;
       waybar.enable = false;
-      wofi.enable = false;
+      rofi.enable = false;
     };
 
     cursor = {
       name = "Capitaine Cursors (Gruvbox)";
-      size = 40;
+      size = 50;
       package = pkgs.capitaine-cursors-themed;
     };
 

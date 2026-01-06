@@ -1,0 +1,33 @@
+* {
+    font-family: "IosevkaTerm Nerd Font Propo";
+    background-image: none;
+    transition: all 0.2s ease-in-out;
+    box-shadow: none;
+}
+
+window {
+    background-color: rgba(29, 32, 33, 0.95);
+}
+
+button {
+    color: #bdaa89;
+    background-color: #1d2021;
+    border: solid 5px #d8a657;
+    min-width: 300px;
+
+    font-size: 256px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+
+    margin: 10px;
+    padding-bottom: 120px;
+    border-radius: 0;
+}
+
+button:hover {
+    background-color: #1d2021;
+    border: solid 5px #ea6962;
+    color: #ea6962;
+    outline-style: none;
+}

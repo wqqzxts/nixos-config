@@ -12,7 +12,6 @@
     # wayland
     brightnessctl
     cliphist
-    # eww
     grimblast
     hyprpicker
     wl-clipboard
