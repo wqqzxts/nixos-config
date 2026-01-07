@@ -77,9 +77,9 @@
 #workspaces button {
     padding: 0px 7px;
     margin: 0px 2px;
-    border: solid 5px #83a598;
+    border: solid 5px #bdaa89;
     background-color: transparent;
-    color: #83a598;
+    color: #bdaa89;
     border-radius: 0;
 }
 
@@ -88,9 +88,10 @@
     border-radius: 0;
 }
 
-#workspaces button.active label{
+#workspaces button.active {
+    transition: all 0.5s ease-in-out;
     background-color: #1d2021;
-    color: #ea6962;
+    border: solid 5px #ea6962;
 }
 
 #mpris {

@@ -1,12 +1,8 @@
-# 🎨 NixOS Configuration using Flakes
+# ❄️ NixOS Configuration using Flakes
 
 [![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)](#)
 [![NixOS](https://img.shields.io/badge/NixOS-5277C3?logo=nixos&logoColor=fff)](#)
-[![Hyprland](https://img.shields.io/badge/Hyprland-00add8?style=for-the-badge)](#)
-[![Alacritty](https://img.shields.io/badge/Alacritty-F46D01?logo=alacritty&logoColor=fff)](#)
-[![Zsh](https://img.shields.io/badge/Zsh-F15A24?logo=zsh&logoColor=fff)](#)
-[![tmux](https://img.shields.io/badge/tmux-1BB91F?logo=tmux&logoColor=fff)](#)
-[![Neovim](https://img.shields.io/badge/Neovim-57A143?logo=neovim&logoColor=fff)](#)
+[![Ghostty](https://custom-icon-badges.demolab.com/badge/Ghostty-0000ff?logo=ghostty_term)](#)
 
 ![showcase1](./gallery/showcase1.png)
 Welcome to redesigned by me [Ampersand's](https://www.youtube.com/@ampersand3636) NixOS configuration with unstable channel.
@@ -15,18 +11,17 @@ Welcome to redesigned by me [Ampersand's](https://www.youtube.com/@ampersand3636
 
 - ❄️ **[Flakes](https://wiki.nixos.org/wiki/Flakes)**: Configured NixOS flakes for maximum reproducibility.
 - 🏠 **[Home Manager Integration](https://nix-community.github.io/home-manager/)**: Configured for managing the home environment.
-- 🎨 **[Gruvbox Theme](https://github.com/morhetz/gruvbox)**: A perfect blend of vibrant and subtle colors.
+- 🎨 **[Gruvbox Material Theme](https://github.com/sainnhe/gruvbox-material)**: A perfect blend of vibrant and subtle colors.
 - 💧 **[Hyprland](https://hypr.land)**: Highly customizable tiling Wayland compositor.
-- 📊 **[Waybar](https://github.com/Alexays/Waybar):** A highly customizable Wayland bar with Gruvbox themed modules.
+- 📊 **[Waybar](https://github.com/Alexays/Waybar):** A highly customizable Wayland bar.
 - 📨 **[Swaync](https://github.com/ErikReider/SwayNotificationCenter):** A notification daemon for Wayland, themed with Gruvbox.
 - 🔒 **[Hyprlock](https://hyprland.org/docs/ecosystem/hyprlock/):** The native screen locker for Hyprland, showing a blurred background and the current time.
-- 🚄 **[Alacritty](https://alacritty.org/):** A fast, GPU-accelerated terminal emulator with a Gruvbox theme and monospace nerd font.
+- 👻 **[Ghostty](https://ghostty.org/):** A fast, feature rich and GPU-accelerated terminal emulator.
 - 🌟 **[Zsh](https://wiki.archlinux.org/title/Zsh)**: Efficient shell setup with lots of aliases.
-- 🧇 **[Tmux](https://github.com/tmux/tmux/wiki)**: With convenient hotkeys.
-- ⌨️ **[Neovim](https://neovim.io)**: Vim-fork focused on extensibility with configured plugins and gruvbox-material theme.
-- 📁 **[Ranger](https://github.com/ranger/ranger):** A console file manager with VI key bindings and image previews, themed with gruvbox.
-- 🦇 **[Bat](https://github.com/sharkdp/bat):** A `cat(1)` clone with wings, using the `gruvbox-dark` theme for syntax highlighting.
-- 📖 **[Zathura](https://pwmt.org/projects/zathura/):** A highly customizable document viewer with VI-like keybindings and a Gruvbox theme.
+- 🧇 **[Tmux](https://github.com/tmux/tmux/wiki)**: Terminal multiplexer with convenient hotkeys.
+- ⌨️ **[Neovim](https://neovim.io)**: Vim-fork focused on extensibility configured using Nixvim.
+- 🦆 **[Yazi](https://yazi-rs.github.io/):** Blazing fast terminal file manager written in Rust, based on async I/O.
+- 📖 **[Zathura](https://pwmt.org/projects/zathura/):** A highly customizable document viewer with VI-like keybindings.
 - 🛑 **[Zapret](https://https://github.com/bol-van/zapret):** Multi platform DPI bypass service.
 
 ## 🚀 Installation

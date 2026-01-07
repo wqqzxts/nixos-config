@@ -25,7 +25,6 @@
 
 
     targets = {
-      bat.enable = false;
       firefox.enable = false;
       hyprland.enable = false;
       hyprlock.enable = false;

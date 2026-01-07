@@ -1,7 +1,7 @@
 * {
     font-family: "IosevkaTerm Nerd Font Propo";
     background-image: none;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
     box-shadow: none;
 }
 
@@ -12,7 +12,7 @@ window {
 button {
     color: #bdaa89;
     background-color: #1d2021;
-    border: solid 5px #d8a657;
+    border: solid 5px #bdaa89;
     min-width: 300px;
 
     font-size: 256px;

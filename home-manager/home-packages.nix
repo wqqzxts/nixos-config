@@ -7,9 +7,9 @@
     mpv
     pavucontrol
     qbittorrent
-    chromium
 
     # wayland
+    bemoji
     brightnessctl
     cliphist
     grimblast
@@ -32,10 +32,10 @@
     # cli utilities
     bc
     bottom
+    cava
     fzf
     htop
     ripgrep
-    ueberzugpp
     w3m
     wget
 
@@ -45,10 +45,12 @@
     xdg-desktop-portal-hyprland
 
     # entertainment
-    bemoji
-    cava
+    cmatrix
     fastfetch
+    hollywood
+    lolcat
     nitch
     ufetch
+    unimatrix
   ];
 }

@@ -1,14 +1,13 @@
 {
   imports = [
-    ./alacritty.nix
     ./eww
     ./eza.nix
     ./firefox.nix
+    ./ghostty.nix
     ./git.nix
     ./hyprland
     ./lazygit.nix
     ./nixvim
-    ./ranger.nix
     ./rofi
     ./starship.nix
     ./stylix.nix
@@ -16,6 +15,7 @@
     ./tmux.nix
     ./waybar
     ./wlogout
+    ./yazi.nix
     ./zathura.nix
     ./zsh.nix
   ];
