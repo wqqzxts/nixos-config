@@ -13,6 +13,7 @@
       notification-icon-size = 64;
       notification-body-image-height = 100;
       notification-body-image-width = 200;
+      image-visibility = "when-available";
       timeout = 10;
       timeout-low = 5;
       timeout-critical = 0;
@@ -24,19 +25,17 @@
         "notifications"
       ];
       widget-config = {
-        title = {
-          text = "Notifications";
-          clear-all-button = true;
-          button-text = "Clear All";
-        };
         dnd = {
-          text = "Do Not Disturb";
+          text = "󰂛";
         };
         mpris = {
           image-size = 96;
+          image-radius = 0;
           blur = true;
+          blacklist = [ "spotify" "firefox"]; # well there's two instances by default the dbus and specific application so i decided to block the player isntances of apps
         };
       };
     };
+    style = ./style.css;
   };
 }

@@ -77,7 +77,7 @@
 #workspaces button {
     padding: 0px 7px;
     margin: 0px 2px;
-    border: solid 5px #bdaa89;
+    border: solid 5px #83a598;
     background-color: transparent;
     color: #bdaa89;
     border-radius: 0;
@@ -96,7 +96,7 @@
 
 #mpris {
     background-color: #1d2021;
-    border: solid 5px #a9b665;
+    border: solid 5px #d3869b;
     color: #bdaa89;
     padding: 0 7px;
     margin: 0;
@@ -104,7 +104,7 @@
 
 #cava {
     background-color: #1d2021;
-    border: solid 5px #a9b665;
+    border: solid 5px #d3869b;
     color: #bdaa89;
     padding: 0 7px;
     margin: 0;
@@ -112,7 +112,7 @@
 
 #clock {
     color: #bdaa89;
-    border: solid 5px #ea6962;
+    border: solid 5px #bdaa89;
     background-color: #1d2021;
     padding: 0 7px;
     margin: 0;

@@ -44,16 +44,16 @@
         "mpris" = {
           interval = 0.5;
           format = "<span color='#a9b665'>{status_icon}</span> {artist} | {title}";
-          format-disconnected = "Disconnected";
+          format-disconnected = "";
           format-stopped = "{status_icon} Stopped";
           ellipsis = "…";
-          title-len = 17;
+          title-len = 20;
           player-icons = {
-            default = "";
+            default = "";
           };
           status-icons = {
             paused = "";
-            playing = "";
+            playing = "";
             stopped = "";
           };
           tooltip = false;
@@ -115,6 +115,7 @@
           format-icons = ["" "" "" "" ""];
           tooltip = false;
         };
+
 
         "tray" = {
           icon-size = 23;

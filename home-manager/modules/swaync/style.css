@@ -1,0 +1,93 @@
+* {
+  font-family: "IosevkaTerm Nerd Font Propo";
+  font-weight: bold;
+  color: #bdaa89;
+  text-shadow: none;
+  transition: none;
+  box-shadow: none;
+}
+
+.control-center {
+  background-color: #1d2021;
+  border: solid 5px #bdaa89;
+  border-radius: 0;
+  margin: 15px;
+}
+
+.notification-row {
+  outline: none;
+  margin: 5px;
+}
+
+.notification {
+  background-color: #1d2021;
+  border: solid 5px #83a598;
+  border-radius: 0;
+  padding: 10px;
+  margin: 5px;
+}
+
+.notification:hover {
+  background-color: #1d2021;
+  transition: all 0.5s ease-in-out;
+  border-color: #ea6962;
+  border-radius: 0;
+}
+
+.notification-content {
+  background: transparent;
+  padding: 5px;
+}
+
+.notification-action {
+  background-color: #1d2021;
+  border: solid 5px #ea6962;
+  color: #bdaa89;
+  border-radius: 0;
+  margin: 5px;
+}
+
+.widget-title {
+  color: #ea6962;
+  font-size: 1.5rem;
+  margin: 10px;
+}
+
+.widget-title > button {
+  background-color: #1d2021;
+  border: solid 5px #d8a657;
+  color: #bdaa89;
+  border-radius: 0;
+  padding: 5px;
+}
+
+.widget-mpris {
+  background-color: #1d2021;
+  border: solid 5px #d3869b;
+  padding: 10px;
+  border-radius: 0;
+  margin: 10px;
+}
+
+.widget-mpris-player {
+  padding: 5px;
+  margin: 5px;
+}
+
+.widget-menubar > button {
+  background-color: #1d2021;
+  border: solid 5px #e3433b;
+  color: #bdaa89;
+  border-radius: 0;
+  padding: 5px 10px;
+}
+
+scrollbar {
+  background: #1d2021;
+  width: 5px;
+  border-radius: 0;
+}
+
+scrollbar slider {
+  border-radius: 0;
+}

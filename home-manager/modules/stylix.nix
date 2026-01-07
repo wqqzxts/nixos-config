@@ -30,8 +30,9 @@
       hyprlock.enable = false;
       neovim.enable = false;
       nixvim.enable = false;
-      waybar.enable = false;
       rofi.enable = false;
+      swaync.enable = false;
+      waybar.enable = false;
     };
 
     cursor = {
