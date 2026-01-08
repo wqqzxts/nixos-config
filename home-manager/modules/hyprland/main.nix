@@ -5,7 +5,6 @@
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     plugins = [
-      inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.xtra-dispatchers
       inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprscrolling
     ];
     settings = {
@@ -22,7 +21,7 @@
       monitor = ",1920x1080@60,auto,1.0";
       "$mainMod" = "SUPER";
       "$terminal" = "alacritty";
-      "$fileManager" = "yazi";
+      "$fileManager" = "$terminal -e sh -c 'yazi'";
       "$menu" = "rofi -show drun";
 
       exec-once = [

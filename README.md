@@ -4,7 +4,7 @@
 [![NixOS](https://img.shields.io/badge/NixOS-5277C3?logo=nixos&logoColor=fff)](#)
 [![Alacritty](https://img.shields.io/badge/Alacritty-F46D01?logo=alacritty&logoColor=fff)](#)
 
-![showcase1](./gallery/showcase1.png)
+![showcase1](./gallery/hyprland/hypr1.png)
 Welcome to my NixOS configuration.
 
 ## 🖥️ Quick overview
@@ -54,7 +54,7 @@ To get started with this setup, follow these steps:
 5. **Edit `nixos/modules/timezone.nix.example`, `home-manager/modules/git.nix.example`**:
 
     ```diff
-    // do not forget to change the name of timezone file (delete .example)
+    // do not forget to change the name of timezone file (also delete .example from file name)
     {
     --  time.timeZone = "Europe/London";
     ++  time.timeZone = "<YourContinent>/<YourCity>";
@@ -62,7 +62,7 @@ To get started with this setup, follow these steps:
     ```
 
     ```diff
-    // do not forget to change the name of git file (delete .example)
+    // do not forget to change the name of git file (also delete .example from file name)
     user = {
     --  name = "John Doe";
     ++  name = "YourName";
@@ -110,10 +110,10 @@ To get started with this setup, follow these steps:
     home-manager switch --flake path:.
     ```
 
-## 😎 Enjoy!
+## 🪄 Enjoy!
 
-![showcase2](./gallery/showcase2.png)
+![showcase2](./gallery/hyprland/hypr2.png)
 
 ## 🤝 Contributions
 
-Feel free to fork the repository and submit pull requests if you'd like to contribute improvements. Open issues if you encounter any problems with the config or have ideas for new features. Special thanks to [Ampersand's](https://www.youtube.com/@ampersand3636) as he provided NixOS config.
+Feel free to fork the repository and submit pull requests if you'd like to contribute improvements. Open issues if you encounter any problems with the config or have ideas for new features. Special thanks to [Ampersand](https://www.youtube.com/@ampersand3636) as he provided NixOS config and [embeddingBits](https://github.com/embeddingBits/arch_dotfiles) for inspiring.

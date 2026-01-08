@@ -34,6 +34,8 @@
               # navigate to left/right window
               "<leader>h" = "<C-w>h";
               "<leader>l" = "<C-w>l";
+              "<leader>j" = "<C-w>j";
+              "<leader>k" = "<C-w>k";
 
               # press 'H', 'L' to jump to start/end of a line (first/last character)
               L = "$";
@@ -62,8 +64,12 @@
               "K" = ":m '<-2<CR>gv=gv";
               "J" = ":m '>+1<CR>gv=gv";
 
+              # press 'H', 'L' to jump to start/end of a line (first/last character)
+              L = "$";
+              H = "^";
+
               # sort
-            "<leader>s" = ":sort<CR>";
+              "<leader>s" = ":sort<CR>";
             };
       in
       config.lib.nixvim.keymaps.mkKeymaps { options.silent = true; } (normal ++ visual);

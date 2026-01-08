@@ -32,7 +32,7 @@
       bind -n M-C-k resize-pane -U 3
       bind -n M-C-j resize-pane -D 3
 
-      bind -n M-x split-window -v
+      bind -n M-s split-window -v
       bind -n M-v split-window -h
 
       bind -n M-t new-window

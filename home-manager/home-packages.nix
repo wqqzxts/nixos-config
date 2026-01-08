@@ -43,6 +43,9 @@
     wget
 
     # entertainment
+    asciiquarium
+    cbonsai
+    era
     fastfetch
     nitch
     unimatrix

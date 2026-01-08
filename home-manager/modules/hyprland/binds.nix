@@ -4,7 +4,7 @@
       "$mainMod,       q,       killactive,"
       "$mainMod,       f,       togglefloating,"
       "$mainMod,       t,       exec, $terminal"
-      "$mainMod,       r,       exec, \"$terminal $fileManager\""
+      "$mainMod,       y,       exec, $fileManager"
       "$mainMod,       d,       exec, $menu"
       "$mainMod,       ESCAPE,  exec, loginctl lock-session"
       "$mainMod SHIFT, ESCAPE,  exec, wlogout,"
