@@ -10,6 +10,7 @@
     ./markdown-preview.nix
     # ./neo-tree.nix
     ./nvim-tree.nix
+    ./smear.nix
     ./telescope.nix
     ./treesitter.nix
   ];

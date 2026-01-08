@@ -7,8 +7,8 @@
     enable = true;
     platformTheme.name = "gtk";
     style = {
-      package = pkgs.adwaita-qt;
-      name = "adwaita-dark";
+      package = pkgs.gruvbox-material-gtk-theme;
+      name = "Gruvbox-Material-Dark";
     };
   };
 }

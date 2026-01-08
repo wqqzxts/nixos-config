@@ -31,13 +31,11 @@
             "1" = "一";
             "2" = "二";
             "3" = "三";
-            "4" = "四";
-            "5" = "五";
             "magic" = "上";
           };
 
           persistent-workspaces = {
-            "*" = 5;
+            "*" = 3;
           };
         };
 
@@ -61,7 +59,7 @@
 
         "cava" = {
           framerate = 144;
-          bars = 4;
+          bars = 6;
           bar_delimiter = 0;
           method = "pipewire";
           noise_reduction = 0.85;
@@ -72,9 +70,10 @@
         };
 
         "clock" = {
-          format = "{:%a %d | %I:%M %p}";
+          # format = "{:%a %d | %I:%M %p}";
+          format = "{:%H:%M}";
           interval = 1;
-          on-click = ../eww/calendar.sh;
+          on-click = ../eww/calendar/calendar.sh;
           tooltip = false;
         };
 
@@ -115,7 +114,6 @@
           format-icons = ["" "" "" "" ""];
           tooltip = false;
         };
-
 
         "tray" = {
           icon-size = 23;

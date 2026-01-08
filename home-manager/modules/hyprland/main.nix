@@ -1,7 +1,13 @@
-{
+{ inputs, pkgs, ... }: {
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    plugins = [
+      inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.xtra-dispatchers
+      inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprscrolling
+    ];
     settings = {
       env = [
         # hint electron apps to use wayland
@@ -15,15 +21,15 @@
 
       monitor = ",1920x1080@60,auto,1.0";
       "$mainMod" = "SUPER";
-      "$terminal" = "ghostty";
-      "$fileManager" = "$terminal -e sh -c 'yazi'";
+      "$terminal" = "alacritty";
+      "$fileManager" = "yazi";
       "$menu" = "rofi -show drun";
 
       exec-once = [
+        "eww daemon"
         "waybar"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
-        "eww daemon"
       ];
 
       general = {
@@ -37,8 +43,8 @@
 
         resize_on_border = true;
 
-        allow_tearing = false;
-        layout = "master";
+        allow_tearing = true;
+        layout = "scrolling";
       };
 
       decoration = {
@@ -94,13 +100,15 @@
         kb_layout = "us,ru";
         kb_options = "grp:caps_toggle";
 
-        repeat_rate = 35;
+        repeat_rate = 40;
         repeat_delay = 225;
 
-        sensitivity = 0.25;
+        accel_profile = "flat";
+        sensitivity = 2.25;
 
         touchpad = {
           natural_scroll = true;
+          scroll_factor = 0.50;
         };
       };
 
@@ -108,25 +116,20 @@
         workspace_swipe_distance = 500;
         workspace_swipe_cancel_ratio = 0.3;
         gesture = [
-          "3, horizontal, workspace"
+          "4, horizontal, workspace"
+
+          "3, right,  dispatcher, layoutmsg, focus l"
+          "3, left,   dispatcher, layoutmsg, focus r"
+
+          "3, pinchin,  dispatcher, layoutmsg, fit active"
+          "3, pinchout, dispatcher, layoutmsg, colresize 0.5"
         ];
-      };
-
-      dwindle = {
-        pseudotile = true;
-        preserve_split = true;
-      };
-
-      master = {
-        new_status = "slave";
-        new_on_top = true;
-        mfact = 0.5;
       };
 
       misc = {
         force_default_wallpaper = 0;
         disable_hyprland_logo = true;
-        animate_manual_resizes = true;
+        animate_manual_resizes = false;
       };
 
       windowrule = [
@@ -168,7 +171,10 @@
         "match:class ^(.blueman-manager-wrapped)$, center on"
         "match:class ^(.blueman-manager-wrapped)$, float on"
         "match:class ^(.blueman-manager-wrapped)$, size (monitor_w*.45) (monitor_h*.45)"
-
+        "match:class ^(ueberzugpp)(.*)$, float on"
+        "match:class ^(ueberzugpp)(.*)$, no_anim 1"
+        "match:class ^(ueberzugpp)(.*)$, no_focus 1"
+        "match:class ^(ueberzugpp)(.*)$, border_size 0"
         # picture in picture
         "match:title ^([Pp]icture[-\s]?[Ii]n[-\s]?[Pp]icture)(.*)$, float on"
         "match:title ^([Pp]icture[-\s]?[Ii]n[-\s]?[Pp]icture)(.*)$, keep_aspect_ratio on"
@@ -181,6 +187,16 @@
         "match:title .*minecraft.*, immediate on"
         "match:class ^(steam_app).*, immediate on"
       ];
+      plugin = {
+        hyprscrolling = {
+          fullscreen_on_one_column = true;
+          column_width = 0.5;
+          explicit_column_widths = "0.333,0.5,0.667,1.0";
+          focus_fit_method = 1;
+          follow_focus = true;
+          follow_debounce_ms = 100;
+        };
+      };
     };
   };
 }

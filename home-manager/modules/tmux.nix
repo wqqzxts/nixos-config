@@ -7,7 +7,7 @@
     keyMode = "vi";
     terminal = "screen-256color";
     extraConfig = ''
-      set -as terminal-features ",ghostty*:RGB"
+      set -as terminal-features ",alacritty*:RGB"
       bind -n M-Space copy-mode -u
 
       bind -n M-1 select-window -t 1
@@ -36,6 +36,7 @@
       bind -n M-t new-window
       bind -n M-c kill-pane
       bind -n M-q kill-window
+      bind -n M-d detach
       bind -n M-Q kill-session
     '';
     plugins = with pkgs; [

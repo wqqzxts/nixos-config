@@ -28,6 +28,7 @@
       firefox.enable = false;
       hyprland.enable = false;
       hyprlock.enable = false;
+      hyprpaper.enable = false;
       neovim.enable = false;
       nixvim.enable = false;
       rofi.enable = false;
@@ -37,7 +38,7 @@
 
     cursor = {
       name = "Capitaine Cursors (Gruvbox)";
-      size = 50;
+      size = 40;
       package = pkgs.capitaine-cursors-themed;
     };
 
@@ -71,6 +72,7 @@
       light = "Papirus-Light";
     };
 
-    image = ../../nixos/assets/wall-lain.jpg;
+    # broken until https://github.com/nix-community/stylix/pull/2087 merged
+    # image = ../../nixos/assets/wall-lain.jpg;
   };
 }

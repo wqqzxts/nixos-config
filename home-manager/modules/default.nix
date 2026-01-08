@@ -1,13 +1,14 @@
 {
   imports = [
+    ./alacritty.nix
     ./eww
     ./eza.nix
     ./firefox.nix
-    ./ghostty.nix
     ./git.nix
     ./hyprland
     ./lazygit.nix
     ./nixvim
+    ./qt.nix
     ./rofi
     ./starship.nix
     ./stylix.nix

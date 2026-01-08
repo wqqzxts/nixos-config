@@ -2,7 +2,7 @@
 
 [![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)](#)
 [![NixOS](https://img.shields.io/badge/NixOS-5277C3?logo=nixos&logoColor=fff)](#)
-[![Ghostty](https://custom-icon-badges.demolab.com/badge/Ghostty-0000ff?logo=ghostty_term)](#)
+[![Alacritty](https://img.shields.io/badge/Alacritty-F46D01?logo=alacritty&logoColor=fff)](#)
 
 ![showcase1](./gallery/showcase1.png)
 Welcome to redesigned by me [Ampersand's](https://www.youtube.com/@ampersand3636) NixOS configuration with unstable channel.
@@ -13,10 +13,11 @@ Welcome to redesigned by me [Ampersand's](https://www.youtube.com/@ampersand3636
 - 🏠 **[Home Manager Integration](https://nix-community.github.io/home-manager/)**: Configured for managing the home environment.
 - 🎨 **[Gruvbox Material Theme](https://github.com/sainnhe/gruvbox-material)**: A perfect blend of vibrant and subtle colors.
 - 💧 **[Hyprland](https://hypr.land)**: Highly customizable tiling Wayland compositor.
+- 💧 **[Hyprscrolling](https://github.com/hyprwm/hyprland-plugins/tree/main/hyprscrolling)**: Plugin for Hyprland which adds a scrolling layout.
 - 📊 **[Waybar](https://github.com/Alexays/Waybar):** A highly customizable Wayland bar.
 - 📨 **[Swaync](https://github.com/ErikReider/SwayNotificationCenter):** A notification daemon for Wayland, themed with Gruvbox.
 - 🔒 **[Hyprlock](https://hyprland.org/docs/ecosystem/hyprlock/):** The native screen locker for Hyprland, showing a blurred background and the current time.
-- 👻 **[Ghostty](https://ghostty.org/):** A fast, feature rich and GPU-accelerated terminal emulator.
+- 🚄 **[Alacritty](https://alacritty.org/):** A blazing fast and GPU-accelerated terminal emulator.
 - 🌟 **[Zsh](https://wiki.archlinux.org/title/Zsh)**: Efficient shell setup with lots of aliases.
 - 🧇 **[Tmux](https://github.com/tmux/tmux/wiki)**: Terminal multiplexer with convenient hotkeys.
 - ⌨️ **[Neovim](https://neovim.io)**: Vim-fork focused on extensibility configured using Nixvim.

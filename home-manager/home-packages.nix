@@ -14,8 +14,10 @@
     cliphist
     grimblast
     hyprpicker
+    libnotify
     wl-clipboard
     wtype
+    xdg-desktop-portal-gtk
 
     # multimedia
     ffmpeg
@@ -36,21 +38,13 @@
     fzf
     htop
     ripgrep
+    ueberzugpp
     w3m
     wget
 
-    # wm stuff
-    libnotify
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-hyprland
-
     # entertainment
-    cmatrix
     fastfetch
-    hollywood
-    lolcat
     nitch
-    ufetch
     unimatrix
   ];
 }
