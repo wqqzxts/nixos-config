@@ -26,10 +26,12 @@
       "$menu" = "rofi -show drun";
 
       exec-once = [
+        "hyprlock"
+        "loginctl lock-session"
         "eww daemon"
         "waybar"
-        "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
+        "wl-paste --type text --watch cliphist store"
       ];
 
       general = {

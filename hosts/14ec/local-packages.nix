@@ -22,8 +22,5 @@
     nodejs_24
     poetry
     python313
-
-    # regreet
-    gruvbox-material-gtk-theme
   ];
 }

@@ -6,7 +6,9 @@
     escapeTime = 0;
     keyMode = "vi";
     terminal = "screen-256color";
+    prefix = "C-a";
     extraConfig = ''
+      unbind C-b
       set -as terminal-features ",alacritty*:RGB"
       bind -n M-Space copy-mode -u
 

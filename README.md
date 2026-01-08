@@ -5,7 +5,7 @@
 [![Alacritty](https://img.shields.io/badge/Alacritty-F46D01?logo=alacritty&logoColor=fff)](#)
 
 ![showcase1](./gallery/showcase1.png)
-Welcome to redesigned by me [Ampersand's](https://www.youtube.com/@ampersand3636) NixOS configuration with unstable channel.
+Welcome to my NixOS configuration.
 
 ## 🖥️ Quick overview
 
@@ -13,12 +13,12 @@ Welcome to redesigned by me [Ampersand's](https://www.youtube.com/@ampersand3636
 - 🏠 **[Home Manager Integration](https://nix-community.github.io/home-manager/)**: Configured for managing the home environment.
 - 🎨 **[Gruvbox Material Theme](https://github.com/sainnhe/gruvbox-material)**: A perfect blend of vibrant and subtle colors.
 - 💧 **[Hyprland](https://hypr.land)**: Highly customizable tiling Wayland compositor.
-- 💧 **[Hyprscrolling](https://github.com/hyprwm/hyprland-plugins/tree/main/hyprscrolling)**: Plugin for Hyprland which adds a scrolling layout.
+- 📜 **[Hyprscrolling](https://github.com/hyprwm/hyprland-plugins/tree/main/hyprscrolling)**: Plugin for Hyprland which adds a scrolling layout.
 - 📊 **[Waybar](https://github.com/Alexays/Waybar):** A highly customizable Wayland bar.
 - 📨 **[Swaync](https://github.com/ErikReider/SwayNotificationCenter):** A notification daemon for Wayland, themed with Gruvbox.
 - 🔒 **[Hyprlock](https://hyprland.org/docs/ecosystem/hyprlock/):** The native screen locker for Hyprland, showing a blurred background and the current time.
 - 🚄 **[Alacritty](https://alacritty.org/):** A blazing fast and GPU-accelerated terminal emulator.
-- 🌟 **[Zsh](https://wiki.archlinux.org/title/Zsh)**: Efficient shell setup with lots of aliases.
+- 🐚 **[Zsh](https://wiki.archlinux.org/title/Zsh)**: Efficient shell setup with lots of aliases.
 - 🧇 **[Tmux](https://github.com/tmux/tmux/wiki)**: Terminal multiplexer with convenient hotkeys.
 - ⌨️ **[Neovim](https://neovim.io)**: Vim-fork focused on extensibility configured using Nixvim.
 - 🦆 **[Yazi](https://yazi-rs.github.io/):** Blazing fast terminal file manager written in Rust, based on async I/O.

@@ -35,9 +35,16 @@
     history.path = "${config.xdg.dataHome}/zsh/history";
 
     initContent = ''
-      # start tmux automatically if not already running. no Tmux in tty
-      if [ -z "$TMUX" ] && [ -n "$DISPLAY" ]; then
-        tmux attach-session -t default || tmux new-session -s default
+      # u can uncomment that but i prefer to use tmux without autorun
+      # start tmux automatically if not already running. no tmux in tty
+      # if [ -z "$TMUX" ] && [ -n "$DISPLAY" ]; then
+      #   tmux attach-session -t default || tmux new-session -s default
+      # fi
+    '';
+
+    profileExtra = ''
+      if [[ "$(tty)" == "/dev/tty1" ]]; then
+          exec start-hyprland
       fi
     '';
   };
