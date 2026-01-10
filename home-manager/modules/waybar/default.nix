@@ -11,7 +11,7 @@
         margin-left = 3;
         margin-right = 3;
         margin-top = 7;
-        modules-left = ["custom/launcher" "hyprland/workspaces" "mpris" "cava"];
+        modules-left = ["custom/launcher" "niri/workspaces" "mpris" "cava"];
         modules-center = ["clock"];
         modules-right = ["hyprland/language" "custom/weather" "pulseaudio" "battery" "tray"];
 
@@ -19,6 +19,18 @@
           format = "";
           on-click = "wlogout";
           tooltip = false;
+        };
+
+        "niri/workspaces" = {
+          all-outputs = false;
+          format = "{icon}";
+          format-icons = {
+            "1" = "一";
+            "2" = "二";
+            "3" = "三";
+            "4" = "四";
+            "5" = "五";
+          };
         };
 
         "hyprland/workspaces" = {
@@ -58,7 +70,7 @@
         };
 
         "cava" = {
-          framerate = 144;
+          framerate = 60;
           bars = 6;
           bar_delimiter = 0;
           method = "pipewire";

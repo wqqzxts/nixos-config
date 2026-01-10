@@ -77,8 +77,8 @@
       BrowserDataBackup = false;
       DisableAppUpdate = true;
       DisableSetDesktopBackground = true;
-      DisableSystemAddonUpdate = true;
-      ExtensionUpdate = false;
+      DisableSystemAddonUpdate = false;
+      ExtensionUpdate = true;
 
       # convenient stuff
       NoDefaultBookmarks = true;

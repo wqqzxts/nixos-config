@@ -14,11 +14,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     hyprland = {
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -28,6 +23,20 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.hyprland.follows = "hyprland";
+    };
+
+    niri = {
+      url = "github:sodiboo/niri-flake";
+    };
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    spicetify = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -47,6 +56,7 @@
 
       modules = [
         ./hosts/${hostname}/configuration.nix
+        ./overlays.nix
       ];
     };
 
@@ -65,8 +75,12 @@
       };
 
       modules = [
+        inputs.stylix.homeModules.stylix
+        inputs.niri.homeModules.niri
         inputs.nixvim.homeModules.nixvim
+        inputs.spicetify.homeManagerModules.spicetify
         ./home-manager/home.nix
+        ./overlays.nix
       ];
     };
   };

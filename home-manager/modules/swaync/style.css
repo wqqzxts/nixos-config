@@ -1,15 +1,15 @@
 * {
   font-family: "IosevkaTerm Nerd Font Propo";
   font-weight: bold;
-  color: #bdaa89;
+  color: #ddc7a1;
   text-shadow: none;
   transition: none;
   box-shadow: none;
 }
 
 .control-center {
-  background-color: #1d2021;
-  border: solid 5px #bdaa89;
+  background-color: #292828;
+  border: solid 5px #ddc7a1;
   border-radius: 0;
   margin: 15px;
 }
@@ -20,7 +20,7 @@
 }
 
 .notification {
-  background-color: #1d2021;
+  background-color: #292828;
   border: solid 5px #83a598;
   border-radius: 0;
   padding: 10px;
@@ -28,7 +28,7 @@
 }
 
 .notification:hover {
-  background-color: #1d2021;
+  background-color: #292828;
   transition: all 0.5s ease-in-out;
   border-color: #ea6962;
   border-radius: 0;
@@ -40,9 +40,9 @@
 }
 
 .notification-action {
-  background-color: #1d2021;
+  background-color: #292828;
   border: solid 5px #ea6962;
-  color: #bdaa89;
+  color: #ddc7a1;
   border-radius: 0;
   margin: 5px;
 }
@@ -54,15 +54,15 @@
 }
 
 .widget-title > button {
-  background-color: #1d2021;
+  background-color: #292828;
   border: solid 5px #d8a657;
-  color: #bdaa89;
+  color: #ddc7a1;
   border-radius: 0;
   padding: 5px;
 }
 
 .widget-mpris {
-  background-color: #1d2021;
+  background-color: #292828;
   border: solid 5px #d3869b;
   padding: 10px;
   border-radius: 0;
@@ -75,15 +75,15 @@
 }
 
 .widget-menubar > button {
-  background-color: #1d2021;
+  background-color: #292828;
   border: solid 5px #e3433b;
-  color: #bdaa89;
+  color: #ddc7a1;
   border-radius: 0;
   padding: 5px 10px;
 }
 
 scrollbar {
-  background: #1d2021;
+  background: #292828;
   width: 5px;
   border-radius: 0;
 }

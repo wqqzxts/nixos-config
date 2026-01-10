@@ -7,9 +7,11 @@
     ./git.nix
     ./hyprland
     ./lazygit.nix
+    ./niri
     ./nixvim
     ./qt.nix
     ./rofi
+    ./spicetify.nix
     ./starship.nix
     ./stylix.nix
     ./swaync

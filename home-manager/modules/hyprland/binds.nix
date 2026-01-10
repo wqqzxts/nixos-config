@@ -1,9 +1,9 @@
-{ pkgs, ... }: {
+{
   wayland.windowManager.hyprland.settings = {
     bind = [
+      "$mainMod,       t,       exec, $terminal"
       "$mainMod,       q,       killactive,"
       "$mainMod,       f,       togglefloating,"
-      "$mainMod,       t,       exec, $terminal"
       "$mainMod,       y,       exec, $fileManager"
       "$mainMod,       d,       exec, $menu"
       "$mainMod,       ESCAPE,  exec, loginctl lock-session"
@@ -48,7 +48,9 @@
       "$mainMod CTRL,   l,  exec,	hyprctl dispatch layoutmsg colresize +0.1"
       "$mainMod CTRL,   h,  exec,	hyprctl dispatch layoutmsg colresize -0.1"
 
+      "$mainMod SHIFT,  u,  layoutmsg,  promote"
       "$mainMod SHIFT,  f,  layoutmsg,  fit active"
+      "$mainMod SHIFT,  r,  exec,       hyprctl dispatch layoutmsg colresize 0.5"
     ];
 
     # move/resize windows with mainMod + lmb/rmb and dragging

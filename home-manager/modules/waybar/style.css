@@ -1,7 +1,7 @@
 * {
   font-family: "IosevkaTerm Nerd Font Propo";
   font-weight: bold;
-  color: #bdaa89;
+  color: #ddc7a1;
   text-shadow: none;
   transition: none;
   box-shadow: none;
@@ -9,7 +9,7 @@
 
 #waybar {
     background: none;
-    color: #bdaa89;
+    color: #ddc7a1;
     margin: 0;
     padding: 0 10px;
     min-height: 0;
@@ -17,7 +17,7 @@
 
 #waybar {
     background: none;
-    color: #bdaa89;
+    color: #ddc7a1;
     margin: 0;
     padding: 0 10px;
     min-height: 0;
@@ -41,16 +41,16 @@
 
 #custom-launcher {
     background-color: #ea6962;
-    color: #1d2021;
+    color: #292828;
     border: solid 5px #e3433b;
     padding: 0 4px;
     margin: 0;
 }
 
 #window {
-    background-color: #1d2021;
-    border: solid 5px #83a598;
-    color: #bdaa89;
+    background-color: #292828;
+    border: solid 5px #7daea3;
+    color: #ddc7a1;
     border-radius: 0;
     padding: 0 6px;
     margin: 0;
@@ -59,7 +59,7 @@
 .modules-center,
 .modules-right,
 .modules-left {
-    background-color: #1d2021;
+    background-color: #292828;
     border: none;
     border-radius: 0;
     padding: 5px 5px;
@@ -67,7 +67,7 @@
 }
 
 #workspaces {
-    background-color: #1d2021;
+    background-color: #292828;
     border-radius: 0;
     border: none;
     margin: 0px -5px 0px -5px;
@@ -77,9 +77,9 @@
 #workspaces button {
     padding: 0px 7px;
     margin: 0px 2px;
-    border: solid 5px #83a598;
+    border: solid 5px #7daea3;
     background-color: transparent;
-    color: #bdaa89;
+    color: #ddc7a1;
     border-radius: 0;
 }
 
@@ -90,80 +90,80 @@
 
 #workspaces button.active {
     transition: all 0.5s ease-in-out;
-    background-color: #1d2021;
+    background-color: #292828;
     border: solid 5px #ea6962;
 }
 
 #mpris {
-    background-color: #1d2021;
+    background-color: #292828;
     border: solid 5px #d3869b;
-    color: #bdaa89;
+    color: #ddc7a1;
     padding: 0 7px;
     margin: 0;
 }
 
 #cava {
-    background-color: #1d2021;
+    background-color: #292828;
     border: solid 5px #d3869b;
-    color: #bdaa89;
+    color: #ddc7a1;
     padding: 0 7px;
     margin: 0;
 }
 
 #clock {
-    color: #bdaa89;
-    border: solid 5px #bdaa89;
-    background-color: #1d2021;
+    color: #ddc7a1;
+    border: solid 5px #ddc7a1;
+    background-color: #292828;
     padding: 0 7px;
     margin: 0;
 }
 
 #language {
-  background-color: #1d2021;
+  background-color: #292828;
   border: solid 5px #a9b665;
-  color: #bdaa89;
+  color: #ddc7a1;
   padding: 0 7px;
   margin: 0;
 }
 
 #custom-weather {
-  background-color: #1d2021;
+  background-color: #292828;
   border: solid 5px #e78a4e;
-  color: #bdaa89;
+  color: #ddc7a1;
   padding: 0 7px;
   margin: 0;
 }
 
 #pulseaudio {
-  background-color: #1d2021;
-  border: solid 5px #83a598;
-  color: #bdaa89;
+  background-color: #292828;
+  border: solid 5px #7daea3;
+  color: #ddc7a1;
   padding: 0 7px;
   margin: 0;
 }
 
 #pulseaudio.muted {
-    background-color: #1d2021;
-    color: #bdaa89;
+    background-color: #292828;
+    color: #ddc7a1;
 }
 
 #battery {
-  background-color: #1d2021;
+  background-color: #292828;
   border: solid 5px #d3869b;
-  color: #bdaa89;
+  color: #ddc7a1;
   padding: 0 7px;
   margin: 0;
 }
 
 #battery.charging,
 #battery.plugged {
-  color: #bdaa89;
-  background-color: #1d2021;
+  color: #ddc7a1;
+  background-color: #292828;
 }
 
 #battery.critical:not(.charging) {
   background-color: #ea6962;
-  color: #bdaa89;
+  color: #ddc7a1;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: steps(12);
@@ -173,9 +173,9 @@
 
 
 #tray {
-  background-color: #1d2021;
+  background-color: #292828;
   border: solid 5px #d8a657;
-  color: #bdaa89;
+  color: #ddc7a1;
   padding: 0 7px;
   margin: 0;
 }

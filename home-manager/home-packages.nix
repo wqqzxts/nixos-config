@@ -7,6 +7,7 @@
     mpv
     pavucontrol
     qbittorrent
+    vscodium
 
     # wayland
     bemoji
@@ -18,6 +19,7 @@
     wl-clipboard
     wtype
     xdg-desktop-portal-gtk
+    xwayland-satellite
 
     # multimedia
     ffmpeg
@@ -48,6 +50,7 @@
     era
     fastfetch
     nitch
+    pipes-rs
     unimatrix
   ];
 }

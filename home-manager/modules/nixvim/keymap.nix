@@ -23,7 +23,7 @@
               Y = "y$";
 
               # back and fourth between the two most recent files
-              "<M-TAB>" = ":b#<CR>";
+              "<C-TAB>" = ":b#<CR>";
 
               # close by Ctrl+x
               "<C-x>" = ":close<CR>";
@@ -72,6 +72,6 @@
               "<leader>s" = ":sort<CR>";
             };
       in
-      config.lib.nixvim.keymaps.mkKeymaps { options.silent = true; } (normal ++ visual);
+        config.lib.nixvim.keymaps.mkKeymaps { options.silent = true; } (normal ++ visual);
   };
 }

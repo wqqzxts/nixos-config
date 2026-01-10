@@ -5,43 +5,37 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
-    shellAliases =
-      let
-        flakeDir = "~/flake";
-      in {
-        sw = "nh os switch";
-        upd = "nh os switch --update";
-        hms = "nh home switch";
+    shellAliases = {
+      v = "nvim";
+      y = "yazi";
 
-        pkgs = "nvim ${flakeDir}/nixos/packages.nix";
+      t = "tmux";
+      ta = "tmux new -As ";
+      td = "tmux detach";
 
-        v = "nvim";
-        se = "sudoedit";
+      gs = "git status";
+      ga = "git add";
+      gc = "git commit";
+      gp = "git push";
 
-        gs = "git status";
-        ga = "git add";
-        gc = "git commit";
-        gp = "git push";
+      ".." = "cd ..";
+      "cl" = "clear";
 
-        ".." = "cd ..";
-        "cl" = "clear";
-
-        ff = "fastfetch";
-        uf = "ufetch";
-        nf = "nitch";
-      };
+      ff = "fastfetch";
+      nf = "nitch";
+    };
 
     history.size = 10000;
     history.path = "${config.xdg.dataHome}/zsh/history";
 
     initContent = ''
       # u can uncomment that but i prefer to use tmux without autorun
-      # start tmux automatically if not already running. no tmux in tty
       # if [ -z "$TMUX" ] && [ -n "$DISPLAY" ]; then
       #   tmux attach-session -t default || tmux new-session -s default
       # fi
     '';
 
+    # maybe cringe but sddm and etc is not my type
     profileExtra = ''
       if [[ "$(tty)" == "/dev/tty1" ]]; then
           exec start-hyprland

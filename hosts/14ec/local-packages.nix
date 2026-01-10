@@ -12,6 +12,8 @@
     spotify
     telegram-desktop
     vesktop
+    wineWowPackages.waylandFull
+    winetricks
 
     # development
     clang

@@ -1,17 +1,17 @@
-{ inputs, homeStateVersion, user, pkgs, lib, ... }: {
+{ homeStateVersion, user, ... }: {
   imports = [
     ./modules
     ./home-packages.nix
   ];
-
-  services.udiskie.enable = true;
-  services.udiskie.tray = "never";
 
   home = {
     username = user;
     homeDirectory = "/home/${user}";
     stateVersion = homeStateVersion;
   };
+
+  services.udiskie.enable = true;
+  services.udiskie.tray = "never";
 
   xdg.mimeApps = {
     defaultApplications = {

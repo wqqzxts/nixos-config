@@ -7,10 +7,15 @@
       inlayHints.enable = true;
       servers = {
         clangd.enable = true;
+        rust_analyzer.enable = true;
         lua_ls = {
           enable = true;
           config.settings.diagnostics.globals = [ "vim" ];
         };
+        ts_ls.enable = true;
+        pyright.enable = true;
+        # nixd.enable = true;
+        omnisharp.enable = true;
       };
 
       keymaps =
@@ -30,7 +35,7 @@
             gD.lspBufAction = "references";
             gt.lspBufAction = "type_definition";
             gi.lspBufAction = "implementation";
-            K.lspBufAction = "hover";
+            # K.lspBufAction = "hover";
             "<F2>".lspBufAction = "rename";
           };
     };

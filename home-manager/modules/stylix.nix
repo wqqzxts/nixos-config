@@ -1,6 +1,4 @@
-{ pkgs, inputs, ... }: {
-  imports = [ inputs.stylix.homeModules.stylix ];
-
+{ pkgs, ... }: {
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
@@ -32,6 +30,7 @@
       neovim.enable = false;
       nixvim.enable = false;
       rofi.enable = false;
+      spicetify.enable = false;
       swaync.enable = false;
       waybar.enable = false;
     };

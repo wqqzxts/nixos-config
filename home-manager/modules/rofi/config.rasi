@@ -1,10 +1,10 @@
 * {
-      background:     #1d2021FF;
+      background:     #292828FF;
       background-alt: #3c3836FF;
       foreground:     #ebdbb2FF;
       selected:       #ea6962FF;
-      selected1:      #bdaa89FF;
-      active:         #98971aFF;
+      selected1:      #ddc7a1FF;
+      active:         #a9b665FF;
       urgent:         #ea6962FF;
       border-colour:               var(selected);
       border:                      var(selected1);
@@ -18,7 +18,7 @@
       urgent-foreground:           var(background);
       active-background:           var(active);
       active-foreground:           var(background);
-      selected-normal-background:  #83a598;
+      selected-normal-background:  #7daea3;
       selected-normal-foreground:  var(background);
       selected-urgent-background:  var(active);
       selected-urgent-foreground:  var(background);

@@ -10,9 +10,9 @@ window {
 }
 
 button {
-    color: #bdaa89;
-    background-color: #1d2021;
-    border: solid 5px #bdaa89;
+    color: #ddc7a1;
+    background-color: #292828;
+    border: solid 5px #ddc7a1;
     min-width: 300px;
 
     font-size: 256px;
@@ -26,7 +26,7 @@ button {
 }
 
 button:hover {
-    background-color: #1d2021;
+    background-color: #292828;
     border: solid 5px #ea6962;
     color: #ea6962;
     outline-style: none;
