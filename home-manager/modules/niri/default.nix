@@ -7,7 +7,7 @@
     ./layout.nix
     ./main.nix
     ./misc.nix
-    ./outputs.nix
+    ./output.nix
     ./rules.nix
   ];
 }

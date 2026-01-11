@@ -1,5 +1,7 @@
 {
   wayland.windowManager.hyprland.settings = {
+    "$mainMod" = "SUPER";
+
     bind = [
       # applications
       "$mainMod,       T,       exec, $terminal"
