@@ -5,7 +5,10 @@
     ./eza.nix
     ./firefox.nix
     ./git.nix
+    ./hypridle.nix
     ./hyprland
+    ./hyprlock.nix
+    ./hyprpaper.nix
     ./lazygit.nix
     ./niri
     ./nixvim

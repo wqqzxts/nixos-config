@@ -12,7 +12,7 @@
     };
 
     spawn-at-startup = [
-      { command = [ "loginctl" "lock-session" ]; }
+      { command = [ "hyprlock" ]; }
       { command = [ "waybar" ]; }
       { command = [ "eww" "daemon" ]; }
       { command = [ "wl-paste" "--type" "image" "--watch" "cliphist" "store" ]; }

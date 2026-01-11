@@ -1,56 +1,65 @@
 {
   wayland.windowManager.hyprland.settings = {
     bind = [
-      "$mainMod,       t,       exec, $terminal"
-      "$mainMod,       q,       killactive,"
-      "$mainMod,       f,       togglefloating,"
-      "$mainMod,       y,       exec, $fileManager"
-      "$mainMod,       d,       exec, $menu"
-      "$mainMod,       ESCAPE,  exec, loginctl lock-session"
+      # applications
+      "$mainMod,       T,       exec, $terminal"
+      "$mainMod,       Y,       exec, $fileManager"
+      "$mainMod,       D,       exec, $menu"
+      "$mainMod,       V,       exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+      "$mainMod,       E,       exec, bemoji -cn"
+
+      # utilities
+      "$mainMod,       P,       exec, hyprpicker -an"
+      "                ,PRINT,  exec, grimblast --notify --freeze copysave area"
+
+      # widgets
+      "$mainMod,       B,       exec, pkill -SIGUSR1 waybar"
+      "$mainMod,       N,       exec, swaync-client -t"
       "$mainMod SHIFT, ESCAPE,  exec, wlogout,"
-      "$mainMod,       e,       exec, bemoji -cn"
-      "$mainMod,       v,       exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
-      "$mainMod,       b,       exec, pkill -SIGUSR1 waybar"
-      "$mainMod SHIFT, b,       exec, pkill -SIGUSR2 waybar"
-      "$mainMod,       p,       exec, hyprpicker -an"
-      "$mainMod,       n,       exec, swaync-client -t"
-      ",               PRINT,   exec, grimblast --notify --freeze copysave area"
+      "$mainMod,       ESCAPE,  exec, loginctl lock-session"
 
-      # window resize
-      "$mainMod CTRL, k,  resizeactive, 0    -60"
-      "$mainMod CTRL, j,  resizeactive, 0    60"
+      # window management
+      "$mainMod,       Q,       killactive,"
+      "$mainMod,       F,       togglefloating,"
 
-      # switching workspaces
-      "$mainMod, 1, workspace, 1"
-      "$mainMod, 2, workspace, 2"
-      "$mainMod, 3, workspace, 3"
-
-      # moving windows to workspaces
-      "$mainMod SHIFT, 1, movetoworkspacesilent, 1"
-      "$mainMod SHIFT, 2, movetoworkspacesilent, 2"
-      "$mainMod SHIFT, 3, movetoworkspacesilent, 3"
-
-      # scratchpad
-      "$mainMod,       s,	togglespecialworkspace, magic"
-      "$mainMod SHIFT, s,	movetoworkspace,        special:magic"
-
-      # scrolling layout
-      "$mainMod,  h,  layoutmsg,  focus l"
-      "$mainMod,  l,  layoutmsg,  focus r"
-      "$mainMod,  k,  layoutmsg,  focus u"
-      "$mainMod,  j,  layoutmsg,  focus d"
-
+      ## window moving
       "$mainMod SHIFT,  l,  layoutmsg,	movewindowto r"
       "$mainMod SHIFT,  h,  layoutmsg,	movewindowto l"
       "$mainMod SHIFT,  k,  layoutmsg,	movewindowto u"
       "$mainMod SHIFT,  j,  layoutmsg,	movewindowto d"
 
-      "$mainMod CTRL,   l,  exec,	hyprctl dispatch layoutmsg colresize +0.1"
-      "$mainMod CTRL,   h,  exec,	hyprctl dispatch layoutmsg colresize -0.1"
+      ## column management
+      "$mainMod SHIFT, P,  layoutmsg,    promote"
 
-      "$mainMod SHIFT,  u,  layoutmsg,  promote"
-      "$mainMod SHIFT,  f,  layoutmsg,  fit active"
-      "$mainMod SHIFT,  r,  exec,       hyprctl dispatch layoutmsg colresize 0.5"
+
+      ## window resizing
+      "$mainMod CTRL, K,  resizeactive,                                      0 -60"
+      "$mainMod CTRL, J,  resizeactive,                                      0 60"
+      "$mainMod CTRL, L,  exec,         hyprctl dispatch layoutmsg colresize +0.1"
+      "$mainMod CTRL, H,  exec,         hyprctl dispatch layoutmsg colresize -0.1"
+
+      "$mainMod CTRL, U,  layoutmsg,    fit active"
+      "$mainMod CTRL, R,  exec,         hyprctl dispatch layoutmsg colresize 0.5"
+      "$mainMod CTRL, F,  exec,         hyprctl dispatch fullscreen          0"
+
+      ## window navigation
+      "$mainMod,  H,  layoutmsg,  focus l"
+      "$mainMod,  L,  layoutmsg,  focus r"
+      "$mainMod,  K,  layoutmsg,  focus u"
+      "$mainMod,  J,  layoutmsg,  focus d"
+
+      # workspace management
+      "$mainMod,       1, workspace,                                     1"
+      "$mainMod,       2, workspace,                                     2"
+      "$mainMod,       3, workspace,                                     3"
+
+      "$mainMod SHIFT, 1, layoutmsg, movecoltoworkspace, 1"
+      "$mainMod SHIFT, 2, layoutmsg, movecoltoworkspace, 2"
+      "$mainMod SHIFT, 3, layoutmsg, movecoltoworkspace, 3"
+
+      # scratchpad
+      "$mainMod,       S,	togglespecialworkspace, magic"
+      "$mainMod SHIFT, S,	movetoworkspace,        special:magic"
     ];
 
     # move/resize windows with mainMod + lmb/rmb and dragging
@@ -59,17 +68,16 @@
       "$mainMod,  mouse:273, resizewindow"
     ];
 
-    # volume & brightness
+    # laptop keys
     bindel = [
-      ",XF86AudioRaiseVolume,  exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
-      ",XF86AudioLowerVolume,  exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-      ",XF86AudioMute,         exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-      ",XF86AudioMicMute,      exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-      "$mainMod, bracketright, exec, brightnessctl s 10%+"
-      "$mainMod, bracketleft,  exec, brightnessctl s 10%-"
+      ",XF86AudioRaiseVolume,    exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+      ",XF86AudioLowerVolume,    exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      ",XF86AudioMute,           exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+      ",XF86AudioMicMute,        exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+      ",XF86MonBrightnessUp ,   exec, brightnessctl s 10%+"
+      ",XF86MonBrightnessDown,  exec, brightnessctl s 10%-"
     ];
 
-    # audio playback
     bindl = [
       ", XF86AudioNext,  exec, playerctl next"
       ", XF86AudioPause, exec, playerctl play-pause"

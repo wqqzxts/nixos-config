@@ -39,7 +39,7 @@
               end
             '';
             icon = "";
-            color.fg = "#C0AF8B";
+            color.fg = "#1d2021";
           }
           "encoding"
           "fileformat"
