@@ -1,4 +1,4 @@
-{
+{ config, ...}: {
   programs.niri.settings = {
     prefer-no-csd = true;
     hotkey-overlay.skip-at-startup = true;
@@ -24,5 +24,11 @@
       { command = [ "wl-paste" "--type" "image" "--watch" "cliphist" "store" ]; }
       { command = [ "wl-paste" "--type" "text" "--watch" "cliphist" "store" ]; }
     ];
+
+    cursor = {
+      hide-when-typing = true;
+      theme = config.stylix.cursor.name;
+      size = config.stylix.cursor.size;
+    };
   };
 }

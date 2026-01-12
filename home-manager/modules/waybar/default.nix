@@ -72,7 +72,7 @@
         };
 
         "cava" = {
-          framerate = 60;
+          framerate = 244;
           bars = 6;
           bar_delimiter = 0;
           method = "pipewire";
