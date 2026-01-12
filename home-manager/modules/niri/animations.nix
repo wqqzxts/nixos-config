@@ -1,15 +1,21 @@
 let
   # curves (works bad with gestures)
-  easeInOut = [ 0.85 0 0.1 1 ]; # starts very slowly and then incredibly accelerates
-  anticipation = [ 0.25 (-0.5) 0.05 1.0 ]; # accumulates at first and then realeases
+  # easing like:
+  easeInOut = [ 0.85 0.00 0.10 1.00 ]; # starts very slowly and then incredibly accelerates
+  # spring like:
+  anticipation = [ 0.25 (-0.50) 0.05 1.00 ]; # accumulates at first and then realeases
+
+  # animation durations
+  candy = 750;
+  responsive = 400;
 
   # dampings
-  jumpy = 0.75; # eye candy
+  jumpy = 0.65; # eye candy
   tight = 0.85; # responsive feel
 
   # stiffnesses
-  hiStiff = 750; # responsive feel
   loStiff = 200; # eye candy
+  hiStiff = 750; # responsive feel
 
   # epsilon
   e = 0.00001; # that value works nice, but you can try out to lower (but values above 0.005 works baad)
@@ -18,7 +24,7 @@ in
   programs.niri.settings = {
     animations = {
       enable = true;
-      slowdown = 1.0;
+      slowdown = 1.0; # bigger value - slower all the animations
 
       # navigation
       ## workspaces
@@ -56,7 +62,7 @@ in
       window-close.kind.easing = {
         curve = "cubic-bezier";
         curve-args = easeInOut;
-        duration-ms = 750;
+        duration-ms = candy;
       };
       ## window moving
       window-movement.kind.spring = {
@@ -68,14 +74,14 @@ in
       window-resize.kind.easing = {
         curve = "cubic-bezier";
         curve-args = easeInOut;
-        duration-ms = 750;
+        duration-ms = candy;
       };
 
       # utils
       screenshot-ui-open.kind.easing = {
         curve = "cubic-bezier";
         curve-args = easeInOut;
-        duration-ms = 750;
+        duration-ms = candy;
       };
 
       config-notification-open-close.kind.spring = {

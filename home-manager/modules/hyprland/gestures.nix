@@ -12,6 +12,11 @@
         "3, pinchin,  dispatcher, layoutmsg, fit active"
         "3, pinchout, dispatcher, layoutmsg, colresize 0.5"
       ];
+
     };
+
+    # hyprexpo-gesture = [
+    #   "4, up, expo"
+    # ];
   };
 }

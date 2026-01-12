@@ -43,6 +43,7 @@
       "match:class ^(ueberzugpp)(.*)$, no_anim 1"
       "match:class ^(ueberzugpp)(.*)$, no_focus 1"
       "match:class ^(ueberzugpp)(.*)$, border_size 0"
+
       # picture in picture
       "match:title ^([Pp]icture[-\s]?[Ii]n[-\s]?[Pp]icture)(.*)$, float on"
       "match:title ^([Pp]icture[-\s]?[Ii]n[-\s]?[Pp]icture)(.*)$, keep_aspect_ratio on"
@@ -50,6 +51,7 @@
       "match:title ^([Pp]icture[-\s]?[Ii]n[-\s]?[Pp]icture)(.*)$, size (monitor_w*.25) (monitor_h*.25)"
       "match:title ^([Pp]icture[-\s]?[Ii]n[-\s]?[Pp]icture)(.*)$, float on"
       "match:title ^([Pp]icture[-\s]?[Ii]n[-\s]?[Pp]icture)(.*)$, pin on"
+
       # tearing
       "match:title .*\.exe, immediate on"
       "match:title .*minecraft.*, immediate on"

@@ -6,6 +6,7 @@ in
   wayland.windowManager.hyprland = {
     plugins = [
       hyprPlugPkgs.hyprscrolling
+      # hyprPlugPkgs.hyprexpo # idk why but it doesn't want to work
     ];
 
     settings.plugin = {
@@ -17,6 +18,11 @@ in
         follow_focus = true;
         follow_debounce_ms = 100;
       };
+      # hyprexpo = {
+      #   columns = 1;
+      #   bg_col = "rgba(665C54ff)";
+      #   workspace_method = "center current";
+      # };
     };
   };
 }

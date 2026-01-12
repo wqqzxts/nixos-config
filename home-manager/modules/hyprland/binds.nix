@@ -45,10 +45,11 @@
       "$mainMod CTRL, F,  exec,         hyprctl dispatch fullscreen          0"
 
       ## window navigation
-      "$mainMod,  H,  layoutmsg,  focus l"
-      "$mainMod,  L,  layoutmsg,  focus r"
-      "$mainMod,  K,  layoutmsg,  focus u"
-      "$mainMod,  J,  layoutmsg,  focus d"
+      "$mainMod,  H,    layoutmsg,  focus l"
+      "$mainMod,  L,    layoutmsg,  focus r"
+      "$mainMod,  K,    layoutmsg,      focus u"
+      "$mainMod,  J,    layoutmsg,      focus d"
+      "$mainMod,  TAB,  hyprexpo:expo,  toggle"
 
       # workspace management
       "$mainMod,       1, workspace,                                     1"

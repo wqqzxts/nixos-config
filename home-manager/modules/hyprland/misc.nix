@@ -1,4 +1,4 @@
-{
+{ inputs, pkgs, ...}: {
   wayland.windowManager.hyprland.settings = {
     env = [
       # hint electron apps to use wayland
@@ -22,7 +22,7 @@
     misc = {
       force_default_wallpaper = 0;
       disable_hyprland_logo = true;
-      animate_manual_resizes = false;
+      animate_manual_resizes = true;
     };
   };
 }
