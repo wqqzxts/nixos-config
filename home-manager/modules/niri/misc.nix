@@ -1,7 +1,13 @@
 {
   programs.niri.settings = {
     prefer-no-csd = true;
+    hotkey-overlay.skip-at-startup = true;
     screenshot-path = "~/pictures/screenshots/screenshot from %Y-%m-%d %H-%M-%S.png";
+
+    workspaces = {
+      "1" = {};
+      "2" = {};
+    };
 
     environment = {
       "NIXOS_OZONE_WL" = "1";

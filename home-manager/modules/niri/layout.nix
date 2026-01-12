@@ -7,25 +7,19 @@
       default-column-width = { proportion = 1. / 2.; };
 
       preset-column-widths = [
-        { proportion = 1. / 2.; }
-        { proportion = 2. / 3.; }
-        { proportion = 1. / 1.; }
+        { proportion = 0.5; }
+        { proportion = 0.6667; }
+        { proportion = 1.0; }
       ];
 
-      gaps = 5;
-      struts = {
-        left = 7;
-        right = 7;
-        top = 5;
-        bottom = 5;
-      };
+      gaps = 3;
 
       focus-ring.enable = false;
       border = {
         enable = true;
         width = 5;
         active = { color = "#ddc7a1"; };
-        inactive = { color = "#292828"; };
+        inactive = { color = "#665c54"; };
       };
 
       insert-hint.enable = false;

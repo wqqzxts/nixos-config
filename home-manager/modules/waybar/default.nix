@@ -10,10 +10,12 @@
         spacing = 5;
         margin-left = 3;
         margin-right = 3;
-        margin-top = 7;
-        modules-left = ["custom/launcher" "hyprland/workspaces" "mpris" "cava"];
+        margin-top = 3;
+        # modules-left = ["custom/launcher" "hyprland/workspaces" "mpris" "cava"];
+        modules-left = ["custom/launcher" "niri/workspaces" "mpris" "cava"];
         modules-center = ["clock"];
-        modules-right = ["hyprland/language" "custom/weather" "pulseaudio" "battery" "tray"];
+        # modules-right = ["hyprland/language" "custom/weather" "pulseaudio" "battery" "tray"];
+        modules-right = ["niri/language" "custom/weather" "pulseaudio" "battery" "tray"];
 
         "custom/launcher" = {
           format = "";

@@ -18,8 +18,7 @@
         click-method = "clickfinger";
         disabled-on-external-mouse = false;
         natural-scroll = true;
-        # accel-profile = "flat";
-        accel-speed = 0.25;
+        accel-speed = 0.0;
         scroll-method = "two-finger";
         scroll-factor = 0.75;
       };

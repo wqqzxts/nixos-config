@@ -3,7 +3,7 @@
     binds = {
       # applications
       "Mod+T" = { action.spawn = [ "alacritty" ]; repeat = false; };
-      "Mod+Y" = { action.spawn = [ "sh" "-c" "yazi" ]; repeat = false; };
+      "Mod+Y" = { action.spawn-sh = [ "yazi" ]; repeat = false; };
       "Mod+D" = { action.spawn = [ "rofi" "-show" "drun" ]; repeat = false; };
       "Mod+V" = { action.spawn = [ "sh" "-c" "cliphist list | rofi -dmenu | cliphist decode | wl-copy" ]; repeat = false; };
       "Mod+E" = { action.spawn = [ "bemoji" "-cn" ]; repeat = false; };

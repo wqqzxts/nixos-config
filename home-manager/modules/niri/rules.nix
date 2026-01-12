@@ -7,7 +7,7 @@
       }
       {
         matches = [
-          { title = "^(Open File|Select a File|Open Folder|Save As|Library|File Upload).*$"; }
+          { title = "^(Open File|Select a File|Open Folder|Save As|Library|File Upload|Choose Files|Mini App:).*$"; }
           { title = "^.*(wants to save|wants to open)$"; }
           { app-id = "^(org.pulseaudio.pavucontrol|Throne|.blueman-manager-wrapped)$"; }
         ];
@@ -19,8 +19,8 @@
       {
         matches = [{ title = "^(Choose wallpaper).*$"; }];
         open-floating = true;
-        default-column-width = { proportion = 0.50; };
-        default-window-height = { proportion = 0.75; };
+        default-column-width = { proportion = 0.75; };
+        default-window-height = { proportion = 0.50; };
       }
 
       {
@@ -28,14 +28,14 @@
         open-floating = true;
         draw-border-with-background = false;
       }
-
       {
-        matches = [{ title = "^([Pp]icture[-\s]?[Ii]n[-\s]?[Pp]icture).*$"; }];
+        matches = [
+          { title = "^([Pp]icture[-\s]?[Ii]n[-\s]?[Pp]icture).*$"; }
+        ];
         open-floating = true;
         default-column-width = { proportion = 0.25; };
         default-window-height = { proportion = 0.25; };
       }
-
       {
         matches = [
           { title = ".*\\.exe"; }

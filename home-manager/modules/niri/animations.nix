@@ -1,7 +1,8 @@
 {
   programs.niri.settings = {
     animations = {
-      enable = true;
+      # off while niri does not support layer animations
+      enable = false;
       slowdown = 1.0;
       workspace-switch.kind.easing = {
         curve = "cubic-bezier";

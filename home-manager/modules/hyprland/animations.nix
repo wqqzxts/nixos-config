@@ -11,8 +11,8 @@
 
       animation = [
         "windows, 1, 5, fluentDecel, slide"
-        "windowsIn, 1, 5, softSpring, popin 80%"
-        "windowsOut, 1, 5, fluentDecel, popin 80%"
+        "windowsIn, 1, 5, softSpring, popin 10%"
+        "windowsOut, 1, 5, fluentDecel, popin 10%"
 
         "workspaces, 1, 6, easeOutCirc, slidevert"
 
