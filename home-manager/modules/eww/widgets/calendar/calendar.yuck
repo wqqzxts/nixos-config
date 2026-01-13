@@ -1,0 +1,14 @@
+(defwindow calendar
+  :namespace "calendar"
+  :monitor 0
+  :stacking "fg"
+  :geometry (geometry
+    :anchor "top center"
+    :width  "30%"
+    :height "300px")
+  (box :class "calendar-window" (calendar))
+)
+
+(defpoll get_date
+  :interval "1m"
+  "date +'%d / %m / %Y, %A'")

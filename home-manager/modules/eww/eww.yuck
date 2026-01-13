@@ -1,1 +1,12 @@
-(include "./calendar/calendar.yuck")
+(include "./bar/bar.yuck")
+(include "./bar/modules/audio.yuck")
+(include "./bar/modules/battery.yuck")
+(include "./bar/modules/bluetooth.yuck")
+(include "./bar/modules/cava.yuck")
+(include "./bar/modules/clock.yuck")
+(include "./bar/modules/power.yuck")
+(include "./bar/modules/workspaces.yuck")
+
+(include "./widgets/battery/battery.yuck")
+(include "./widgets/calendar/calendar.yuck")
+(include "./widgets/media/media.yuck")

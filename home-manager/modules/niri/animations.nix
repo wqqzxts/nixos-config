@@ -6,7 +6,7 @@ let
   anticipation = [ 0.25 (-0.50) 0.05 1.00 ]; # accumulates at first and then realeases
 
   # animation durations
-  candy = 750;
+  candy = 650;
   responsive = 400;
 
   # dampings
@@ -14,7 +14,7 @@ let
   tight = 0.85; # responsive feel
 
   # stiffnesses
-  loStiff = 200; # eye candy
+  loStiff = 150; # eye candy
   hiStiff = 750; # responsive feel
 
   # epsilon
@@ -24,7 +24,7 @@ in
   programs.niri.settings = {
     animations = {
       enable = true;
-      slowdown = 1.0; # bigger value - slower all the animations
+      slowdown = 1.0; # bigger value - slower the animations
 
       # navigation
       ## workspaces

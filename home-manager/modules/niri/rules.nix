@@ -7,7 +7,7 @@
       }
       {
         matches = [
-          { title = "^(Open File|Select a File|Open Folder|Save As|Library|File Upload|Choose Files|Mini App:).*$"; }
+          { title = "^(Open File|Select a File|Open Folder|Save As|Library|File Upload|Choose Files|Mini App:|Sign in).*$"; }
           { title = "^.*(wants to save|wants to open)$"; }
           { app-id = "^(org.pulseaudio.pavucontrol|Throne|.blueman-manager-wrapped)$"; }
         ];
@@ -17,32 +17,24 @@
       }
 
       {
-        matches = [{ title = "^(Choose wallpaper).*$"; }];
+        matches = [ { title = "^(Choose wallpaper).*$"; } ];
         open-floating = true;
         default-column-width = { proportion = 0.75; };
         default-window-height = { proportion = 0.50; };
       }
-
       {
-        matches = [{ app-id = "^(ueberzugpp).*$"; }];
-        open-floating = true;
-        draw-border-with-background = false;
-      }
-      {
-        matches = [
-          { title = "^([Pp]icture[-\s]?[Ii]n[-\s]?[Pp]icture).*$"; }
-        ];
+        matches = [ { title = "^([Pp]icture[-\s]?[Ii]n[-\s]?[Pp]icture).*$"; } ];
         open-floating = true;
         default-column-width = { proportion = 0.25; };
         default-window-height = { proportion = 0.25; };
       }
+
       {
         matches = [
-          { title = ".*\\.exe"; }
-          { title = ".*minecraft.*"; }
-          { app-id = "^(steam_app).*"; }
+          { app-id = "^(ueberzugpp).*$"; }
+          { title = "^(Media viewer).*$"; }
         ];
-        open-maximized = true;
+        open-floating = true;
       }
     ];
   };

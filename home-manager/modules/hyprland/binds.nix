@@ -49,7 +49,7 @@
       "$mainMod,  L,    layoutmsg,  focus r"
       "$mainMod,  K,    layoutmsg,      focus u"
       "$mainMod,  J,    layoutmsg,      focus d"
-      "$mainMod,  TAB,  hyprexpo:expo,  toggle"
+      # "$mainMod,  TAB,  hyprexpo:expo,  toggle"
 
       # workspace management
       "$mainMod,       1, workspace,                                     1"

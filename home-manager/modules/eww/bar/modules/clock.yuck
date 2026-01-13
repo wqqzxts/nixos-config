@@ -1,0 +1,7 @@
+(defpoll dt :interval "5s" "date +\":%H:%M\"")
+
+(defwidget clock []
+	(box :space-evenly false :orientation "h"
+  ;; TODO
+	(eventbox :cursor "pointer" :onclick "../widgets/scripts/toggle-calendar.sh" (label :text "${dt}" :class "clk-t")))
+)

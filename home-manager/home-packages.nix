@@ -36,16 +36,17 @@
     # cli utilities
     bc
     bottom
-    cava
     fzf
     htop
     ripgrep
     ueberzugpp
+    upower
     w3m
     wget
 
     # entertainment
     asciiquarium
+    cava
     cbonsai
     era
     fastfetch

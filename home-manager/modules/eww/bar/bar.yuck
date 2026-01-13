@@ -1,0 +1,67 @@
+(include "./bar/modules/audio.yuck")
+(include "./bar/modules/battery.yuck")
+(include "./bar/modules/bluetooth.yuck")
+(include "./bar/modules/cava.yuck")
+(include "./bar/modules/clock.yuck")
+(include "./bar/modules/power.yuck")
+(include "./bar/modules/workspaces.yuck")
+
+(defwindow eww-bar
+  :namespace	"bar"
+  :monitor      0
+  :stacking     "fg"
+  :geometry     (geometry
+                  :anchor "top center"
+                  :width  "98%"
+                  :height "3px"
+                )
+	:exclusive true
+
+  (box
+    (revealer
+      :transition "slidedown"
+      :reveal     barrev
+      :duration   "200ms"
+      (bar)
+    )
+  )
+)
+
+(defvar barrev true)
+
+(defwidget bar []
+  (box :class "bar"
+    :orientation "h"
+    :space-evenly false
+
+      (box :class "module-left"
+        :halign "start"
+        :valign "center"
+        :width 750
+        :spacing 10
+        :space-evenly false
+        (power)
+        (workspaces)
+      )
+
+      (box :class "module-center"
+        :halign "center"
+        :valign "center"
+        :hexpand true
+        :spacing 10
+        :space-evenly false
+        (cava)
+      )
+      (box :class "module-right"
+        :halign "end"
+        :valign "center"
+        :hexpand true
+        :spacing 10
+        :space-evenly false
+        (bluetooth)
+        (audio)
+        (battery)
+        (clock)
+      )
+  )
+)

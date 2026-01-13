@@ -1,0 +1,3 @@
+(defwidget power []
+	(eventbox :cursor "pointer" :onclick "niri msg action spawn -- wlogout" (label :class "logo" :text ""))
+)

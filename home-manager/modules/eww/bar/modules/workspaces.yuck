@@ -1,0 +1,10 @@
+(deflisten workspaces :initial "" `../scripts/workspaces.sh`)
+
+(defwidget workspaces []
+	(box :class "workspace-container"
+		:hexpand false
+		:orientation "h"
+
+		(literal :content "${workspaces}")
+  )
+)

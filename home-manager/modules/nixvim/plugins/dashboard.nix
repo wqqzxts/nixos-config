@@ -42,7 +42,7 @@
         ];
 
         footer = [
-          "Managed by NixVim "
+          "Managed by NixVim"
         ];
       };
     };

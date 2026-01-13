@@ -14,8 +14,8 @@
         # modules-left = ["custom/launcher" "hyprland/workspaces" "mpris" "cava"];
         modules-left = ["custom/launcher" "niri/workspaces" "mpris" "cava"];
         modules-center = ["clock"];
-        # modules-right = ["hyprland/language" "custom/weather" "pulseaudio" "battery" "tray"];
-        modules-right = ["niri/language" "custom/weather" "pulseaudio" "battery" "tray"];
+        # modules-right = ["hyprland/language" "custom/weather" "pulseaudio" "battery"];
+        modules-right = ["niri/language" "custom/weather" "pulseaudio" "battery"];
 
         "custom/launcher" = {
           format = "";
@@ -87,7 +87,7 @@
           # format = "{:%a %d | %I:%M %p}";
           format = "{:%H:%M}";
           interval = 1;
-          on-click = ../eww/calendar/calendar.sh;
+          on-click = ../eww/widgets/scripts/toggle-calendar.sh;
           tooltip = false;
         };
 
@@ -134,11 +134,6 @@
           format-charging = " {capacity}";
           format-icons = ["" "" "" "" ""];
           tooltip = false;
-        };
-
-        "tray" = {
-          icon-size = 23;
-          spacing = 5;
         };
       };
     };

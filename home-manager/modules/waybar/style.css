@@ -1,26 +1,15 @@
 * {
-  font-family: "IosevkaTerm Nerd Font Propo";
-  font-weight: bold;
+    font-family: "IosevkaTerm Nerd Font Propo";
+    font-weight: bold;
+    color: #ddc7a1;
+    text-shadow: none;
+    box-shadow: none;
+    transition: all 0.5s ease-in-out;
+}
+
+#waybar {
   color: #ddc7a1;
-  text-shadow: none;
-  transition: none;
-  box-shadow: none;
-}
-
-#waybar {
-    background: none;
-    color: #ddc7a1;
-    margin: 0;
-    padding: 0 10px;
-    min-height: 0;
-}
-
-#waybar {
-    background: none;
-    color: #ddc7a1;
-    margin: 0;
-    padding: 0 10px;
-    min-height: 0;
+  background: none;
 }
 
 #custom-launcher,
@@ -30,56 +19,36 @@
 #language,
 #weather,
 #pulseaudio,
-#battery,
-#tray {
+#battery {
     background-color: transparent;
     color: inherit;
-    padding: 0 5px;
-    margin: 0;
 }
 
 #custom-launcher {
     background-color: #ea6962;
     color: #292828;
     border: solid 5px #e3433b;
-    padding: 0 4px;
-    margin: 0;
+    min-width: 40px;
 }
 
 .modules-center,
 .modules-right,
 .modules-left {
-    background-color: #504945;
-    border: none;
-    border-radius: 0;
-    padding: 5px 5px;
-    margin: 0px;
-}
-
-#workspaces {
-    background-color: #292828;
-    border-radius: 0;
-    border: none;
-    margin: 0px -5px 0px -5px;
-    padding: 0 7px;
+    background-color: transparent;
 }
 
 #workspaces button {
-    padding: 0px 7px;
-    margin: 0px 2px;
+    background-color: #292828;
+    padding: 0px 5px;
+    margin-left: 5;
     border: solid 5px #7daea3;
-    background-color: transparent;
+    border-radius: 0;
     color: #ddc7a1;
-    border-radius: 0;
 }
-
-#workspaces button:first-child,
-#workspaces button:last-child {
-    border-radius: 0;
+#workspaces button:first-child {
+  margin-left: 0;
 }
-
 #workspaces button.active {
-    transition: all 0.5s ease-in-out;
     background-color: #292828;
     border: solid 5px #ea6962;
 }
@@ -88,84 +57,52 @@
     background-color: #292828;
     border: solid 5px #d3869b;
     color: #ddc7a1;
-    padding: 0 7px;
-    margin: 0;
+    padding: 0 5px;
 }
 
 #cava {
     background-color: #292828;
     border: solid 5px #d3869b;
     color: #ddc7a1;
-    padding: 0 7px;
-    margin: 0;
+    padding: 0 5px;
 }
 
 #clock {
     color: #ddc7a1;
     border: solid 5px #ddc7a1;
     background-color: #292828;
-    padding: 0 7px;
-    margin: 0;
+    padding: 0 5px;
 }
 
 #language {
-  background-color: #292828;
-  border: solid 5px #a9b665;
-  color: #ddc7a1;
-  padding: 0 7px;
-  margin: 0;
+    background-color: #292828;
+    border: solid 5px #d8a657;
+    color: #ddc7a1;
+    min-width: 80px;
 }
 
 #custom-weather {
-  background-color: #292828;
-  border: solid 5px #e78a4e;
-  color: #ddc7a1;
-  padding: 0 7px;
-  margin: 0;
+    background-color: #292828;
+    border: solid 5px #e78a4e;
+    color: #ddc7a1;
+    min-width: 80px;
 }
 
 #pulseaudio {
-  background-color: #292828;
-  border: solid 5px #d3869b;
-  color: #ddc7a1;
-  padding: 0 7px;
-  margin: 0;
+    background-color: #292828;
+    border: solid 5px #d3869b;
+    color: #ddc7a1;
+    min-width: 80px;
 }
-
 #pulseaudio.muted {
     background-color: #292828;
-    color: #ddc7a1;
+    color: #ea6962;
+    min-width: 80px;
 }
 
 #battery {
-  background-color: #292828;
-  border: solid 5px #7daea3;
-  color: #ddc7a1;
-  padding: 0 7px;
-  margin: 0;
-}
-
-#battery.charging,
-#battery.plugged {
-  color: #ddc7a1;
-  background-color: #292828;
-}
-
-#battery.critical:not(.charging) {
-  background-color: #ea6962;
-  color: #ddc7a1;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: steps(12);
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-
-#tray {
-  background-color: #292828;
-  border: solid 5px #d8a657;
-  color: #ddc7a1;
-  padding: 0 7px;
-  margin: 0;
+    background-color: #292828;
+    border: solid 5px #a9b665;
+    color: #ddc7a1;
+    min-width: 80px;
 }

@@ -6,6 +6,7 @@
   environment.systemPackages = with pkgs; [
     # apps
     anki
+    gimp
     libreoffice-qt-fresh
     obs-studio
     obsidian

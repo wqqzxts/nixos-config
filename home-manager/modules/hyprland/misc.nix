@@ -12,9 +12,8 @@
 
     exec-once = [
       "hyprlock"
-      "loginctl lock-session"
-      "eww daemon"
       "waybar"
+      "eww daemon"
       "wl-paste --type image --watch cliphist store"
       "wl-paste --type text --watch cliphist store"
     ];

@@ -2,7 +2,6 @@
   imports = [
     ./alacritty.nix
     ./eww
-    ./eza.nix
     ./firefox.nix
     ./git.nix
     ./hypridle.nix
@@ -10,6 +9,7 @@
     ./hyprlock.nix
     ./hyprpaper.nix
     ./lazygit.nix
+    ./mount.nix
     ./niri
     ./nixvim
     ./qt.nix
@@ -21,6 +21,7 @@
     ./tmux.nix
     ./waybar
     ./wlogout
+    ./xdg.nix
     ./yazi.nix
     ./zathura.nix
     ./zsh.nix
