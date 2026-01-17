@@ -1,7 +1,43 @@
-(defpoll dt :interval "5s" "date +\":%H:%M\"")
+(defvar clockrev false)
 
-(defwidget clock []
-	(box :space-evenly false :orientation "h"
-  ;; TODO
-	(eventbox :cursor "pointer" :onclick "../widgets/scripts/toggle-calendar.sh" (label :text "${dt}" :class "clk-t")))
+(defwidget widget-clock []
+  (eventbox
+    :class "bar-clk"
+    :onhover "eww update clockrev=true"
+    :width 400
+    (label :text {formattime(EWW_TIME, "%A %d %I:%M %p")})
+  )
+)
+
+(defwindow window-clock
+  :monitor 0
+  :geometry (geometry :x "63px"
+                      :y "0px"
+                      :width "400px"
+                      :anchor "top left"
+            )
+  :stacking "overlay"
+  :visible clockrev
+  (menu-clock)
+)
+
+(defwidget menu-clock []
+  (eventbox
+    :class "sm-ph_clk"
+    :cursor "pointer"
+    :onhoverlost "eww update clockrev=false"
+    (revealer
+      :reveal clockrev
+      :transition "slidedown"
+      :duration 650
+      (box
+        :class "sm-ph_clk"
+        :orientation "v"
+        (calendar
+          :class "sm-el_clk-cal"
+          :show-heading false
+        )
+      )
+    )
+  )
 )

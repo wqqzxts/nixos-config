@@ -1,0 +1,53 @@
+(defvar weatherrev false)
+(defpoll weather :initial "{}" :interval "600s" `~/.config/eww/bar/scripts/get-weather.sh`)
+
+(defwidget widget-weather []
+  (eventbox
+    :class "bar-wtr"
+    :onhover "eww update weatherrev=true"
+    :width 85
+    (label
+      :text
+      "${
+        weather.condition == "Clear" || weather.condition == "Sunny" ? "󰖙" :
+        weather.condition == "Partly cloudy" ? "󰖕" :
+        weather.condition == "Cloudy" || weather.condition == "Overcast" ? "󰖐" :
+        weather.condition == "Mist" || weather.condition == "Fog" || weather.condition == "Freezing fog" ? "󰖑" :
+        weather.condition == "Blowing snow" || weather.condition == "Blizzard" || weather.condition == "Heavy snow" ? "󰼶" :
+        weather.condition == "Light snow" || weather.condition == "Moderate snow"  ? "󰖘" :
+        weather.condition == "Light rain" || weather.condition == "Moderate rain" || weather.condition == "Heavy rain"  ? "󰖗" :
+        weather.condition == "Light sleet" || weather.condition == "Moderate or heavy sleet" || weather.condition == "Heavy rain"  ? "󰖗" :
+        ""
+      } ${weather.temp}"
+    )
+  )
+)
+
+(defwindow window-weather
+  :monitor 0
+  :geometry (geometry :x "468px"
+                      :width "40px"
+                      :anchor "top left"
+            )
+  :stacking "overlay"
+  :visible weatherrev
+  (menu-weather)
+)
+
+(defwidget menu-weather []
+  (eventbox
+    :class "sm-ph_wtr"
+    :onhoverlost "eww update weatherrev=false"
+    (revealer
+      :reveal weatherrev
+      :transition "slidedown"
+      :duration 650
+      (box
+        :orientation "v"
+        (label :class "sm-el_wtr-lbl" :text "󰙍 ${weather.ftemp}")
+        (label :class "sm-el_wtr-lbl" :text "󱪈 ${weather.wind}")
+        (label :class "sm-el_wtr-lbl" :text "󱁝  ${weather.uv}")
+      )
+    )
+  )
+)

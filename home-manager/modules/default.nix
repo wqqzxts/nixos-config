@@ -2,10 +2,10 @@
   imports = [
     ./alacritty.nix
     ./eww
+    ./eza.nix
     ./firefox.nix
     ./git.nix
     ./hypridle.nix
-    ./hyprland
     ./hyprlock.nix
     ./hyprpaper.nix
     ./lazygit.nix
@@ -19,7 +19,6 @@
     ./stylix.nix
     ./swaync
     ./tmux.nix
-    ./waybar
     ./wlogout
     ./xdg.nix
     ./yazi.nix

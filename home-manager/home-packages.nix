@@ -38,10 +38,14 @@
     bottom
     fzf
     htop
+    inotify-tools
+    jq
+    pamixer
+    pulseaudio
     ripgrep
     ueberzugpp
-    upower
     w3m
+    wf-recorder
     wget
 
     # entertainment

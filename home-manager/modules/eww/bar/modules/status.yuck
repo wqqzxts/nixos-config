@@ -1,0 +1,251 @@
+;; TODO: i should extend widgets in status. defenitely to add: bluetooth,
+
+(defvar statusrev false)
+(deflisten network :initial '{"essid": "lo", "signal": ""}' "~/.config/eww/bar/scripts/get-network.sh")
+;; (deflisten bluetooth :initial '{"essid": "lo", "signal": ""}' "~/.config/eww/bar/scripts/get-network.sh")
+(deflisten volume :initial "0" "~/.config/eww/bar/scripts/get-volume.sh")
+(deflisten brightness :initial "0" "~/.config/eww/bar/scripts/get-brightness.sh")
+(defwidget state-icon [condition text]
+  (label
+    :valign "center"
+    :visible {condition}
+    :text {text})
+)
+
+(defwidget widget-status []
+  (eventbox
+    :class "bar-sts"
+    :onhover "eww update statusrev=true"
+    :width 400
+    (box
+      :orientation "h"
+      :spacing 10
+      (widget-network)
+      (widget-volume)
+      (widget-brightness)
+    )
+  )
+)
+
+(defwidget widget-network []
+  (state-icon
+    :condition true
+    :text
+      {
+        network.essid == "lo" ? "󰤭" :
+        network.signal == "" ? "󰤩" :
+        network.signal < 25 ? "󰤟" :
+        network.signal < 50 ? "󰤢" :
+        network.signal < 75 ? "󰤥" :
+        "󰤨"
+      }
+  )
+)
+(defwidget widget-volume []
+  (state-icon
+    :condition true
+    :text
+      {
+        volume == "muted" ? "󰝟" :
+        volume < 33 ? "󰖀" :
+        "󰕾"
+      }
+  )
+)
+(defwidget widget-brightness []
+  (state-icon
+    :condition true
+    :text
+      {
+        brightness == 0 ? "󰛩" :
+        brightness < 11 ? "󱩎" :
+        brightness < 21 ? "󱩏" :
+        brightness < 31 ? "󱩐" :
+        brightness < 41 ? "󱩑" :
+        brightness < 51 ? "󱩒" :
+        brightness < 61 ? "󱩓" :
+        brightness < 71 ? "󱩔" :
+        brightness < 81 ? "󱩕" :
+        brightness < 91 ? "󱩖" :
+        "󰛨"
+      }
+  )
+)
+
+(defwindow window-status
+  :monitor 0
+  :geometry (geometry :x "63px"
+                      :width "400px"
+                      :anchor "top right"
+  )
+  :stacking "overlay"
+  :visible statusrev
+  (menu-status)
+)
+
+(defwidget menu-status []
+  (eventbox
+    :class "sm-ph_sts"
+    :cursor "pointer"
+    :onhoverlost "eww update statusrev=false"
+    (revealer
+      :reveal statusrev
+      :transition "slidedown"
+      :duration 650
+      (box
+        :orientation "v"
+        :space-evenly true
+        (slider-volume)
+        (slider-brightness)
+        (status-settings)
+        (systray
+          :class "sm-ph_sts-set-tray"
+          :orientation "h"
+          :spacing 5
+          :space-evenly true
+        )
+      )
+    )
+  )
+)
+
+(defwidget slider-volume []
+    (box
+      :class "sm-ph_sts-vol"
+      :orientation "h"
+      :space-evenly false
+      (scale-volume)
+    )
+)
+(defwidget scale-volume []
+  (overlay
+    :hexpand true
+    (scale
+      :class "sm-el_sts-vol-sldr"
+      :min 0
+      :max 100
+      :active {volume != "muted"}
+      :value {volume == "muted" ? 0 : volume}
+      :onchange "pamixer --set-volume {}"
+    )
+    (label
+      :class "sm-el_sts-vol-lbl"
+      :halign "start"
+      :text
+        {
+          volume == "muted" ? "󰝟" :
+          volume < 33 ? "󰖀" :
+          "󰕾"
+        }
+    )
+  )
+)
+
+(defwidget slider-brightness []
+    (box
+      :class "sm-ph_sts-brt"
+      :orientation "h"
+      :space-evenly false
+      (scale-brightness)
+    )
+)
+(defwidget scale-brightness []
+    (overlay
+      :hexpand true
+      (scale
+        :class "sm-el_sts-brt-sldr"
+        :min 0
+        :max 100
+        :active true
+        :value {brightness}
+        :onchange "brightnessctl -q set {}%"
+      )
+      (label
+        :class "sm-el_sts-brt-lbl"
+        :halign "start"
+        :text
+          {
+            brightness == 0 ? "󰛩" :
+            brightness < 11 ? "󱩎" :
+            brightness < 21 ? "󱩏" :
+            brightness < 31 ? "󱩐" :
+            brightness < 41 ? "󱩑" :
+            brightness < 51 ? "󱩒" :
+            brightness < 61 ? "󱩓" :
+            brightness < 71 ? "󱩔" :
+            brightness < 81 ? "󱩕" :
+            brightness < 91 ? "󱩖" :
+            "󰛨"
+          }
+      )
+    )
+)
+
+(defwidget status-settings []
+  (box
+    :class "sm-ph_sts_set"
+    :orientation "v"
+    :space-evenly true
+    (box
+      :orientation "h"
+      :space-evenly true
+      (setting-network)
+      (setting-bluetooth)
+    )
+    ;; (box
+    ;;   :orientation "h"
+    ;;   :space-evenly true
+    ;;   (setting-dnd)
+    ;;   (setting-hide)
+    ;; )
+  )
+)
+
+(defwidget button-status-settings [action icon label]
+  (button
+    :class "sm-el_sts-set-btn"
+    :onclick {action}
+    (box
+      :orientation "h"
+      :space-evenly false
+      (box
+        :class "sm-ph_sts-set-btn-lbl"
+        :orientation "h"
+        :space-evenly false
+        :halign "start"
+        (label :class "sm-el_sts-set-btn-lbl-l" :text {icon})
+      )
+      (box
+        :class "sm-ph_sts-set-btn-lbl"
+        :orientation "h"
+        :space-evenly false
+        :halign "start"
+        (label :class "sm-el_sts-set-btn-lbl-r" :text {label})
+      )
+    )
+  )
+)
+
+(defwidget setting-network []
+  (button-status-settings
+    :action "nmcli connection down id ${network.essid}"
+    :icon
+      {
+        network.essid == "lo" ? "󰤭" :
+        network.signal == "" ? "󰤫" :
+        network.signal < 25 ? "󰤟" :
+        network.signal < 50 ? "󰤢" :
+        network.signal < 75 ? "󰤥" :
+        "󰤨"
+      }
+    :label {network.essid == "lo" ? "not connected" : network.essid}
+  )
+)
+
+(defwidget setting-bluetooth []
+  (button-status-settings
+    :action "~/.config/eww/bar/scripts/toggle-bluetooth.sh"
+    :icon "󰂯"
+    :label "bluetooth"
+  )
+)

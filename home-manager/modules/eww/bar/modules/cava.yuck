@@ -1,7 +1,99 @@
-(deflisten cava :initial "" `../scripts/cava.sh`)
+(defvar cavarev false)
+(deflisten cava :initial "" "~/.config/eww/bar/scripts/get-cava.sh")
+(deflisten mpris :initial "{}" "~/.config/eww/bar/scripts/mpris.sh")
+(deflisten mpris-positions :initial "{}" "~/.config/eww/bar/scripts/mpris-positions.sh")
 
-(defwidget cava []
-	(eventbox :cursor "pointer" :onclick "../widgets/scripts/toggle-player.sh"
-    (label :text "${cava}" :class "cava")
+(defwidget widget-cava []
+  (eventbox
+    :class "bar-cava"
+    :onhover "eww update cavarev=true"
+    :width 400
+    (label :text {cava})
+  )
+)
+
+(defwindow window-cava
+  :monitor 0
+  :geometry (geometry :width "400px"
+                      :anchor "top center"
+            )
+  :stacking "overlay"
+  :visible cavarev
+  (menu-cava)
+)
+
+(defwidget menu-cava []
+  (eventbox
+    :cursor "pointer"
+    :onhoverlost "eww update cavarev=false"
+    (revealer
+      :reveal cavarev
+      :transition "slidedown"
+      :duration 650
+      (box
+        :class "sm-ph_cava"
+        :orientation "v"
+        (box
+          :orientation "h"
+          :space-evenly false
+          ;; (box
+          ;;   :class "sm-el_cava-img"
+          ;;   :orientation "h"
+          ;;   :space-evenly false
+          ;;   :style "background-image: url('${mpris.artUrl ?: ""}');"
+          ;; )
+          (box
+            :class "sm-ph_cava-meta"
+            :orientation "v"
+            :space-evenly false
+            :hexpand true
+            (box
+              :orientation "v"
+              :space-evenly false
+              (label :halign "start" :class "sm-el_cava-meta-title" :limit-width 40 :text {mpris.title})
+              (label :halign "start" :class "sm-el_cava-meta-artist" :limit-width 40 :text {mpris.artist})
+            )
+            (box
+              :class "sm-el_cava-meta-src"
+              :orientation "h"
+              :space-evenly false
+              :halign "end"
+              (label :text {mpris.name})
+            )
+          )
+        )
+        (box
+          :class "sm-ph_cava-progress"
+          :orientation "v"
+          :space-evenly false
+          :visible {mpris.length == "" ? false : true}
+          (scale
+            :class "sm-el_cava-progress-sldr"
+            :min 0
+            :max {mpris.length ?: 100}
+            :active true
+            :value {mpris-positions[mpris.name]?.position ?: 0}
+            :onchange "playerctl position {}"
+          )
+          (box
+            :class "sm-ph_cava-progress-bounds"
+            :orientation "h"
+            :space-evenly false
+            :hexpand true
+            (label :hexpand true :class "sm-el_cava-bound" :text {mpris-positions[mpris.name]?.positionStr ?: "0:00"} :halign "start")
+            (label :hexpand true :class "sm-el_cava-bound" :text {mpris.lengthStr} :halign "end")
+          )
+        )
+        (box
+          :class "sm-ph_cava-btns"
+          :orientation "h"
+          :space-evenly false
+          :halign "center"
+          (button :class "sm-el_cava-btn" :onclick "playerctl previous" "󰒮")
+          (button :class "sm-el_cava-btn" :onclick "playerctl play-pause" {mpris.status == "Playing" ? "󰏤" : "󰐊"})
+          (button :class "sm-el_cava-btn" :onclick "playerctl next" "󰒭")
+        )
+      )
+    )
   )
 )

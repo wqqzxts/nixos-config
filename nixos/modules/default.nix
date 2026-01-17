@@ -1,6 +1,7 @@
 {
   imports = [
     ./audio.nix
+    ./battery.nix
     ./bluetooth.nix
     ./boot.nix
     ./env.nix
@@ -13,6 +14,7 @@
     ./theme.nix
     ./throne.nix # uncomment if you need sing-box client
     ./timezone.nix
+    ./upower.nix
     ./user.nix
     ./zapret.nix # uncomment if you need dpi bypass
   ];

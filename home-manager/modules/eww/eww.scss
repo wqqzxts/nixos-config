@@ -1,2 +1,36 @@
+/* CONTAINERS: */
+/* placeholder     - ph */
+/* slide down menu - sm */
+/* element         - el */
+/**/
+/* ELEMENTS: */
+/* bar             - bar */
+/* window          - win */
+/* widget          - wgt */
+/* button          - btn */
+/* label           - lbl */
+/* slider          - sldr */
+/* icon            - icn */
+/**/
+/* INDIVIDUALS: */
+/* f               - first*/
+/* power           - pow */
+/* clock           - clk */
+/* calendar        - cal */
+/* weather         - wtr */
+/* battery         - bat */
+/* image           - img */
+/* status          - sts */
+/* volume          - vol */
+/* brightness      - brt */
+/* settings        - set */
+/* network         - net */
+/* bluetooth       - blu */
+
+* {
+  font-family: "IosevkaTerm Nerd Font Propo";
+  font-weight: bold;
+  transition: all 0.5s ease-in-out;
+}
+
 @import "./bar/bar.scss";
-@import "./widgets/widgets.scss";

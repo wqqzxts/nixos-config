@@ -1,7 +1,66 @@
-(deflisten baticon `../scripts/battery.sh`)
+(defvar batteryrev false)
 
-(defwidget battery []
-	(box :space-evenly false :orientation "h"
-  (eventbox :cursor "pointer" :onclick "../widgets/scripts/toggle-perfomance.sh"(label :text "${baticon}" :class "bat-i"))
-	(label :text "${EWW_BATTERY.BAT0.capacity}%" :class "bat-t"))
+(defwidget widget-battery []
+  (eventbox
+    :class "bar-bat"
+    :onhover "eww update batteryrev=true"
+    :width 55
+    (label :text
+            {
+              EWW_BATTERY.BAT0.status == "Charging" && EWW_BATTERY.BAT0.capacity > 99 ? "󰂅" :
+              EWW_BATTERY.BAT0.status == "Charging" && EWW_BATTERY.BAT0.capacity > 89 ? "󰂋" :
+              EWW_BATTERY.BAT0.status == "Charging" && EWW_BATTERY.BAT0.capacity > 79 ? "󰂊" :
+              EWW_BATTERY.BAT0.status == "Charging" && EWW_BATTERY.BAT0.capacity > 69 ? "󰢞" :
+              EWW_BATTERY.BAT0.status == "Charging" && EWW_BATTERY.BAT0.capacity > 59 ? "󰂉" :
+              EWW_BATTERY.BAT0.status == "Charging" && EWW_BATTERY.BAT0.capacity > 49 ? "󰢝" :
+              EWW_BATTERY.BAT0.status == "Charging" && EWW_BATTERY.BAT0.capacity > 39 ? "󰂈" :
+              EWW_BATTERY.BAT0.status == "Charging" && EWW_BATTERY.BAT0.capacity > 29 ? "󰂇" :
+              EWW_BATTERY.BAT0.status == "Charging" && EWW_BATTERY.BAT0.capacity > 19 ? "󰂆" :
+              EWW_BATTERY.BAT0.status == "Charging" && EWW_BATTERY.BAT0.capacity > 9 ? "󰢜" :
+              EWW_BATTERY.BAT0.status == "Charging" && EWW_BATTERY.BAT0.capacity > 1 ? "󰢟" :
+              EWW_BATTERY.BAT0.capacity > 99 ? "󰁹" :
+              EWW_BATTERY.BAT0.capacity > 89 ? "󰂂" :
+              EWW_BATTERY.BAT0.capacity > 79 ? "󰂁" :
+              EWW_BATTERY.BAT0.capacity > 69 ? "󰂀" :
+              EWW_BATTERY.BAT0.capacity > 59 ? "󰁿" :
+              EWW_BATTERY.BAT0.capacity > 49 ? "󰁾" :
+              EWW_BATTERY.BAT0.capacity > 39 ? "󰁽" :
+              EWW_BATTERY.BAT0.capacity > 29 ? "󰁼" :
+              EWW_BATTERY.BAT0.capacity > 19 ? "󰁻" :
+              EWW_BATTERY.BAT0.capacity > 9 ? "󰁺" :
+              "󰂎"
+            }
+    )
+  )
+)
+
+(defwindow window-battery
+  :monitor 0
+  :geometry (geometry :x "3"
+                      :width "40px"
+                      :anchor "top right"
+            )
+  :stacking "overlay"
+  :visible batteryrev
+  (menu-battery)
+)
+
+(defwidget menu-battery []
+  (eventbox
+    :class "sm-ph_bat"
+    :cursor "pointer"
+    :onhoverlost "eww update batteryrev=false"
+    (revealer
+      :reveal batteryrev
+      :transition "slidedown"
+      :duration 650
+      (box
+        :class "sm-ph_bat-btns"
+        :orientation "v"
+        (button :class "sm-el_bat-btn" :onclick "powerprofilesctl set performance && eww update batteryrev=false" "󰓅")
+        (button :class "sm-el_bat-btn" :onclick "powerprofilesctl set balanced && eww update batteryrev=false" "󰾅")
+        (button :class "sm-el_bat-btn" :onclick "powerprofilesctl set power-saver && eww update batteryrev=false" "󰾆")
+      )
+    )
+  )
 )

@@ -1,5 +1,0 @@
-(deflisten bluetooth `../widgets/scripts/bluetooth.sh`)
-
-(defwidget bluetooth []
-  (eventbox :cursor "pointer" :onclick "niri msg action spawn -- blueman-manager" :onrightclick "../widgets/scripts/toggle-bluetooth.sh" (label :text "${bluetooth.icon}" :class "bt-i"))
-)

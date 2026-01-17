@@ -1,0 +1,112 @@
+.bar-cava {
+ background-color: #282929;
+  color: #ddc7a1;
+  border: solid 5px #d3869b;
+}
+
+.sm-ph_cava {
+  background-color: #292828;
+  border: 5px solid #d3869b;
+  border-top: 0px;
+  padding: 0px;
+}
+
+/* .sm-el_cava-img { */
+/*   min-width: 125px; */
+/*   min-height: 125px; */
+/*   background-size: cover; */
+/*   background-position: center; */
+/*   border: 5px solid #d3869b; */
+/*   border-top: 0px; */
+/*   border-left: 0px; */
+/* } */
+
+.sm-ph_cava-meta {
+  background-color: #292828;
+  padding: 10px;
+  border: 5px solid #d3869b;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+.sm-el_cava-meta-title {
+  color: #ddc7a1;
+  margin-bottom: 5px;
+}
+
+.sm-el_cava-meta-artist {
+  color: #665c54;
+}
+
+.sm-el_cava-meta-src {
+  background-color: #a9b665;
+  color: #292828;
+  padding: 5px 10px;
+  margin-top: 10px;
+}
+
+.sm-ph_cava-progress {
+  background-color: #292828;
+  padding: 5px 0px;
+  border: 5px solid #d3869b;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+.sm-el_cava-progress-sldr highlight {
+  background-color: #d3869b;
+  border-radius: 0px;
+  min-height: 10px;
+}
+
+.sm-el_cava-progress-sldr trough {
+  background-color: #665c54;
+  border-radius: 0px;
+  min-height: 10px;
+}
+
+.sm-el_cava-progress-sldr slider {
+  background-color: #ea6962;
+  border-radius: 0px;
+  min-width: 5px;
+  min-height: 20px;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+.sm-el_cava-progress-sldr slider:hover {
+  background-color: #a9b665;
+}
+
+.sm-el_cava-bound {
+  color: #665c54;
+  margin: 0px 10px;
+}
+
+.sm-ph_cava-btns {
+  background-color: #292828;
+  padding: 5px;
+}
+
+.sm-el_cava-btn {
+  background-color: #a9b665;
+  color: #292828;
+  border-radius: 0px;
+  min-width: 95px;
+  margin: 0px 5px;
+  font-size: 100px;
+}
+
+.sm-el_cava-btn:first-child {
+  margin-left: 0px;
+}
+
+.sm-el_cava-btn:last-child {
+  margin-right: 0px;
+}
+
+.sm-el_cava-btn:hover {
+  background-color: #d3869b;
+}

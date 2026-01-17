@@ -23,7 +23,7 @@ in
 {
   programs.niri.settings = {
     animations = {
-      enable = true;
+      enable = false;
       slowdown = 1.0; # bigger value - slower the animations
 
       # navigation

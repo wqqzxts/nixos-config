@@ -87,7 +87,6 @@
           # format = "{:%a %d | %I:%M %p}";
           format = "{:%H:%M}";
           interval = 1;
-          on-click = ../eww/widgets/scripts/toggle-calendar.sh;
           tooltip = false;
         };
 

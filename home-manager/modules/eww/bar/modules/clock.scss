@@ -1,0 +1,24 @@
+.bar-clk {
+  background-color: #282929;
+  color: #ddc7a1;
+  border: solid 5px #e78a4e;
+}
+
+.sm-ph_clk {
+  border: 5px solid #e78a4e;
+  border-top: 0px;
+  padding: 5px
+}
+
+calendar.highlight {
+  color: #d8a657;
+}
+
+calendar:selected {
+  background-color: #e78a4e;
+  border-radius: 0;
+}
+
+calendar:indeterminate {
+  color: #bd6f3e;
+}

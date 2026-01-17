@@ -1,67 +1,59 @@
-(include "./bar/modules/audio.yuck")
-(include "./bar/modules/battery.yuck")
-(include "./bar/modules/bluetooth.yuck")
-(include "./bar/modules/cava.yuck")
-(include "./bar/modules/clock.yuck")
 (include "./bar/modules/power.yuck")
-(include "./bar/modules/workspaces.yuck")
+(include "./bar/modules/clock.yuck")
+(include "./bar/modules/weather.yuck")
 
-(defwindow eww-bar
-  :namespace	"bar"
-  :monitor      0
-  :stacking     "fg"
-  :geometry     (geometry
-                  :anchor "top center"
-                  :width  "98%"
-                  :height "3px"
-                )
-	:exclusive true
+(include "./bar/modules/cava.yuck")
 
-  (box
-    (revealer
-      :transition "slidedown"
-      :reveal     barrev
-      :duration   "200ms"
-      (bar)
-    )
-  )
+;; (include "./bar/modules/language.yuck")
+(include "./bar/modules/battery.yuck")
+(include "./bar/modules/status.yuck")
+
+;; TODO: fix the damn indents in whole config
+;; TODO: implement smooth sliding down of ewwbar
+(defvar ewwbarrev true)
+
+; module -- each interactive part of status bar
+; widget-<name-of-module> -- the actual ui element on status bar, which responsible for initiate the render of slide-down menus
+; menu-<name-of-module> -- the slide down menu
+
+; just a window to reserve exclusive space at the top of the screen
+(defwindow ewwbar
+  :monitor 0
+  :geometry (geometry :x 0
+                      :y 0
+                      :width "100%"
+                      :height "50px"
+                      :anchor "top center"
+            )
+  :stacking "fg"
+  :exclusive true
+  :visible ewwbarrev
+  (eww-bar-placeholder)
 )
 
-(defvar barrev true)
+; bar widgets placeholder - each widget in placeholder would create a window with revealer
+(defwidget eww-bar-placeholder []
+  (centerbox
+    :class "ewwbar-ph"
+    (box
+      :spacing 5
+      :space-evenly false
+      (widget-power) ; ./modules/power.yuck
+      (widget-clock) ; ./modules/clock.yuck
+      (widget-weather) ; ./modules/weather.yuck
+    )
+    (box
+      :space-evenly false
+      (widget-cava) ; ./modules/cava.yuck
+    )
+    (box
+      :spacing 5
+      :space-evenly false
+      :halign "end"
+      ;; (widget-language)
+      (widget-status) ; ./modules/status.yuck
+      (widget-battery) ; ./modules/battery.yuck
 
-(defwidget bar []
-  (box :class "bar"
-    :orientation "h"
-    :space-evenly false
-
-      (box :class "module-left"
-        :halign "start"
-        :valign "center"
-        :width 750
-        :spacing 10
-        :space-evenly false
-        (power)
-        (workspaces)
-      )
-
-      (box :class "module-center"
-        :halign "center"
-        :valign "center"
-        :hexpand true
-        :spacing 10
-        :space-evenly false
-        (cava)
-      )
-      (box :class "module-right"
-        :halign "end"
-        :valign "center"
-        :hexpand true
-        :spacing 10
-        :space-evenly false
-        (bluetooth)
-        (audio)
-        (battery)
-        (clock)
-      )
+    )
   )
 )

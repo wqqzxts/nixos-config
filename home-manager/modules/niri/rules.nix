@@ -2,7 +2,7 @@
   programs.niri.settings = {
     window-rules = [
       {
-        opacity = 0.975;
+        # opacity = 0.975;
         draw-border-with-background = false;
       }
       {

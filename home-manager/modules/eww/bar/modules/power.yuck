@@ -1,3 +1,42 @@
-(defwidget power []
-	(eventbox :cursor "pointer" :onclick "niri msg action spawn -- wlogout" (label :class "logo" :text ""))
+(defvar powerrev false)
+
+(defwidget widget-power []
+  (eventbox
+    :class "bar-pow"
+    :onhover "eww update powerrev=true"
+    :width 55
+    (label :text "󱐋")
+  )
+)
+
+(defwindow window-power
+  :monitor 0
+  :geometry (geometry :x "3px"
+                      :width "40px"
+                      :anchor "top left"
+            )
+  :stacking "overlay"
+  :visible powerrev
+  (menu-power)
+)
+
+(defwidget menu-power []
+  (eventbox
+    :class "sm-ph_pow"
+    :cursor "pointer"
+    :onhoverlost "eww update powerrev=false"
+    (revealer
+      :reveal powerrev
+      :transition "slidedown"
+      :duration 650
+      (box
+        ;; :class "sm-ph_pow-btns"
+        :orientation "v"
+        (button :class "sm-el_pow-btn" :onclick "systemctl poweroff" "󰤁")
+        (button :class "sm-el_pow-btn" :onclick "systemctl reboot" "󰜉")
+        (button :class "sm-el_pow-btn" :onclick "systemctl suspend" "󰤄")
+        (button :class "sm-el_pow-btn" :onclick "loginctl lock-session" "󰌾")
+      )
+    )
+  )
 )

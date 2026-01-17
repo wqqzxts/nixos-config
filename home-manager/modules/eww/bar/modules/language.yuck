@@ -1,0 +1,32 @@
+;; (defvar clockrev false)
+
+; TODO: implement on hover list of available keyboard layouts
+(defwidget widget-weather []
+  (button
+    :onclick ""
+    (label :text {kb_layout})
+  )
+)
+
+;; (defwindow window-weather
+;;   :monitor 0
+;;   :geometry (geometry :width "100px"
+;;             )
+;;   :stacking "overlay"
+;;   :visible clockrev
+;;   (menu-weather)
+;; )
+
+;; (defwidget menu-weather []
+;;   (eventbox
+;;     :onhoverlost "eww update clockrev=false"
+;;     (revealer
+;;       :reveal clockrev
+;;       :transition "slidedown"
+;;       :duration 650
+;;       (box
+;;         :orientation "v"
+;;       )
+;;     )
+;;   )
+;
