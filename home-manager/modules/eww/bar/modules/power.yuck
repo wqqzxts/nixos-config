@@ -30,7 +30,6 @@
       :transition "slidedown"
       :duration 650
       (box
-        ;; :class "sm-ph_pow-btns"
         :orientation "v"
         (button :class "sm-el_pow-btn" :onclick "systemctl poweroff" "󰤁")
         (button :class "sm-el_pow-btn" :onclick "systemctl reboot" "󰜉")

@@ -23,15 +23,14 @@
 
 
     targets = {
+      dunst.enable = false;
       firefox.enable = false;
-      hyprland.enable = false;
       hyprlock.enable = false;
       hyprpaper.enable = false;
       neovim.enable = false;
       nixvim.enable = false;
       rofi.enable = false;
       spicetify.enable = false;
-      swaync.enable = false;
       waybar.enable = false;
     };
 

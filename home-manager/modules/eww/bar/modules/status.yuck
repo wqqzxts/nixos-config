@@ -1,8 +1,7 @@
-;; TODO: i should extend widgets in status. defenitely to add: bluetooth,
-
 (defvar statusrev false)
 (deflisten network :initial '{"essid": "lo", "signal": ""}' "~/.config/eww/bar/scripts/get-network.sh")
-;; (deflisten bluetooth :initial '{"essid": "lo", "signal": ""}' "~/.config/eww/bar/scripts/get-network.sh")
+(deflisten bluetooth :initial '{"status": "off"}' "~/.config/eww/bar/scripts/get-bluetooth.sh")
+(deflisten dnd :initial '{"status": "off"}' "~/.config/eww/bar/scripts/get-dnd.sh")
 (deflisten volume :initial "0" "~/.config/eww/bar/scripts/get-volume.sh")
 (deflisten brightness :initial "0" "~/.config/eww/bar/scripts/get-brightness.sh")
 (defwidget state-icon [condition text]
@@ -16,13 +15,15 @@
   (eventbox
     :class "bar-sts"
     :onhover "eww update statusrev=true"
-    :width 400
+    :width 430
     (box
       :orientation "h"
       :spacing 10
       (widget-network)
+      (widget-bluetooth)
       (widget-volume)
       (widget-brightness)
+      (widget-dnd)
     )
   )
 )
@@ -39,6 +40,12 @@
         network.signal < 75 ? "󰤥" :
         "󰤨"
       }
+  )
+)
+(defwidget widget-bluetooth []
+  (state-icon
+    :condition true
+    :text {bluetooth.status == "on" ? "󰂯" : "󰂲"}
   )
 )
 (defwidget widget-volume []
@@ -71,11 +78,17 @@
       }
   )
 )
+(defwidget widget-dnd []
+  (state-icon
+    :condition true
+    :text {dnd.status == "on" ? "󰂛" : "󰂚"}
+  )
+)
 
 (defwindow window-status
   :monitor 0
   :geometry (geometry :x "63px"
-                      :width "400px"
+                      :width "430px"
                       :anchor "top right"
   )
   :stacking "overlay"
@@ -192,12 +205,12 @@
       (setting-network)
       (setting-bluetooth)
     )
-    ;; (box
-    ;;   :orientation "h"
-    ;;   :space-evenly true
-    ;;   (setting-dnd)
-    ;;   (setting-hide)
-    ;; )
+    (box
+      :orientation "h"
+      :space-evenly true
+      (setting-dnd)
+      (setting-hide)
+    )
   )
 )
 
@@ -246,6 +259,22 @@
   (button-status-settings
     :action "~/.config/eww/bar/scripts/toggle-bluetooth.sh"
     :icon "󰂯"
-    :label "bluetooth"
+    :label "Bluetooth"
+  )
+)
+
+(defwidget setting-dnd []
+  (button-status-settings
+    :action "~/.config/eww/bar/scripts/toggle-dnd.sh"
+    :icon "󰂛"
+    :label "DND"
+  )
+)
+
+(defwidget setting-hide []
+  (button-status-settings
+    :action "~/.config/eww/bar/scripts/toggle-ewwbar.sh"
+    :icon "󰈉"
+    :label "Hide EwwBar"
   )
 )

@@ -4,8 +4,8 @@
   (eventbox
     :class "bar-clk"
     :onhover "eww update clockrev=true"
-    :width 400
-    (label :text {formattime(EWW_TIME, "%A %d %I:%M %p")})
+    :width 430
+    (label :text {formattime(EWW_TIME, "%A | %B %d | %I:%M %p")})
   )
 )
 
@@ -13,11 +13,11 @@
   :monitor 0
   :geometry (geometry :x "63px"
                       :y "0px"
-                      :width "400px"
+                      :width "430px"
                       :anchor "top left"
             )
   :stacking "overlay"
-  :visible clockrev
+  :visible true
   (menu-clock)
 )
 

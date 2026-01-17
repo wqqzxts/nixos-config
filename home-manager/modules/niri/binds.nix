@@ -13,7 +13,7 @@
       "Print".action.screenshot = [ ];
 
       # widgets
-      "Mod+B" = { action.spawn = [ "pkill" "-SIGUSR1" "waybar" ]; repeat = false; };
+      "Mod+B" = { action.spawn = [ "pkill" "-SIGUSR1" "eww" ]; repeat = false; };
       "Mod+N" = { action.spawn = [ "swaync-client" "-t" ]; repeat = false; };
       "Mod+Shift+Escape" = { action.spawn = [ "wlogout" ]; repeat = false; };
       "Mod+Escape" = { action.spawn = [ "loginctl" "lock-session" ]; repeat = false; };

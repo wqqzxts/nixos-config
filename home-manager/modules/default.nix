@@ -1,6 +1,7 @@
 {
   imports = [
     ./alacritty.nix
+    ./dunst.nix
     ./eww
     ./eza.nix
     ./firefox.nix
@@ -17,9 +18,7 @@
     ./spicetify.nix
     ./starship.nix
     ./stylix.nix
-    ./swaync
     ./tmux.nix
-    ./wlogout
     ./xdg.nix
     ./yazi.nix
     ./zathura.nix

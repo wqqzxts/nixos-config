@@ -1,32 +1,41 @@
-;; (defvar clockrev false)
+(defvar languagerev false)
 
-; TODO: implement on hover list of available keyboard layouts
-(defwidget widget-weather []
-  (button
-    :onclick ""
-    (label :text {kb_layout})
+(defwidget widget-power []
+  (eventbox
+    :class "bar-pow"
+    :onhover "eww update languagerev=true"
+    :width 85
+    (label :text "󱐋")
   )
 )
 
-;; (defwindow window-weather
-;;   :monitor 0
-;;   :geometry (geometry :width "100px"
-;;             )
-;;   :stacking "overlay"
-;;   :visible clockrev
-;;   (menu-weather)
-;; )
+(defwindow window-power
+  :monitor 0
+  :geometry (geometry :x "498px"
+                      :width "70px"
+                      :anchor "top right"
+            )
+  :stacking "overlay"
+  :visible languagerev
+  (menu-power)
+)
 
-;; (defwidget menu-weather []
-;;   (eventbox
-;;     :onhoverlost "eww update clockrev=false"
-;;     (revealer
-;;       :reveal clockrev
-;;       :transition "slidedown"
-;;       :duration 650
-;;       (box
-;;         :orientation "v"
-;;       )
-;;     )
-;;   )
-;
+(defwidget menu-power []
+  (eventbox
+    :class "sm-ph_lang"
+    :cursor "pointer"
+    :onhoverlost "eww update languagerev=false"
+    (revealer
+      :reveal languagerev
+      :transition "slidedown"
+      :duration 650
+      (box
+        :orientation "v"
+        (button :class "sm-el_lang-btn" :onclick "systemctl poweroff" "󰤁")
+        (button :class "sm-el_lang-btn" :onclick "systemctl reboot" "󰜉")
+        (button :class "sm-el_lang-btn" :onclick "systemctl suspend" "󰤄")
+        (button :class "sm-el_lang-btn" :onclick "loginctl lock-session" "󰌾")
+      )
+    )
+  )
+)

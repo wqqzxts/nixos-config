@@ -8,10 +8,6 @@
 (include "./bar/modules/battery.yuck")
 (include "./bar/modules/status.yuck")
 
-;; TODO: fix the damn indents in whole config
-;; TODO: implement smooth sliding down of ewwbar
-(defvar ewwbarrev true)
-
 ; module -- each interactive part of status bar
 ; widget-<name-of-module> -- the actual ui element on status bar, which responsible for initiate the render of slide-down menus
 ; menu-<name-of-module> -- the slide down menu
@@ -27,7 +23,7 @@
             )
   :stacking "fg"
   :exclusive true
-  :visible ewwbarrev
+  :visible true
   (eww-bar-placeholder)
 )
 

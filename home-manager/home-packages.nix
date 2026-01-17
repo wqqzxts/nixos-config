@@ -41,6 +41,7 @@
     inotify-tools
     jq
     pamixer
+    power-profiles-daemon
     pulseaudio
     ripgrep
     ueberzugpp
