@@ -1,26 +1,27 @@
 (defvar languagerev false)
+(defpoll language :initial "" :interval "1s" "~/.config/eww/bar/scripts/get-kb.sh")
 
-(defwidget widget-power []
+(defwidget widget-language []
   (eventbox
-    :class "bar-pow"
+    :class "bar-lang"
     :onhover "eww update languagerev=true"
     :width 85
-    (label :text "󱐋")
+    (label :text {language})
   )
 )
 
-(defwindow window-power
+(defwindow window-language
   :monitor 0
   :geometry (geometry :x "498px"
-                      :width "70px"
+                      :width "85px"
                       :anchor "top right"
             )
   :stacking "overlay"
   :visible languagerev
-  (menu-power)
+  (menu-language)
 )
 
-(defwidget menu-power []
+(defwidget menu-language []
   (eventbox
     :class "sm-ph_lang"
     :cursor "pointer"
@@ -31,10 +32,16 @@
       :duration 650
       (box
         :orientation "v"
-        (button :class "sm-el_lang-btn" :onclick "systemctl poweroff" "󰤁")
-        (button :class "sm-el_lang-btn" :onclick "systemctl reboot" "󰜉")
-        (button :class "sm-el_lang-btn" :onclick "systemctl suspend" "󰤄")
-        (button :class "sm-el_lang-btn" :onclick "loginctl lock-session" "󰌾")
+        (button
+          :class "sm-el_lang-btn${language == 'US' ? '-active' : ''}"
+          :onclick "niri msg action switch-layout 0"
+          "US"
+        )
+        (button
+          :class "sm-el_lang-btn${language == 'RU' ? '-active' : ''}"
+          :onclick "niri msg action switch-layout 1"
+          "RU"
+        )
       )
     )
   )

@@ -1,7 +1,7 @@
 (defvar statusrev false)
 (deflisten network :initial '{"essid": "lo", "signal": ""}' "~/.config/eww/bar/scripts/get-network.sh")
 (deflisten bluetooth :initial '{"status": "off"}' "~/.config/eww/bar/scripts/get-bluetooth.sh")
-(deflisten dnd :initial '{"status": "off"}' "~/.config/eww/bar/scripts/get-dnd.sh")
+(defpoll dnd :initial '{"status": "off"}' :interval "1s" "~/.config/eww/bar/scripts/get-dnd.sh")
 (deflisten volume :initial "0" "~/.config/eww/bar/scripts/get-volume.sh")
 (deflisten brightness :initial "0" "~/.config/eww/bar/scripts/get-brightness.sh")
 (defwidget state-icon [condition text]

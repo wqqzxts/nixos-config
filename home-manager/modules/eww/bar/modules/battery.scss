@@ -5,6 +5,19 @@
 }
 
 .sm-el_bat-btn {
+  color: #ddc7a1;
+  border: solid 5px #e3433b;
+  border-radius: 0;
+  margin-top: 5px;
+  min-width: 25px;
+}
+
+.sm-el_bat-btn:hover {
+  background-color: #ea6962;
+  color: #292828;
+}
+
+.sm-el_bat-btn-active {
   background-color: #ea6962;
   color: #292828;
   border: solid 5px #e3433b;

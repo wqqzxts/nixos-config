@@ -25,8 +25,7 @@
     targets = {
       dunst.enable = false;
       firefox.enable = false;
-      hyprlock.enable = false;
-      hyprpaper.enable = false;
+      swaylock.enable = false;
       neovim.enable = false;
       nixvim.enable = false;
       rofi.enable = false;
@@ -63,14 +62,11 @@
       };
     };
 
-    iconTheme = {
+    icons = {
       enable = true;
       package = pkgs.papirus-icon-theme;
       dark = "Papirus-Dark";
       light = "Papirus-Light";
     };
-
-    # broken until https://github.com/nix-community/stylix/pull/2087 merged
-    # image = ../../nixos/assets/wall-lain.jpg;
   };
 }

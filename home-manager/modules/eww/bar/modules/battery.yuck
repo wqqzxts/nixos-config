@@ -1,4 +1,5 @@
 (defvar batteryrev false)
+(deflisten mode :initial "" "~/.config/eww/bar/scripts/get-battery.sh")
 
 (defwidget widget-battery []
   (eventbox
@@ -57,9 +58,21 @@
       (box
         :class "sm-ph_bat-btns"
         :orientation "v"
-        (button :class "sm-el_bat-btn" :onclick "powerprofilesctl set performance && eww update batteryrev=false" "󰓅")
-        (button :class "sm-el_bat-btn" :onclick "powerprofilesctl set balanced && eww update batteryrev=false" "󰾅")
-        (button :class "sm-el_bat-btn" :onclick "powerprofilesctl set power-saver && eww update batteryrev=false" "󰾆")
+        (button
+          :class "sm-el_bat-btn${mode == 'performance' ? '-active' : ''}"
+          :onclick "powerprofilesctl set performance &"
+          "󰓅"
+        )
+        (button
+          :class "sm-el_bat-btn${mode == 'balanced' ? '-active' : ''}"
+          :onclick "powerprofilesctl set balanced &"
+          "󰾅"
+        )
+        (button
+          :class "sm-el_bat-btn${mode == 'power-saver' ? '-active' : ''}"
+          :onclick "powerprofilesctl set power-saver &"
+          "󰾆"
+        )
       )
     )
   )

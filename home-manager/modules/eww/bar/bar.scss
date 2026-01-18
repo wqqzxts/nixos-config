@@ -2,6 +2,7 @@ window.ewwbar {
   background: none;
   margin-left: 3px;
   margin-top: 3px;
+  margin-bottom: 2px;
   margin-right: 3px;
 }
 
@@ -13,5 +14,6 @@ window.ewwbar {
 @import "./modules/clock.scss";
 @import "./modules/weather.scss";
 @import "./modules/cava.scss";
-@import "./modules/battery.scss";
+@import "./modules/language.scss";
 @import "./modules/status.scss";
+@import "./modules/battery.scss";

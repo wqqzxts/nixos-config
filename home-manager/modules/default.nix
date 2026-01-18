@@ -1,24 +1,25 @@
 {
   imports = [
     ./alacritty.nix
+    ./anyrun
     ./dunst.nix
     ./eww
     ./eza.nix
+    ./fastfetch.nix
     ./firefox.nix
     ./git.nix
-    ./hypridle.nix
-    ./hyprlock.nix
-    ./hyprpaper.nix
     ./lazygit.nix
     ./mount.nix
     ./niri
     ./nixvim
     ./qt.nix
-    ./rofi
     ./spicetify.nix
     ./starship.nix
     ./stylix.nix
+    ./swayidle.nix
+    ./swaylock.nix
     ./tmux.nix
+    ./wpaperd.nix
     ./xdg.nix
     ./yazi.nix
     ./zathura.nix

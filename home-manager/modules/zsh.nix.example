@@ -6,6 +6,11 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
+      nu = "nix flake update --flake path:.";
+      ns = "sudo nixos-rebuild switch --flake path:.";
+      hs = "home-manager switch --flake path:.";
+      gc = "nix-collect-garbage -d";
+
       v = "nvim";
       y = "yazi";
 
@@ -23,6 +28,8 @@
 
       ff = "fastfetch";
       nf = "nitch";
+
+      ewwbar = "eww open ewwbar && eww open window-power && eww open window-clock && eww open window-weather && eww open window-cava && eww open window-language && eww open window-status && eww open window-battery";
     };
 
     history.size = 10000;
@@ -39,7 +46,6 @@
     profileExtra = ''
       if [[ "$(tty)" = "/dev/tty1" ]]; then
         exec niri-session -l
-        # ex start-hyprland
       fi
     '';
   };

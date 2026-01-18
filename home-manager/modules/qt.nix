@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     papirus-icon-theme
-    pcmanfm-qt
+    pcmanfm
   ];
   qt = {
     enable = true;

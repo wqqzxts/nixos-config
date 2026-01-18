@@ -9,8 +9,3 @@ get_dnd_status() {
 }
 
 get_dnd_status
-
-dbus-monitor "path='/org/freedesktop/Notifications',interface='org.freedesktop.DBus.Properties'" 2>/dev/null | \
-  while read -r line; do
-    get_dnd_status
-  done

@@ -31,7 +31,7 @@
       };
     };
 
-    # Find TODOs
+    # find TODOs
     keymaps = [
       {
         mode = "n";

@@ -54,7 +54,6 @@
     cava
     cbonsai
     era
-    fastfetch
     nitch
     pipes-rs
     unimatrix

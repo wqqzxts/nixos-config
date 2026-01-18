@@ -10,7 +10,7 @@ get_bluetooth_status() {
 
 get_bluetooth_status
 
-while true; do
-  inotifywait -e modify /sys/class/bluetooth/*/powered 2>/dev/null
-  get_bluetooth_status
-done
+dbus-monitor --system "type='signal',interface='org.freedesktop.DBus.Properties',member='PropertiesChanged',path='/org/bluez/hci0'" 2>/dev/null | \
+  while read -r _; do
+    get_bluetooth_status
+  done

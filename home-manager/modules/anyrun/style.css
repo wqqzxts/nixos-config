@@ -1,0 +1,78 @@
+* {
+  border-radius: 0px;
+  font-family: "IosevkaTerm Nerd Font Propo 20";
+  font-weight: bold;
+  transition: all 0.5s ease-in-out;
+}
+
+window {
+  background: transparent;
+}
+text {
+  color: #ddc7a1;
+  background-color: #292828;
+  border: solid 5px #ea6962;
+  padding: 15px;
+}
+
+box.main {
+  background-color: #292828;
+  border: solid 5px #ddc7a1;
+  padding: 5px 10px 5px 5px;
+  animation: spring 0.65s cubic-bezier(0.65, 0.20, 0.05, 1.25);
+}
+box.matches {
+  color: #ddc7a1;
+  background-color: #292828;
+  padding-top: 5px;
+}
+
+label.match {
+  color: #ddc7a1;
+  animation: slide-up 0.325s cubic-bezier(0.85, 0.00, 0.10, 1.00)
+}
+label.match.description {
+  color: #665c54;
+  font-size: 8px;
+}
+box.match {
+  margin: 5px 5px 0px 5px;
+}
+box.match:selected {
+  background-color: #7daea3 !important;
+  border: solid 5px #7daea3 !important;
+  animation: fade 0.05s linear;
+}
+
+@keyframes spring {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

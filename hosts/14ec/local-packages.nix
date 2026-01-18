@@ -20,10 +20,6 @@
     clang
     docker
     git-graph
-    jdk21
     nix-prefetch-scripts
-    nodejs_24
-    poetry
-    python313
   ];
 }

@@ -4,7 +4,7 @@
 
 (include "./bar/modules/cava.yuck")
 
-;; (include "./bar/modules/language.yuck")
+(include "./bar/modules/language.yuck")
 (include "./bar/modules/battery.yuck")
 (include "./bar/modules/status.yuck")
 
@@ -46,10 +46,9 @@
       :spacing 5
       :space-evenly false
       :halign "end"
-      ;; (widget-language)
+      (widget-language) ; ./modules/language.yuck
       (widget-status) ; ./modules/status.yuck
       (widget-battery) ; ./modules/battery.yuck
-
     )
   )
 )

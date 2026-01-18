@@ -3,10 +3,13 @@
     plugins.smear-cursor = {
       enable = true;
       settings = {
-        stiffness = 0.8;
-        trailing_stiffness = 0.75;
-        trailing_exponent = 12;
-        damping = 0.85;
+        cursor_color = "#ea6962";
+        particles_enabled = true;
+        particle_max_num = 350;
+        stiffness = 0.5;
+        trailing_stiffness = 0.2;
+        trailing_exponent = 5;
+        damping = 0.60;
 
         distance_stop_animating = 0.5;
 

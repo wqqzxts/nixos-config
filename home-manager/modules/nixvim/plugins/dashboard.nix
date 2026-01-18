@@ -23,26 +23,32 @@
         center = [
           {
             icon = "󰈞";
-            desc = "Find File";
+            desc = "  Find File";
             action = "Telescope find_files";
             key = "f";
           }
           {
             icon = "󰺮";
-            desc = "Find Text";
+            desc = "  Find Text";
             action = "Telescope live_grep";
             key = "g";
           }
           {
+            icon = "";
+            desc = "  Find TODO's";
+            action = "normal! <C-t>";
+            key = "t";
+          }
+          {
             icon = "󱟱";
-            desc = "Recent Files";
+            desc = "  Recent Files";
             action = "Telescope oldfiles";
             key = "r";
           }
         ];
 
         footer = [
-          "Managed by NixVim"
+          " Managed by NixVim"
         ];
       };
     };
