@@ -34,6 +34,11 @@
       ];
     };
     settings = {
+      adapter.image = "ueberzug";
+      preview = {
+        image_filter = "lanczos3";
+        image_quality = 75;
+      };
       plugin.prepend_fetchers = [
         {
           id  = "git";

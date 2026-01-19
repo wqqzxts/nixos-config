@@ -8,6 +8,10 @@
     terminal = "screen-256color";
     prefix = "C-a";
     extraConfig = ''
+      set -g allow-passthrough on
+      set -ga update-environment TERM
+      set -ga update-environment TERM_PROGRAM
+
       unbind C-b
       set -as terminal-features ",alacritty*:RGB"
       bind -n M-Space copy-mode -u

@@ -7,7 +7,7 @@
       }
       {
         matches = [
-          { title = "^(Open File|Select a File|Open Folder|Save As|Library|File Upload|Choose Files|Mini App:|Sign in).*$"; }
+          { title = "^(Open File|Select a File|Open Folder|Save As|Library|File Upload|Choose Files|Mini App:|Sign in|wq).*$"; }
           { title = "^.*(wants to save|wants to open)$"; }
           { app-id = "^(org.pulseaudio.pavucontrol|Throne|.blueman-manager-wrapped)$"; }
         ];
