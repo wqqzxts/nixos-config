@@ -31,7 +31,7 @@
 
       {
         matches = [
-          { app-id = "^(ueberzugpp).*$"; }
+          # { app-id = "^(ueberzugpp).*$"; }
           { title = "^(Media viewer).*$"; }
         ];
         open-floating = true;

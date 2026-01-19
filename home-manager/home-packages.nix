@@ -44,7 +44,6 @@
     power-profiles-daemon
     pulseaudio
     ripgrep
-    ueberzug
     w3m
     wf-recorder
     wget
