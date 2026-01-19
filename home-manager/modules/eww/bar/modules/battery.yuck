@@ -42,7 +42,7 @@
                       :anchor "top right"
             )
   :stacking "overlay"
-  :visible batteryrev
+  :visible true
   (menu-battery)
 )
 

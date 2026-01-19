@@ -30,7 +30,7 @@
                       :anchor "top left"
             )
   :stacking "overlay"
-  :visible weatherrev
+  :visible true
   (menu-weather)
 )
 

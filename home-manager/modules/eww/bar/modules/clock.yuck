@@ -5,7 +5,7 @@
     :class "bar-clk"
     :onhover "eww update clockrev=true"
     :width 430
-    (label :text {formattime(EWW_TIME, "%A | %B %d | %I:%M %p")})
+    (label :text {formattime(EWW_TIME, "%A | %B %d %Y | %I:%M %p")})
   )
 )
 

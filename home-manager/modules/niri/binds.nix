@@ -13,8 +13,7 @@
       "Print".action.screenshot = [ ];
 
       # widgets
-      "Mod+B" = { action.spawn = [ "pkill" "-SIGUSR2" "eww" ]; repeat = false; };
-      "Mod+N" = { action.spawn = [ "swaync-client" "-t" ]; repeat = false; };
+      "Mod+B" = { action.spawn-sh = [ "~/.config/eww/bar/scripts/toggle-ewwbar.sh" ]; repeat = false; };
       "Mod+Shift+Escape" = { action.spawn = [ "wlogout" ]; repeat = false; };
       "Mod+Escape" = { action.spawn = [ "loginctl" "lock-session" ]; repeat = false; };
 
@@ -40,7 +39,7 @@
 
       "Mod+Ctrl+U".action.maximize-column = [ ];
       "Mod+Ctrl+R".action.set-column-width = "50%";
-      "Mod+Ctrl+F".action.fullscreen-window = [ ];
+      "Mod+Ctrl+F".action.spawn-sh = [ "niri msg action fullscreen-window && ~/.config/eww/bar/scripts/toggle-ewwbar.sh" ];
 
       ## window navigation
       "Mod+H".action.focus-column-left = [ ];

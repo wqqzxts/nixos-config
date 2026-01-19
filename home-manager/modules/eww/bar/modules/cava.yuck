@@ -18,7 +18,7 @@
                       :anchor "top center"
             )
   :stacking "overlay"
-  :visible cavarev
+  :visible true
   (menu-cava)
 )
 

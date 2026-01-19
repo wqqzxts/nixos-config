@@ -34,12 +34,6 @@
             key = "g";
           }
           {
-            icon = "";
-            desc = "  Find TODO's";
-            action = "normal! <C-t>";
-            key = "t";
-          }
-          {
             icon = "󱟱";
             desc = "  Recent Files";
             action = "Telescope oldfiles";

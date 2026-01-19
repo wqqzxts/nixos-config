@@ -25,7 +25,7 @@
     targets = {
       dunst.enable = false;
       firefox.enable = false;
-      swaylock.enable = false;
+      hyprlock.enable = false;
       neovim.enable = false;
       nixvim.enable = false;
       rofi.enable = false;

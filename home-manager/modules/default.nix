@@ -8,6 +8,8 @@
     ./fastfetch.nix
     ./firefox.nix
     ./git.nix
+    ./hypridle.nix
+    ./hyprlock.nix
     ./lazygit.nix
     ./mount.nix
     ./niri
@@ -16,8 +18,6 @@
     ./spicetify.nix
     ./starship.nix
     ./stylix.nix
-    ./swayidle.nix
-    ./swaylock.nix
     ./tmux.nix
     ./wpaperd.nix
     ./xdg.nix

@@ -8,7 +8,7 @@ in
 
     config = {
       x.fraction = 0.5;
-      y.fraction = 0.5;
+      y.fraction = 0.45;
       width.fraction = 0.2;
       ignoreExclusiveZones = true;
       layer = "overlay";

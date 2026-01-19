@@ -4,7 +4,7 @@
     settings = {
       general = {
         before_sleep_cmd = "loginctl lock-session";
-        after_sleep_cmd = "hyprctl dispatch dpms on";
+        after_sleep_cmd = "niri msg output off";
         ignore_dbus_inhibit = false;
         lock_cmd = "pidof hyprlock || hyprlock";
       };
@@ -21,7 +21,7 @@
         }
         {
           timeout = 600;
-          on-timeout = "hyprctl dispatch dpms off";
+          on-timeout = "niri msg output off";
           on-resume = "hyprctl dispatch dpms on";
         }
         {

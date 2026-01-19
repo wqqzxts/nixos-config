@@ -3,23 +3,20 @@
     enable = true;
     settings = {
       general = {
-        disable_loading_bar = true;
-        grace = 10;
         hide_cursor = true;
-        no_fade_in = false;
+        ignore_empty_input = true;
       };
 
       label = {
         text = "$TIME";
         font_family = "IosevkaTerm Nerd Font Mono";
         font_weight = "bold";
-        font_size = 128;
-        color = "rgba(235, 219, 178, 1.0)";
-        position = "0, 200";
+        font_size = 160;
+        color = "rgba(221, 199, 161, 1.0)";
         halign = "center";
         valign = "center";
 
-        shadow_passes = 1;
+        shadow_passes = 0;
       };
 
       background = [
@@ -33,15 +30,15 @@
       input-field = [
         {
           size = "200, 50";
-          position = "0, -80";
-          monitor = "";
+          position = "0, -125";
+          rounding = 0;
           dots_center = true;
-          font_color = "rgb(235, 219, 178)";
-          inner_color = "rgb(40, 40, 40)";
-          outer_color = "rgb(60, 56, 54)";
+          font_color = "rgb(221, 199, 161)";
+          inner_color = "rgb(102, 92, 84)";
+          outer_color = "rgb(221, 199, 161)";
           outline_thickness = 5;
           placeholder_text = "not arch btw";
-          shadow_passes = 1;
+          shadow_passes = 0;
         }
       ];
     };

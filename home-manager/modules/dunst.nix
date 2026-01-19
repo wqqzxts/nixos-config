@@ -7,7 +7,8 @@
         offset = "(10,10)";
         width = "(200,400)";
         height = 300;
-        font = "monospace 20";
+        font = "monospace 16";
+        format = "<b><span font='monospace 22'>%s</span></b>\n%b";
 
         corner_radius = 0;
         frame_width = 5;
@@ -27,15 +28,15 @@
         max_icon_size = 64;
 
         mouse_left_click = "do_action";
-        mouse_middle_click = "close_current";
-        mouse_right_click = "close_all";
+        mouse_middle_click = "close_all";
+        mouse_right_click = "close_current";
       };
 
       urgency_normal = {
         background = "#292828";
         foreground = "#ddc7a1";
-        frame_color = "#a9b665";
-        timeout = 10;
+        frame_color = "#7daea3";
+        timeout = 5;
       };
 
       urgency_critical = {

@@ -16,7 +16,7 @@
                       :anchor "top left"
             )
   :stacking "overlay"
-  :visible powerrev
+  :visible true
   (menu-power)
 )
 

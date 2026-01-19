@@ -23,7 +23,7 @@
             )
   :stacking "fg"
   :exclusive true
-  :visible true
+  :visible ewwbarrev
   (eww-bar-placeholder)
 )
 
