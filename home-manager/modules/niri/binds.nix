@@ -11,6 +11,7 @@
       # utilities
       "Mod+P".action.spawn = [ "hyprpicker" "-an" ];
       "Print".action.screenshot = [ ];
+      "Shift+Alt+Minus".action.spawn = [ "wtype" "–" ];
 
       # widgets
       "Mod+B" = { action.spawn-sh = [ "~/.config/eww/bar/scripts/toggle-ewwbar.sh" ]; repeat = false; };

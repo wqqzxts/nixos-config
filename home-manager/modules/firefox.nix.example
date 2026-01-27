@@ -7,7 +7,7 @@
       DisableFirefoxStudies = true;
       DisableTelemetry = true;
       DNSOverHTTPS = {
-        Enabled = true;
+        Enabled = false;
         Locked = true;
       };
       EnableTrackingProtection = {

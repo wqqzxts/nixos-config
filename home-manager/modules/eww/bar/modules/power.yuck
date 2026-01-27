@@ -28,7 +28,7 @@
     (revealer
       :reveal powerrev
       :transition "slidedown"
-      :duration 650
+      :duration anim-duration
       (box
         :orientation "v"
         (button :class "sm-el_pow-btn" :onclick "systemctl poweroff" "󰤁")

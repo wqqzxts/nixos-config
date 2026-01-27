@@ -8,6 +8,8 @@
 (include "./bar/modules/battery.yuck")
 (include "./bar/modules/status.yuck")
 
+(defvar anim-duration 375)
+
 ; module -- each interactive part of status bar
 ; widget-<name-of-module> -- the actual ui element on status bar, which responsible for initiate the render of slide-down menus
 ; menu-<name-of-module> -- the slide down menu

@@ -1,10 +1,12 @@
 { pkgs, ... }: {
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.android_sdk.accept_license = true;
 
   virtualisation.docker.enable = true;
 
   environment.systemPackages = with pkgs; [
     # apps
+    android-studio-full
     anki
     gimp
     libreoffice-qt-fresh
@@ -17,7 +19,6 @@
     winetricks
 
     # development
-    clang
     docker
     git-graph
     nix-prefetch-scripts

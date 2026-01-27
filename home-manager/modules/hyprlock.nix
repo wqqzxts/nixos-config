@@ -30,14 +30,14 @@
       input-field = [
         {
           size = "200, 50";
-          position = "0, -125";
+          position = "0, -150";
           rounding = 0;
           dots_center = true;
           font_color = "rgb(221, 199, 161)";
           inner_color = "rgb(102, 92, 84)";
           outer_color = "rgb(221, 199, 161)";
           outline_thickness = 5;
-          placeholder_text = "not arch btw";
+          placeholder_text = "not an arch btw";
           shadow_passes = 0;
         }
       ];

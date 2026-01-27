@@ -54,7 +54,7 @@
     (revealer
       :reveal batteryrev
       :transition "slidedown"
-      :duration 650
+      :duration anim-duration
       (box
         :class "sm-ph_bat-btns"
         :orientation "v"

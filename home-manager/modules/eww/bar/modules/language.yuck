@@ -29,7 +29,7 @@
     (revealer
       :reveal languagerev
       :transition "slidedown"
-      :duration 650
+      :duration anim-duration
       (box
         :orientation "v"
         (button

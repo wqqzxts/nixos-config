@@ -3,6 +3,7 @@
 
   home.packages = with pkgs; [
     # apps
+    chromium
     imv
     mpv
     pavucontrol
@@ -36,6 +37,7 @@
     # cli utilities
     bc
     bottom
+    dig
     fzf
     htop
     inotify-tools
@@ -44,9 +46,12 @@
     power-profiles-daemon
     pulseaudio
     ripgrep
+    tcpdump
+    unixtools.netstat
     w3m
     wf-recorder
     wget
+    whois
 
     # entertainment
     asciiquarium

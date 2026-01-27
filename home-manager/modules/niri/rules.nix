@@ -2,14 +2,14 @@
   programs.niri.settings = {
     window-rules = [
       {
-        opacity = 0.975;
-        draw-border-with-background = false;
+        # opacity = 0.975;
+        # draw-border-with-background = false;
       }
       {
         matches = [
-          { title = "^(Open File|Select a File|Open Folder|Save As|Library|File Upload|Choose Files|Mini App:|Sign in|wq).*$"; }
+          { title = "^(Open File|Select a File|Open Folder|Save As|Save File|Library|File Upload|Choose Files|Mini App:|Sign in|wq).*$"; }
           { title = "^.*(wants to save|wants to open)$"; }
-          { app-id = "^(org.pulseaudio.pavucontrol|Throne|.blueman-manager-wrapped)$"; }
+          { app-id = "^(org.pulseaudio.pavucontrol|Throne|.blueman-manager-wrapped|imv)$"; }
         ];
         open-floating = true;
         default-column-width = { proportion = 0.50; };

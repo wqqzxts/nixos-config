@@ -18,7 +18,7 @@ box.main {
   background-color: #292828;
   border: solid 5px #ddc7a1;
   padding: 5px 10px 5px 5px;
-  animation: spring 0.65s cubic-bezier(0.55, 0.20, 0.05, 1.00);
+  animation: spring 0.45s cubic-bezier(0.55, 0.20, 0.05, 1.00);
 }
 box.matches {
   background-color: #292828;
@@ -29,7 +29,7 @@ box.matches {
 label.match {
   background-color: transparent;
   color: #ddc7a1;
-  animation: spring 0.325s cubic-bezier(0.55, 0.20, 0.05, 1.00);
+  animation: spring 0.225s cubic-bezier(0.55, 0.20, 0.05, 1.00);
 }
 label.match.description {
   color: #665c54;

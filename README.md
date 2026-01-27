@@ -12,7 +12,7 @@ Welcome to my NixOS configuration.
 - ❄️ **[Flakes](https://wiki.nixos.org/wiki/Flakes)**: Configured NixOS flakes for maximum reproducibility.
 - 🏠 **[Home Manager Integration](https://nix-community.github.io/home-manager/)**: Configured for managing the home environment.
 - 🎨 **[Gruvbox Material Theme](https://github.com/sainnhe/gruvbox-material)**: A perfect blend of vibrant and subtle colors.
-- 🕯️ **[Niri](https://https://github.com/YaLTeR/niri)**: A scrollable-tiling Wayland compositor.
+- 🕯️ **[Niri](https://github.com/YaLTeR/niri)**: A scrollable-tiling Wayland compositor.
 - 📊 **[Eww](https://github.com/elkowar/eww):** A standalone widget system made.
 - 📨 **[Dunst](https://github.com/dunst-project/dunst):** Lightweight and customizable notification daemon.
 - 🔒 **[Hyprlock](https://hyprland.org/docs/ecosystem/hyprlock/):** The native screen locker for Hyprland, showing a blurred background and the current time.
@@ -22,7 +22,7 @@ Welcome to my NixOS configuration.
 - ⌨️ **[Neovim](https://neovim.io)**: Vim-fork focused on extensibility configured using Nixvim.
 - 🦆 **[Yazi](https://yazi-rs.github.io/):** Blazing fast terminal file manager written in Rust, based on async I/O.
 - 📖 **[Zathura](https://pwmt.org/projects/zathura/):** A highly customizable document viewer with VI-like keybindings.
-- 🛑 **[Zapret](https://https://github.com/bol-van/zapret):** Multi platform DPI bypass service.
+- 🛑 **[Zapret](https://github.com/bol-van/zapret):** Multi platform DPI bypass service.
 
 ## 🚀 Installation
 
@@ -76,7 +76,8 @@ To get started with this setup, follow these steps:
     imports = [
     --  # ./zapret.nix
     ++  ./zapret.nix
-  ];
+    ];
+    ```
 
 7. **Edit other `hosts/<your_hostname>/local-packages.nix` and `nixos/modules/` files if needed (if you think of packages bloat)**:
 

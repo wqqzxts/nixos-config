@@ -29,7 +29,7 @@
     (revealer
       :reveal cavarev
       :transition "slidedown"
-      :duration 650
+      :duration anim-duration
       (box
         :class "sm-ph_cava"
         :orientation "v"
