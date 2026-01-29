@@ -8,7 +8,7 @@ in
     enable = true;
     theme = spicePkgs.themes.text;
     colorScheme = "Gruvbox";
-    # TODO: fix custom spotify theme
+    # TODO: fix custom spotify theme (maybe could help: https://github.com/spicetify/spicetify-themes/blob/master/Default/color.ini)
     # customColorScheme = {
     #   main               = "${stylixColor.base00}";
     #   sidebar            = "${stylixColor.base02}";

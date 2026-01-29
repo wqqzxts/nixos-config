@@ -87,7 +87,8 @@
 
 (defwindow window-status
   :monitor 0
-  :geometry (geometry :x "63px"
+  :geometry (geometry :x "60px"
+                      :y "-5px"
                       :width "430px"
                       :anchor "top right"
   )

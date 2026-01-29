@@ -14,7 +14,8 @@
 
 (defwindow window-cava
   :monitor 0
-  :geometry (geometry :width "400px"
+  :geometry (geometry :y "-5px"
+                      :width "400px"
                       :anchor "top center"
             )
   :stacking "overlay"

@@ -12,7 +12,13 @@
         { proportion = 1.0; }
       ];
 
-      gaps = 3;
+      gaps = 5;
+      struts = {
+        left = -5;
+        right = -5;
+        top = -5;
+        bottom = -5;
+      };
 
       focus-ring.enable = false;
       border = {

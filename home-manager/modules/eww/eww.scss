@@ -31,7 +31,8 @@
   border-radius: 0;
   font-family: "IosevkaTerm Nerd Font Propo";
   font-weight: bold;
-  transition: all 0.375s ease-in-out;
+  transition: background 0.225s ease-in-out;
+  transition: color 0.225s ease-in-out;
 }
 
 @import "./bar/bar.scss";

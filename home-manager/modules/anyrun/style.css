@@ -41,7 +41,7 @@ box.match {
 .match:selected {
   background-color: #7daea3;
   color: #292828;
-  transition: background-color 0.325s ease-in-out;
+  transition: background-color 0.225s ease-in-out;
 }
 
 @keyframes spring {

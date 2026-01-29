@@ -37,7 +37,8 @@
 
 (defwindow window-battery
   :monitor 0
-  :geometry (geometry :x "3"
+  :geometry (geometry :x "0"
+                      :y "-5px"
                       :width "40px"
                       :anchor "top right"
             )

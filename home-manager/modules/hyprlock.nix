@@ -30,7 +30,7 @@
       input-field = [
         {
           size = "200, 50";
-          position = "0, -150";
+          position = "0, -200";
           rounding = 0;
           dots_center = true;
           font_color = "rgb(221, 199, 161)";

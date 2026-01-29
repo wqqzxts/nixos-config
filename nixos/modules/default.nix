@@ -19,6 +19,7 @@
     ./upower.nix
     ./user.nix
     ./virtualisation.nix
+    ./wireshark.nix
     # ./zapret.nix # uncomment if you need dpi bypass service
   ];
 }

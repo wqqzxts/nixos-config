@@ -11,8 +11,8 @@
 
 (defwindow window-clock
   :monitor 0
-  :geometry (geometry :x "63px"
-                      :y "0px"
+  :geometry (geometry :x "60px"
+                      :y "-5px"
                       :width "430px"
                       :anchor "top left"
             )
