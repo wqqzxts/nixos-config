@@ -23,6 +23,7 @@
     ./xdg.nix
     ./yazi.nix
     ./zathura.nix
+    ./zellij.nix
     ./zsh.nix
   ];
 }

@@ -14,7 +14,6 @@
     obsidian
     spotify
     telegram-desktop
-    vesktop
     wineWowPackages.waylandFull
     winetricks
 

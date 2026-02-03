@@ -1,16 +1,16 @@
 {
   networking = {
-    nameservers = [
-      "127.0.0.1"
-    ];
+    # nameservers = [
+    #   "127.0.0.1"
+    # ];
     networkmanager = {
         enable = true;
-        dns = "none";
+        # dns = "none";
     };
   };
 
   services.dnscrypt-proxy = {
-    enable = true;
+    enable = false;
     settings = {
       sources.public-resolvers = {
         urls = [

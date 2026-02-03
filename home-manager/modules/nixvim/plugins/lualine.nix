@@ -4,6 +4,15 @@
 
     settings = {
       options.globalstatus = true;
+      # TODO: find out the problem
+      section_separators = {
+        left = "│";
+        right = "│";
+      };
+      component_separators = {
+        left = "█";
+        right = "█";
+      };
 
       # +-------------------------------------------------+
       # | A | B | C                             X | Y | Z |

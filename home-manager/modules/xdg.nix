@@ -4,6 +4,8 @@
 
     userDirs = {
       enable = true;
+      desktop = "/home/${user}/desktop";
+      documents = "/home/${user}/documents";
       download = "/home/${user}/downloads";
       pictures = "/home/${user}/pictures";
     };
@@ -11,7 +13,7 @@
     mimeApps = {
       enable = true;
       defaultApplications = {
-        "inode/directory" = [ "yazi.desktop" ];
+        "inode/directory" = [ "pcmanfm.desktop" ];
 
         "application/pdf" = [ "zathura.desktop" ];
 

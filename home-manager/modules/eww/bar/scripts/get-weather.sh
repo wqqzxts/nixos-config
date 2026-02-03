@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # temperature|feels-like|condition|wind|uv-index
-weather_data=$(curl -s "wttr.in/London?m&format=%t+%f+%C+%w+%u")
+weather_data=$(curl -s "wttr.in/Irkutsk?m&format=%t+%f+%C+%w+%u")
 
 temp=$(echo "$weather_data" | awk '{print $1}' | sed 's/°C//')
 ftemp=$(echo "$weather_data" | awk '{print $2}' | sed 's/°C//')

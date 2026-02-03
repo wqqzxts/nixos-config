@@ -8,15 +8,10 @@
       }
     ];
     packages = [
-      # "org.vinegarhq.Sober" # uncomment this if you need roblox xD
+      "org.vinegarhq.Sober" # uncomment this if you need roblox xD
     ];
-    overrides = {
-      # roblox permission for discord access
-      # "org.vinegarhq.Sober".Context.filesystems = [
-      #   "xdg-run/app/com.discordapp.Discord:create"
-      #   "xdg-run/discord-ipc-0"
-      # ];
-    };
+    # overrides = {
+    # };
     update.auto = {
       enable = true;
       onCalendar = "weekly";

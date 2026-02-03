@@ -6,6 +6,7 @@
     chromium
     imv
     mpv
+    nautilus
     pavucontrol
     qbittorrent
     vscodium
@@ -14,7 +15,6 @@
     bemoji
     brightnessctl
     cliphist
-    grimblast
     hyprpicker
     libnotify
     wl-clipboard

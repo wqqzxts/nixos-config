@@ -7,9 +7,9 @@
       }
       {
         matches = [
-          { title = "^(Open File|Select a File|Open Folder|Save As|Save File|Library|File Upload|Choose Files|Mini App:|Sign in|wq).*$"; }
+          { title = "^(Open File|Select a File|Open Folder|Save As|Save File|Library|File Upload|Choose Files|Mini App:|Sign in).*$"; }
           { title = "^.*(wants to save|wants to open)$"; }
-          { app-id = "^(org.pulseaudio.pavucontrol|Throne|.blueman-manager-wrapped|imv)$"; }
+          { app-id = "^(org.pulseaudio.pavucontrol|Throne|.blueman-manager-wrapped|imv|Clash-verge|org.gnome.Nautilus)$"; }
         ];
         open-floating = true;
         default-column-width = { proportion = 0.50; };

@@ -10,6 +10,7 @@
     noto-fonts-lgc-plus
     noto-fonts-color-emoji
     ipafont
+    kanji-stroke-order-font
     # icons
     font-awesome
     powerline-symbols
