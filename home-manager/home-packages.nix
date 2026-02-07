@@ -42,6 +42,7 @@
     htop
     inotify-tools
     jq
+    openssl
     pamixer
     power-profiles-daemon
     pulseaudio
