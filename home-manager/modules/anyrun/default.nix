@@ -24,6 +24,7 @@ in
         anyrunPkgs.applications
         anyrunPkgs.rink
         anyrunPkgs.translate
+        anyrunPkgs.stdin
       ];
     };
 

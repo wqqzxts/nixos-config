@@ -20,7 +20,13 @@
         bottom = -5;
       };
 
-      focus-ring.enable = false;
+      focus-ring = {
+        enable = false;
+        width = 5;
+        active = { color = "#ddc7a1"; };
+        inactive = { color = "#665c54"; };
+      };
+
       border = {
         enable = true;
         width = 5;

@@ -1,3 +1,7 @@
+let
+  # hardcoded :<
+  stdinPath = "/nix/store/k73mpyyr2azbdnirb42c9d7xy3wyqv81-stdin-25.12.0/lib/libstdin.so";
+in
 {
   programs.niri.settings = {
     binds = {
@@ -5,8 +9,8 @@
       "Mod+T" = { action.spawn = [ "alacritty" ]; repeat = false; };
       "Mod+Y" = { action.spawn = [ "alacritty" "-e" "yazi" ]; repeat = false; };
       "Mod+D" = { action.spawn = [ "anyrun" ]; repeat = false; };
-      "Mod+V" = { action.spawn = [ "sh" "-c" "cliphist list | anyrun | cliphist decode | wl-copy" ]; repeat = false; };
-      "Mod+E" = { action.spawn = [ "bemoji" "-cn" ]; repeat = false; };
+      "Mod+V" = { action.spawn = [ "sh" "-c" "cliphist list | anyrun --plugins ${stdinPath} | cliphist decode | wl-copy" ]; repeat = false; };
+      "Mod+E" = { action.spawn = [ "sh" "-c" "BEMOJI_PICKER_CMD='anyrun --plugins ${stdinPath}' bemoji -cn" ]; repeat = false; };
 
       # utilities
       "Mod+P".action.spawn = [ "hyprpicker" "-an" ];
