@@ -3,7 +3,7 @@
 
   home.packages = with pkgs; [
     # apps
-    chromium
+    # chromium
     imv
     mpv
     nautilus
@@ -37,6 +37,7 @@
     # cli utilities
     bc
     bottom
+    cifs-utils
     dig
     fzf
     htop
@@ -47,20 +48,22 @@
     power-profiles-daemon
     pulseaudio
     ripgrep
+    samba
     tcpdump
     unixtools.netstat
+    unrar
     w3m
     wf-recorder
     wget
     whois
 
     # entertainment
-    asciiquarium
-    cava
-    cbonsai
-    era
-    nitch
-    pipes-rs
-    unimatrix
+    # asciiquarium
+    # cava
+    # cbonsai
+    # era
+    # nitch
+    # pipes-rs
+    # unimatrix
   ];
 }

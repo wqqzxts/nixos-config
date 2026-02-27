@@ -9,7 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
+    # nix-flatpak.url = "github:gmodena/nix-flatpak";
 
     stylix = {
       url = "github:danth/stylix/";
@@ -52,7 +52,7 @@
 
       modules = [
         ./hosts/${hostname}/configuration.nix
-        inputs.nix-flatpak.nixosModules.nix-flatpak
+        # inputs.nix-flatpak.nixosModules.nix-flatpak
         ./overlays.nix
       ];
     };

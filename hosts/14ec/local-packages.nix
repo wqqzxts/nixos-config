@@ -6,7 +6,6 @@
 
   environment.systemPackages = with pkgs; [
     # apps
-    android-studio-full
     anki
     gimp
     libreoffice-qt-fresh
@@ -14,8 +13,8 @@
     obsidian
     spotify
     telegram-desktop
-    wineWowPackages.waylandFull
-    winetricks
+    spice
+    spice-vdagent
 
     # development
     docker

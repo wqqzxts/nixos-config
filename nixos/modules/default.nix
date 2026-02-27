@@ -4,7 +4,6 @@
     ./battery.nix
     ./bluetooth.nix
     ./boot.nix
-    # ./clash-verge.nix # uncomment if you need mihomo client
     ./env.nix
     ./flatpak.nix
     ./home-manager.nix
@@ -14,12 +13,11 @@
     ./net.nix
     ./nix.nix
     ./theme.nix
-    # ./throne.nix # uncomment if you need sing-box proxy-client
+    ./throne.nix # uncomment if you need sing-box proxy-client
     ./timezone.nix
     ./upower.nix
     ./user.nix
     ./virtualisation.nix
-    ./wireshark.nix
-    # ./zapret.nix # uncomment if you need dpi bypass service
+    ./zapret.nix # uncomment if you need dpi bypass service
   ];
 }

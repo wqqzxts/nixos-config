@@ -44,7 +44,8 @@ in
 
       "Mod+Ctrl+U".action.maximize-column = [ ];
       "Mod+Ctrl+R".action.set-column-width = "50%";
-      "Mod+Ctrl+F".action.spawn-sh = [ "niri msg action fullscreen-window && ~/.config/eww/bar/scripts/toggle-ewwbar.sh" ];
+      # "Mod+Ctrl+F".action.spawn-sh = [ "niri msg action fullscreen-window && ~/.config/eww/bar/scripts/toggle-ewwbar.sh" ];
+      "Mod+Ctrl+F".action.spawn-sh = [ "niri msg action fullscreen-window" ];
 
       ## window navigation
       "Mod+H".action.focus-column-left = [ ];

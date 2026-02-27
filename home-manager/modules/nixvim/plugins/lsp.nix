@@ -29,8 +29,8 @@
             // props
           )
           {
-            "<leader>k".action.__raw = "function() vim.diagnostic.jump({ count=-1, float=true }) end";
-            "<leader>j".action.__raw = "function() vim.diagnostic.jump({ count=1, float=true }) end";
+            "<leader>kd".action.__raw = "function() vim.diagnostic.jump({ count=-1, float=true }) end";
+            "<leader>jd".action.__raw = "function() vim.diagnostic.jump({ count=1, float=true }) end";
             gd.lspBufAction = "definition";
             gD.lspBufAction = "references";
             gt.lspBufAction = "type_definition";
