@@ -1,16 +1,16 @@
 {
   networking = {
-    # nameservers = [
-    #   "127.0.0.1"
-    # ];
+    nameservers = [
+      "127.0.0.1"
+    ];
     networkmanager = {
         enable = true;
-        # dns = "none";
+        dns = "none";
     };
   };
 
   services.dnscrypt-proxy = {
-    enable = false;
+    enable = true;
     settings = {
       sources.public-resolvers = {
         urls = [
@@ -37,7 +37,6 @@
       http3_probe = false;
 
       ignore_system_dns = true;
-      fallback_resolvers = [ "1.1.1.1:53" ];
 
       server_names = [ "google" ];
     };

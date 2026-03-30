@@ -14,6 +14,7 @@
     # wayland
     bemoji
     brightnessctl
+    claude-code
     cliphist
     hyprpicker
     libnotify
@@ -56,6 +57,7 @@
     wf-recorder
     wget
     whois
+    ueberzugpp
 
     # entertainment
     # asciiquarium

@@ -6,6 +6,13 @@
     corefonts
     dejavu_fonts
     nerd-fonts.iosevka-term
+    nerd-fonts.iosevka-term
+    nerd-fonts.iosevka-term-slab
+    nerd-fonts.bigblue-terminal
+    nerd-fonts.departure-mono
+    nerd-fonts.gohufont
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.monoid
     noto-fonts
     noto-fonts-lgc-plus
     noto-fonts-color-emoji
@@ -26,6 +33,7 @@
     targets = {
       dunst.enable = false;
       firefox.enable = false;
+      hyprland.enable = false;
       hyprlock.enable = false;
       neovim.enable = false;
       nixvim.enable = false;

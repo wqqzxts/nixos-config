@@ -20,6 +20,17 @@
       url = "github:sodiboo/niri-flake";
     };
 
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.hyprland.follows = "hyprland";
+    };
+
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -4,6 +4,7 @@
     ./battery.nix
     ./bluetooth.nix
     ./boot.nix
+    ./clash-verge.nix
     ./env.nix
     ./flatpak.nix
     ./home-manager.nix

@@ -9,6 +9,7 @@
     ./firefox.nix
     ./git.nix
     ./hypridle.nix
+    ./hyprland
     ./hyprlock.nix
     ./lazygit.nix
     ./mount.nix
@@ -23,7 +24,7 @@
     ./xdg.nix
     ./yazi.nix
     ./zathura.nix
-    ./zellij.nix
+    # ./zellij.nix
     ./zsh.nix
   ];
 }
