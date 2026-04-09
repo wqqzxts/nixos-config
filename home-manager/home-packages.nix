@@ -14,7 +14,6 @@
     # wayland
     bemoji
     brightnessctl
-    claude-code
     cliphist
     hyprpicker
     libnotify
@@ -39,6 +38,7 @@
     bc
     bottom
     cifs-utils
+    claude-code
     dig
     fzf
     htop
@@ -51,13 +51,13 @@
     ripgrep
     samba
     tcpdump
+    ueberzugpp
     unixtools.netstat
     unrar
     w3m
     wf-recorder
     wget
     whois
-    ueberzugpp
 
     # entertainment
     # asciiquarium

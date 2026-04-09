@@ -45,9 +45,11 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    claude-code.url = "github:sadjow/claude-code-nix";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: let
+  outputs = { self, nixpkgs, home-manager, claude-code, ... }@inputs: let
     system = "x86_64-linux";
     homeStateVersion = "26.05";
     user = "wq";
