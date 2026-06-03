@@ -12,6 +12,8 @@
   programs.nixvim = {
     enable = true;
 
+    nixpkgs.config.allowUnfree = true;
+
     colorschemes.gruvbox-material-nvim.enable = true;
 
     plugins = {

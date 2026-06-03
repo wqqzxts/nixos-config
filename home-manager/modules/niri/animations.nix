@@ -18,7 +18,7 @@ let
   hiStiff = 350; # responsive feel
 
   # epsilon
-  e = 0.00001; # that value works nice, but you can try out to lower (but values above 0.005 works baad)
+  e = 0.001; # that value works nice, but you can try out to lower (but values above 0.005 works baad)
 in
 {
   programs.niri.settings = {

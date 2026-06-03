@@ -13,6 +13,7 @@
     ./mount.nix
     ./net.nix
     ./nix.nix
+    ./steam.nix
     ./theme.nix
     ./throne.nix # uncomment if you need sing-box proxy-client
     ./timezone.nix

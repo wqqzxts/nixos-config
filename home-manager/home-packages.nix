@@ -61,7 +61,7 @@
 
     # entertainment
     # asciiquarium
-    # cava
+    cava
     # cbonsai
     # era
     # nitch

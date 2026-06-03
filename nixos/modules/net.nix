@@ -2,10 +2,12 @@
   networking = {
     nameservers = [
       "127.0.0.1"
+      "192.168.1.1"
+      "192.168.0.1"
     ];
     networkmanager = {
         enable = true;
-        dns = "none";
+        dns = "default";
     };
   };
 
@@ -32,11 +34,11 @@
       require_nolog = true;
       require_nofilter = true;
 
-      force_tcp = true;
+#     force_tcp = true;
       http3 = false;
       http3_probe = false;
 
-      ignore_system_dns = true;
+#     ignore_system_dns = true;
 
       server_names = [ "google" ];
     };
