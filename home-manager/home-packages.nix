@@ -19,7 +19,6 @@
     libnotify
     wl-clipboard
     wtype
-    xdg-desktop-portal-gtk
     xwayland-satellite
 
     # multimedia

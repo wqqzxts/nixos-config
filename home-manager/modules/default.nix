@@ -9,7 +9,6 @@
     ./firefox.nix
     ./git.nix
     ./hypridle.nix
-    ./hyprland
     ./hyprlock.nix
     ./lazygit.nix
     ./mount.nix

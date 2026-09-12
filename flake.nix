@@ -17,18 +17,8 @@
     };
 
     niri = {
-      url = "github:sodiboo/niri-flake";
-    };
-
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.hyprland.follows = "hyprland";
+      # pinned to sodiboo/niri-flake#1850 fork: libdisplay-info_0_2 was removed from nixpkgs
+      url = "github:rebizzz/niri-flake/6bb99ff875919f03ea6054026619d999061e1170";
     };
 
     nixvim = {

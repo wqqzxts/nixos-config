@@ -7,14 +7,18 @@
   environment.systemPackages = with pkgs; [
     # apps
     anki
-    gimp
-    libreoffice-qt-fresh
+    adwaita-icon-theme
+    gamemode
+    lutris
+    mangohud
     obs-studio
     obsidian
-    spotify
-    telegram-desktop
     spice
     spice-vdagent
+    spotify
+    telegram-desktop
+    winetricks
+    steam-run
 
     # development
     docker

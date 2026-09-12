@@ -8,10 +8,10 @@
     ./env.nix
     ./flatpak.nix
     ./home-manager.nix
-    ./hyprland.nix
     ./kernel.nix
     ./mount.nix
     ./net.nix
+    ./niri.nix
     ./nix.nix
     ./steam.nix
     ./theme.nix
