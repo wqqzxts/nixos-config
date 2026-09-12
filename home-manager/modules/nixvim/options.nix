@@ -5,6 +5,10 @@
       loaded_ruby_provider = 0; # Ruby
       loaded_perl_provider = 0; # Perl
       loaded_python_provider = 0; # Python 2
+
+      # Do not conceal quotes in JSON files
+      vim_json_syntax_conceal = 0;
+      vim_json_conceal = 0;
     };
 
     clipboard = {
@@ -59,6 +63,10 @@
 
       textwidth = 0; # Maximum width of text that is being inserted.  A longer line will be
       #   broken after white space to get this width.
+
+      # Concealing (hides markup formatting characters like *, /, @code in neorg/markdown)
+      conceallevel = 2;
+      concealcursor = "nc";
 
       # Folding
       foldlevel = 99; # Folds with a level higher than this number will be closed

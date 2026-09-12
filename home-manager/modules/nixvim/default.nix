@@ -1,8 +1,7 @@
-{ inputs, ... }: {
+{ inputs, nixpkgs, ... }: {
   imports = [
     ./autocmds.nix
     ./completion.nix
-    ./keymap.nix
     ./keymap.nix
     ./options.nix
     ./perfomance.nix
@@ -11,8 +10,10 @@
 
   programs.nixvim = {
     enable = true;
-
-    nixpkgs.config.allowUnfree = true;
+    nixpkgs = {
+      source = inputs.nixpkgs;
+      useGlobalPackages = true;
+    };
 
     colorschemes.gruvbox-material-nvim.enable = true;
 

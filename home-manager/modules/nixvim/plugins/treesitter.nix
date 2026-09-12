@@ -9,9 +9,11 @@
         highlight.enable = true;
         indent.enable = true;
       };
-      folding.enable = true;
+      folding.enable = false;
     };
 
-    hmts.enable = true;
+    treesitter-context.enable = false;
+
+    hmts.enable = false;
   };
 }

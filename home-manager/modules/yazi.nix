@@ -1,63 +1,90 @@
 { pkgs, ... }: {
-  programs.yazi = {
-    enable = true;
-    theme = {
-      mgr = {
-        border_symbol = "│";
-        border_style = { type = "plain"; };
-      };
-      indicator = {
-        padding = { open = "█"; close = "█"; };
-      };
-      confirm = {
-        border = { type = "plain"; };
-      };
-      spot = {
-        border = { type = "plain"; };
-      };
-      pick = {
-        border = { type = "plain"; };
-      };
-      input = {
-        border = { type = "plain"; };
-      };
-      cmp = {
-        border = { type = "plain"; };
-      };
-      tasks = {
-        border = { type = "plain"; };
+programs.yazi = {
+  enable = true;
+
+  theme = {
+    mgr = {
+      border_symbol = "│";
+      border_style = { type = "plain"; };
+    };
+
+    indicator = {
+      padding = {
+        open = "█";
+        close = "█";
       };
     };
-    keymap = {
-      mgr.prepend_keymap = [
-        { run = "plugin chmod"; on = [ "c" "m" ]; }
-      ];
+
+    status = {
+      sep_left = { open = "▐"; close = "▌"; };
+      sep_right = { open = "▐"; close = "▌"; };
     };
-    settings = {
-      plugin.prepend_fetchers = [
-        {
-          group = "git";
-          url = "*";
-          run = "git";
-        }
-        {
-          group = "git";
-          url = "*/";
-          run = "git";
-        }
-      ];
+
+    confirm = {
+      border = { type = "plain"; };
     };
-    plugins = {
-      full-border = pkgs.yaziPlugins.full-border;
-      no-status = pkgs.yaziPlugins.no-status;
-      git = pkgs.yaziPlugins.git;
-      chmod = pkgs.yaziPlugins.chmod;
+
+    spot = {
+      border = { type = "plain"; };
     };
-    initLua = ''
-      require("full-border"):setup {
-        type = ui.Border.PLAIN,
+
+    pick = {
+      border = { type = "plain"; };
+    };
+
+    input = {
+      border = { type = "plain"; };
+    };
+
+    cmp = {
+      border = { type = "plain"; };
+    };
+
+    tasks = {
+      border = { type = "plain"; };
+    };
+  };
+
+  keymap = {
+    mgr.prepend_keymap = [
+      {
+        run = "plugin chmod";
+        on = [ "c" "m" ];
       }
-      require("git"):setup()
-    '';
+    ];
+  };
+
+  settings = {
+    plugin.prepend_fetchers = [
+      {
+        id = "git";
+        url = "*";
+        run = "git";
+        group = "git";
+      }
+      {
+        id = "git";
+        url = "*/";
+        run = "git";
+        group = "git";
+      }
+    ];
+  };
+
+  plugins = {
+    full-border = pkgs.yaziPlugins.full-border;
+  # no-status = pkgs.yaziPlugins.no-status;
+    git = pkgs.yaziPlugins.git;
+    chmod = pkgs.yaziPlugins.chmod;
+  };
+
+  initLua = ''
+    require("full-border"):setup {
+      type = ui.Border.PLAIN,
+    }
+    require("git"):setup()
+  '';
+
+
   };
 }

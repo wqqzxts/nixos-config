@@ -3,15 +3,16 @@
     enable = true;
 
     settings = {
-      options.globalstatus = true;
-      # TODO: find out the problem
-      section_separators = {
-        left = "│";
-        right = "│";
-      };
-      component_separators = {
-        left = "█";
-        right = "█";
+      options = {
+        globalstatus = true;
+        section_separators = {
+          left = "";
+          right = "";
+        };
+        component_separators = {
+          left = "│";
+          right = "│";
+        };
       };
 
       # +-------------------------------------------------+
@@ -48,7 +49,7 @@
               end
             '';
             icon = "";
-            color.fg = "#1d2021";
+            color.fg = "#d9c8a5";
           }
           "encoding"
           "fileformat"

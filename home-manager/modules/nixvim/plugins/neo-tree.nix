@@ -3,7 +3,7 @@
     keymaps = [
       {
         mode = "n";
-        key = "<leader>n";
+        key = "<leader>b";
         action = ":Neotree action=focus reveal toggle<CR>";
         options.silent = true;
       }
@@ -18,7 +18,7 @@
         window = {
           auto_expand_width = true;
           position = "right";
-          width = 30;
+          width = 57;
           mappings = {
             "h" = "close_node";
             "l" = "open";

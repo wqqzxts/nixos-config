@@ -3,7 +3,7 @@
     keymaps = [
       {
         mode = "n";
-        key = "<leader>n";
+        key = "<leader>b";
         action = "<cmd>NvimTreeFindFileToggle<CR>";
         options.silent = true;
       }
@@ -15,7 +15,7 @@
       settings = {
         view = {
           side = "right";
-          width = 30;
+          width = 57;
         };
         on_attach = {
           __raw = ''

@@ -5,16 +5,11 @@
 
       keymaps = {
         # Find files using Telescope command-line sugar.
-        "<leader>ff" = "find_files";
-        "<leader>fg" = "live_grep";
-        "<leader>b" = "buffers";
-        "<leader>fh" = "help_tags";
-        "<leader>fd" = "diagnostics";
-
-        # FZF like bindings
-        "<C-p>" = "git_files";
-        "<leader>p" = "oldfiles";
-        "<C-f>" = "live_grep";
+        "<leader>tf" = "find_files";
+        "<leader>tg" = "live_grep";
+        "<leader>tb" = "buffers";
+        "<leader>th" = "help_tags";
+        "<leader>td" = "diagnostics";
       };
 
       settings.defaults = {
@@ -35,7 +30,7 @@
     keymaps = [
       {
         mode = "n";
-        key = "<C-t>";
+        key = "<leader>tt";
         action.__raw = ''
           function()
             require('telescope.builtin').live_grep({
@@ -45,6 +40,48 @@
           end
         '';
         options.silent = true;
+      }
+      {
+        mode = "n";
+        key = "<leader>tG";
+        action.__raw = ''
+          function()
+            vim.ui.input({ prompt = "Grep in dir: ", completion = "dir" }, function(dir)
+              if dir and dir ~= "" then
+                local target = vim.fn.expand(dir)
+                require('telescope.builtin').live_grep({
+                  search_dirs = { target },
+                  prompt_title = "Live Grep (" .. dir .. ")"
+                })
+              end
+            end)
+          end
+        '';
+        options = {
+          silent = true;
+          desc = "Live grep in directory";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>tF";
+        action.__raw = ''
+          function()
+            vim.ui.input({ prompt = "Find files in dir: ", completion = "dir" }, function(dir)
+              if dir and dir ~= "" then
+                local target = vim.fn.expand(dir)
+                require('telescope.builtin').find_files({
+                  search_dirs = { target },
+                  prompt_title = "Find Files (" .. dir .. ")"
+                })
+              end
+            end)
+          end
+        '';
+        options = {
+          silent = true;
+          desc = "Find files in directory";
+        };
       }
     ];
   };

@@ -6,16 +6,20 @@
     lsp = {
       inlayHints.enable = true;
       servers = {
-        clangd.enable = true;
-        rust_analyzer.enable = true;
+        bashls.enable = true;
+        docker_compose_language_service.enable = true;
+        dockerls.enable = true;
+        helm_ls.enable = true;
+        nginx_language_server.enable = true;
+        nixd.enable = true;
+        pyright.enable = true;
+        sqls.enable = true;
+        terraformls.enable = true;
+        yamlls.enable = true;
         lua_ls = {
           enable = true;
           config.settings.diagnostics.globals = [ "vim" ];
         };
-        ts_ls.enable = true;
-        pyright.enable = true;
-        # nixd.enable = true;
-        omnisharp.enable = true;
       };
 
       keymaps =
@@ -35,7 +39,7 @@
             gD.lspBufAction = "references";
             gt.lspBufAction = "type_definition";
             gi.lspBufAction = "implementation";
-            # K.lspBufAction = "hover";
+            K.lspBufAction = "hover";
             "<F2>".lspBufAction = "rename";
           };
     };
@@ -46,7 +50,6 @@
         lspServersToEnable = "all";
       };
 
-      # Sane defaults for all servers
       lspconfig.enable = true;
     };
   };

@@ -46,6 +46,9 @@
               "<C-j>" = ":resize +2<CR>";
               "<C-h>" = ":vertical resize +2<CR>";
               "<C-l>" = ":vertical resize -2<CR>";
+
+              # toggle diff mode across windows
+              "<leader>dt" = ":lua if vim.wo.diff then vim.cmd('diffoff!') else local cur = vim.api.nvim_get_current_win(); vim.cmd('windo diffthis'); vim.api.nvim_set_current_win(cur) end<CR>";
             };
         visual =
           lib.mapAttrsToList

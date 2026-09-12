@@ -5,13 +5,19 @@
     mouse = true;
     escapeTime = 0;
     keyMode = "vi";
-    terminal = "screen-256color";
+    terminal = "tmux-256color";
     extraConfig = ''
+      set -g history-limit 10000
+
       set -g allow-passthrough on
       set -ga update-environment TERM
       set -ga update-environment TERM_PROGRAM
 
       set -as terminal-features ",alacritty*:RGB"
+      set -as terminal-features ",xterm-256color:RGB"
+      set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'
+      set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{1}%d::%p2%{1}%d::%p3%{1}%d;%m\E[pm'
+
       bind -n M-Space copy-mode -u
 
       bind -n M-1 select-window -t 1
@@ -39,23 +45,29 @@
 
       bind -n M-t new-window
       bind -n M-c kill-pane
-      bind -n M-q kill-window
+      bind -n M-q send-keys ""
       bind -n M-d detach
-      bind -n M-Q kill-session
+      bind -n M-Q kill-window
+
+      # block accidental shell-exit via Ctrl-D (EOF closes the pane), but
+      # let it through to nvim so it still works as half-page-down
+      bind -n C-d if-shell -F '#{==:#{pane_current_command},nvim}' 'send-keys C-d' 'send-keys ""'
     '';
     plugins = with pkgs; [
-      # tmuxPlugins.gruvbox
-      # {
-      #   plugin = tmuxPlugins.resurrect;
-      #   extraConfig = "set -g @resurrect-strategy-nvim 'session'";
-      # }
-      # {
-      #   plugin = tmuxPlugins.continuum;
-      #   extraConfig = ''
-      #     set -g @continuum-restore 'on'
-      #     set -g @continuum-save-interval '60' # minutes
-      #   '';
-      # }
+      {
+        plugin = tmuxPlugins.resurrect;
+        extraConfig = ''
+          set -g @resurrect-strategy-nvim 'session'
+          set -g @resurrect-capture-pane-contents 'on'
+        '';
+      }
+      {
+        plugin = tmuxPlugins.continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+          set -g @continuum-save-interval '15'
+        '';
+      }
     ];
   };
 }
