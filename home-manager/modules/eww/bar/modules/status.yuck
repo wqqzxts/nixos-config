@@ -280,7 +280,7 @@
     :action "~/.config/eww/bar/scripts/toggle-dnd.sh"
     :active {dnd.status == "on"}
     :icon {dnd.status == "on" ? "󰂛" : "󰂚"}
-    :label "DND"
+    :label "Focus"
   )
 )
 

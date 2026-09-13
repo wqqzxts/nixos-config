@@ -3,6 +3,7 @@ import Quickshell.Bluetooth
 import QtQuick
 import "../../Config"
 import "../../Widgets"
+import "../../Services"
 
 Item {
     id: page
@@ -76,10 +77,11 @@ Item {
 
             BarButton {
                 id: back
-                x: 10
+                x: 10 + Style.shadow
                 width: 40
                 hPadding: 0
                 anchors.verticalCenter: parent.verticalCenter
+                anchors.verticalCenterOffset: -Style.shadow / 2
                 text: "󰁍"
                 bg: Colors.base03
                 hoverBg: Colors.base0C
@@ -88,14 +90,16 @@ Item {
             }
             Label {
                 anchors.left: back.right
-                anchors.leftMargin: 10
+                anchors.leftMargin: 10 + Style.shadow
                 anchors.verticalCenter: parent.verticalCenter
+                anchors.verticalCenterOffset: -Style.shadow / 2
                 text: "Bluetooth"
             }
             BarButton {
                 anchors.right: parent.right
-                anchors.rightMargin: 10
+                anchors.rightMargin: 10 + Style.shadow
                 anchors.verticalCenter: parent.verticalCenter
+                anchors.verticalCenterOffset: -Style.shadow / 2
                 width: 70
                 text: page.btOn ? "on" : "off"
                 active: page.btOn
@@ -104,7 +108,7 @@ Item {
                 activeFg: Colors.base00
                 hoverBg: Colors.base0C
                 hoverFg: Colors.base00
-                onClicked: if (page.adapter) page.adapter.enabled = !page.adapter.enabled
+                onClicked: if (page.adapter) Rfkill.setBluetooth(!page.btOn)
             }
         }
 

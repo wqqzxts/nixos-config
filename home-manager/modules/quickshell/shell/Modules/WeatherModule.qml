@@ -9,8 +9,8 @@ BarModule {
     widgetWidth: 85
     borderColor: Colors.base0A
     menuBorder: false
-    menuGap: Style.spacing
-    menuSpacing: Style.spacing
+    menuGap: Style.spacing + Style.shadow
+    menuSpacing: Style.spacing + Style.shadow
 
     property string temp: ""
     property string ftemp: ""
@@ -76,6 +76,7 @@ BarModule {
             text: modelData.icon + " " + modelData.value
             bg: Colors.base00
             borderColor: Colors.base0A
+            pressable: false
         }
     }
 }

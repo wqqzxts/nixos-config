@@ -26,6 +26,7 @@ Item {
     default property alias menuContent: menuColumn.data
 
     readonly property int menuSide: menuBorder ? Style.border : 0
+    readonly property int menuBleed: menuBorder ? 0 : Style.shadow
     readonly property int innerWidth: widgetWidth - 2 * (menuSide + menuPadding)
 
     width: widgetWidth
@@ -35,10 +36,16 @@ Item {
         onHoveredChanged: mod.hovered = hovered
     }
 
+    Ledge {
+        width: mod.widgetWidth
+        height: widgetBox.height + (mod.menuBorder ? menuClip.height : 0)
+        color: Colors.ledge(mod.borderColor)
+    }
+
     Rectangle {
         id: widgetBox
         width: mod.widgetWidth
-        height: Style.barHeight - Style.barPadding
+        height: Style.barHeight - Style.barPadding - Style.shadow
         color: Qt.alpha(mod.background, Style.bgAlpha)
         border.width: Style.border
         border.color: mod.borderColor
@@ -53,8 +60,9 @@ Item {
     Item {
         id: menuClip
         clip: true
+        x: -mod.menuBleed
         y: widgetBox.height
-        width: mod.widgetWidth
+        width: mod.widgetWidth + 2 * mod.menuBleed
         height: Math.round(mod.progress * menuBox.height)
 
         Rectangle {
@@ -62,7 +70,7 @@ Item {
             anchors.bottom: parent.bottom
             width: parent.width
             clip: true
-            height: menuColumn.height + mod.menuSide + 2 * mod.menuPadding + mod.menuGap
+            height: menuColumn.height + mod.menuSide + 2 * mod.menuPadding + mod.menuGap + mod.menuBleed
             Behavior on height {
                 NumberAnimation { duration: Style.animDuration; easing.type: Easing.BezierSpline; easing.bezierCurve: Style.closeCurve }
             }
@@ -74,7 +82,7 @@ Item {
 
             Column {
                 id: menuColumn
-                x: mod.menuSide + mod.menuPadding
+                x: mod.menuBleed + mod.menuSide + mod.menuPadding
                 y: mod.menuGap + mod.menuPadding
                 width: mod.innerWidth
                 spacing: mod.menuSpacing

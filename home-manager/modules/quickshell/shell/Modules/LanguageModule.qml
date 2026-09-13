@@ -10,8 +10,8 @@ BarModule {
     widgetWidth: 85
     borderColor: Colors.base0D
     menuBorder: false
-    menuGap: Style.spacing
-    menuSpacing: Style.spacing
+    menuGap: Style.spacing + Style.shadow
+    menuSpacing: Style.spacing + Style.shadow
 
     readonly property var names: Niri.keyboardNames
     readonly property int current: Niri.keyboardIndex

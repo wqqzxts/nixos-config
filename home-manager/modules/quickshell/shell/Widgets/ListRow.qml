@@ -12,7 +12,7 @@ Rectangle {
     signal rightClicked()
 
     implicitHeight: 36
-    color: mouse.containsMouse ? Colors.base02 : (highlighted ? Colors.base01 : "transparent")
+    color: mouse.containsMouse ? Colors.base02 : (highlighted ? Colors.base01 : Qt.alpha(Colors.base02, 0))
     Behavior on color { ColorAnimation { duration: Style.colorDuration; easing.type: Easing.BezierSpline; easing.bezierCurve: Style.closeCurve } }
 
     Rectangle {

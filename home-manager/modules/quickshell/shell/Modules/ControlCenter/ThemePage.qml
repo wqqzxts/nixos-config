@@ -31,10 +31,11 @@ Item {
 
             BarButton {
                 id: back
-                x: 10
+                x: 10 + Style.shadow
                 width: 40
                 hPadding: 0
                 anchors.verticalCenter: parent.verticalCenter
+                anchors.verticalCenterOffset: -Style.shadow / 2
                 text: "󰁍"
                 bg: Colors.base03
                 hoverBg: Colors.base0C
@@ -43,14 +44,16 @@ Item {
             }
             Label {
                 anchors.left: back.right
-                anchors.leftMargin: 10
+                anchors.leftMargin: 10 + Style.shadow
                 anchors.verticalCenter: parent.verticalCenter
+                anchors.verticalCenterOffset: -Style.shadow / 2
                 text: "Theme"
             }
             BarButton {
                 anchors.right: parent.right
-                anchors.rightMargin: 10
+                anchors.rightMargin: 10 + Style.shadow
                 anchors.verticalCenter: parent.verticalCenter
+                anchors.verticalCenterOffset: -Style.shadow / 2
                 width: 100
                 text: page.dark ? "󰖔 dark" : "󰖨 light"
                 bg: Colors.base03

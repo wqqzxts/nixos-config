@@ -9,9 +9,9 @@ PanelWindow {
     id: win
 
     readonly property int hidden: Math.max(0, Notifs.popups.length - Notifs.popupLimit)
-    readonly property int edge: 10
+    readonly property int edge: 5
     readonly property int overshootRoom: 20
-    readonly property int cardMaxWidth: 400
+    readonly property int cardMaxWidth: 400 + 2 * Style.shadow
 
     readonly property int needed: stack.contentBottom
     property int shownHeight: 1
@@ -98,22 +98,36 @@ PanelWindow {
             }
         }
 
-        Rectangle {
+        Item {
             visible: win.hidden > 0
             x: win.width - win.edge - width
-            width: hiddenLabel.implicitWidth + 30
-            height: hiddenLabel.implicitHeight + 30
-            color: Qt.alpha(Colors.base00, Style.bgAlpha)
-            border.width: 5
-            border.color: Colors.base05
-            Text {
-                id: hiddenLabel
-                anchors.centerIn: parent
-                font.family: "monospace"
-                font.pointSize: 16
-                font.bold: true
-                color: Colors.base05
-                text: "(" + win.hidden + " more)"
+            width: moreFace.width + 2 * Style.shadow
+            height: moreFace.height + Style.shadow
+
+            Ledge {
+                x: Style.shadow
+                width: moreFace.width
+                height: moreFace.height
+                color: Colors.ledge(Colors.base05)
+            }
+
+            Rectangle {
+                id: moreFace
+                x: Style.shadow
+                width: hiddenLabel.implicitWidth + 30
+                height: hiddenLabel.implicitHeight + 30
+                color: Qt.alpha(Colors.base00, Style.bgAlpha)
+                border.width: 5
+                border.color: Colors.base05
+                Text {
+                    id: hiddenLabel
+                    anchors.centerIn: parent
+                    font.family: "monospace"
+                    font.pointSize: 16
+                    font.bold: true
+                    color: Colors.base05
+                    text: "(" + win.hidden + " more)"
+                }
             }
         }
     }

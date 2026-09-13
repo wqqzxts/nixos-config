@@ -6,6 +6,7 @@ import Quickshell.Bluetooth
 import Quickshell.Services.Pipewire
 import Quickshell.Services.SystemTray
 import QtQuick
+import QtQuick.Effects
 import "../Config"
 import "../Services"
 import "../Widgets"
@@ -151,7 +152,7 @@ BarModule {
     }
 
     component SettingButton: BarButton {
-        width: (settings.width - 20 - 10) / 2
+        width: (settings.width - 2 * settings.margin - grid.columnSpacing) / 2
         textAlign: Text.AlignLeft
         bg: Colors.base03
         fg: Colors.base05
@@ -204,16 +205,17 @@ BarModule {
         visible: controlCenter.page === "main"
         width: parent.width
         height: implicitHeight
-        implicitHeight: Style.border + 10 + grid.implicitHeight + Style.spacing + themeBtn.implicitHeight + 10
+        readonly property int margin: 10 + Style.shadow
+        implicitHeight: Style.border + 10 + grid.implicitHeight + Style.shadow + 10
 
         Rectangle { width: parent.width; height: Style.border; color: Colors.base0C }
 
         Grid {
             id: grid
-            x: 10; y: Style.border + 10
+            x: settings.margin; y: Style.border + 10
             columns: 2
-            columnSpacing: 10
-            rowSpacing: Style.spacing
+            columnSpacing: 10 + 2 * Style.shadow
+            rowSpacing: Style.spacing + Style.shadow
 
             SettingButton {
                 text: controlCenter.networkIcon("󰤫") + "  " + (!controlCenter.wifiOn ? "Wi-Fi off" : (controlCenter.essid === "" ? "not connected" : controlCenter.essid))
@@ -226,25 +228,27 @@ BarModule {
                 onClicked: controlCenter.page = "bt"
             }
             SettingButton {
-                text: (controlCenter.dnd ? "󰂛" : "󰂚") + "  DND"
+                text: (controlCenter.dnd ? "󰂛" : "󰂚") + "  Focus"
                 active: controlCenter.dnd
                 onClicked: Notifs.dnd = !Notifs.dnd
             }
             SettingButton {
+                text: (Rfkill.airplane ? "󰀝" : "󰀞") + "  Airplane"
+                active: Rfkill.airplane
+                onClicked: Rfkill.setAirplane(!Rfkill.airplane)
+            }
+            SettingButton {
                 text: "󰈉  Hide Bar"
-                active: true
+                bg: Colors.base0B
+                fg: Colors.base00
                 onClicked: controlCenter.hideRequested()
             }
-        }
-
-        SettingButton {
-            id: themeBtn
-            x: 10
-            y: grid.y + grid.implicitHeight + Style.spacing
-            width: settings.width - 20
-            text: "󰏘  Theme center"
-            active: true
-            onClicked: controlCenter.page = "theme"
+            SettingButton {
+                text: "󰏘  Theme center"
+                bg: Colors.base0B
+                fg: Colors.base00
+                onClicked: controlCenter.page = "theme"
+            }
         }
     }
 
@@ -374,10 +378,30 @@ BarModule {
                         required property var modelData
                         width: parent.width / Math.max(1, SystemTray.items.values.length)
                         height: parent.height
+                        readonly property bool symbolic: String(modelData.icon).includes("-symbolic")
                         IconImage {
+                            id: trayIcon
                             anchors.centerIn: parent
                             implicitSize: 24
                             source: slot.modelData.icon
+                        }
+                        ShaderEffectSource {
+                            id: trayMask
+                            sourceItem: trayIcon
+                            hideSource: slot.symbolic
+                            visible: false
+                        }
+                        Rectangle {
+                            anchors.fill: trayIcon
+                            visible: slot.symbolic
+                            color: Colors.base05
+                            layer.enabled: true
+                            layer.effect: MultiEffect {
+                                maskEnabled: true
+                                maskSource: trayMask
+                                maskThresholdMin: 0.5
+                                maskSpreadAtMin: 1.0
+                            }
                         }
                         MouseArea {
                             anchors.fill: parent

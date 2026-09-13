@@ -97,7 +97,8 @@ PanelWindow {
         Row {
             id: leftRow
             anchors.left: parent.left
-            spacing: Style.spacing
+            anchors.leftMargin: Style.shadow
+            spacing: Style.spacing + 2 * Style.shadow
             PowerModule { id: power }
             ClockModule { id: clock }
             WeatherModule { id: weather }
@@ -111,7 +112,8 @@ PanelWindow {
         Row {
             id: rightRow
             anchors.right: parent.right
-            spacing: Style.spacing
+            anchors.rightMargin: Style.shadow
+            spacing: Style.spacing + 2 * Style.shadow
             LanguageModule { id: language }
             ControlCenterModule {
                 id: controlCenter

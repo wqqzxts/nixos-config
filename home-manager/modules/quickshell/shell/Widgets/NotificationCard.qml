@@ -5,23 +5,23 @@ import "../Config"
 import "../Services"
 import "spring.js" as Spring
 
-Rectangle {
+Item {
     id: card
 
     required property NotifEntry entry
     readonly property int frame: 5
     readonly property int pad: 10
+    readonly property int depth: Style.shadow
     readonly property int minWidth: 200
     readonly property int maxWidth: 400
     readonly property bool hasIcon: entry.icon !== ""
     readonly property int iconSpan: hasIcon ? 64 + pad : 0
     readonly property int maxTextWidth: maxWidth - 2 * (frame + pad) - iconSpan
 
-    color: Qt.alpha(Colors.base00, Style.bgAlpha)
-    border.width: frame
-    border.color: Notifs.frameColor(entry.urgency)
-    width: Math.max(minWidth, Math.min(maxWidth, textCol.implicitWidth + iconSpan + 2 * (frame + pad)))
-    height: Math.max(hasIcon ? 64 : 0, textCol.implicitHeight) + 2 * (frame + pad)
+    readonly property int faceWidth: Math.max(minWidth, Math.min(maxWidth, textCol.implicitWidth + iconSpan + 2 * (frame + pad)))
+    readonly property int faceHeight: Math.max(hasIcon ? 64 : 0, textCol.implicitHeight) + 2 * (frame + pad)
+    width: faceWidth + 2 * depth
+    height: faceHeight + depth
 
     readonly property var spring: Spring.make(Style.springStiffness, Style.springDamping, Style.springEpsilon)
     property real openT: 0
@@ -52,40 +52,56 @@ Rectangle {
     }
     Component.onCompleted: if (entry.closing) closeAnim.start()
 
-    IconImage {
-        x: card.frame + card.pad
-        y: card.frame + card.pad
-        implicitSize: 64
-        visible: card.hasIcon
-        source: card.entry.icon
+    Ledge {
+        x: card.depth
+        width: card.faceWidth
+        height: card.faceHeight
+        color: Colors.ledge(Notifs.frameColor(card.entry.urgency))
     }
 
-    Column {
-        id: textCol
-        x: card.frame + card.pad + card.iconSpan
-        y: card.frame + card.pad
-        width: Math.min(implicitWidth, card.maxTextWidth)
+    Rectangle {
+        x: card.depth
+        width: card.faceWidth
+        height: card.faceHeight
+        color: Qt.alpha(Colors.base00, Style.bgAlpha)
+        border.width: card.frame
+        border.color: Notifs.frameColor(card.entry.urgency)
 
-        Text {
-            width: Math.min(implicitWidth, card.maxTextWidth)
-            font.family: "monospace"
-            font.pointSize: 22
-            font.bold: true
-            color: Colors.base05
-            wrapMode: Text.Wrap
-            text: (card.entry.count > 1 ? "(" + card.entry.count + ") " : "") + card.entry.summary
+        IconImage {
+            x: card.frame + card.pad
+            y: card.frame + card.pad
+            implicitSize: 64
+            visible: card.hasIcon
+            source: card.entry.icon
         }
-        Text {
+
+        Column {
+            id: textCol
+            x: card.frame + card.pad + card.iconSpan
+            y: card.frame + card.pad
             width: Math.min(implicitWidth, card.maxTextWidth)
-            visible: card.entry.body !== ""
-            font.family: "monospace"
-            font.pointSize: 16
-            color: Colors.base05
-            wrapMode: Text.Wrap
-            textFormat: Text.StyledText
-            maximumLineCount: 8
-            elide: Text.ElideRight
-            text: card.entry.body
+
+            Text {
+                width: Math.min(implicitWidth, card.maxTextWidth)
+                font.family: "monospace"
+                font.pointSize: 22
+                font.bold: true
+                color: Colors.base05
+                wrapMode: Text.Wrap
+                text: (card.entry.count > 1 ? "(" + card.entry.count + ") " : "") + card.entry.summary
+            }
+            Text {
+                width: Math.min(implicitWidth, card.maxTextWidth)
+                visible: card.entry.body !== ""
+                font.family: "monospace"
+                font.pointSize: 16
+                color: Colors.base05
+                wrapMode: Text.Wrap
+                textFormat: Text.StyledText
+                maximumLineCount: 8
+                elide: Text.ElideRight
+                text: card.entry.body
+            }
         }
     }
 

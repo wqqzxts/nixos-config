@@ -16,12 +16,21 @@ in
         { proportion = 1.0; }
       ];
 
-      gaps = 5;
+      gaps = 15;
       struts = {
-        left = -5;
-        right = -5;
-        top = -5;
+        left = -10;
+        right = -10;
+        top = -15;
         bottom = -5;
+      };
+
+      shadow = {
+        enable = true;
+        softness = 0;
+        spread = 5;
+        offset = { x = 0; y = 5; };
+        color = config.lib.theme.ledge "base05";
+        inactive-color = config.lib.theme.ledge "base03";
       };
 
       focus-ring = {

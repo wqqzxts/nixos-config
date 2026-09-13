@@ -215,6 +215,8 @@ BarModule {
             Item { width: 1; height: 10 }
             BarButton {
                 anchors.right: parent.right
+                pressable: false
+                anchors.rightMargin: Style.shadow
                 text: dashboard.player ? (dashboard.player.desktopEntry || dashboard.player.identity.toLowerCase()) : ""
                 bg: Colors.base0B
                 fg: Colors.base00
@@ -255,12 +257,13 @@ BarModule {
         id: buttons
         width: parent.width
         height: implicitHeight
-        implicitHeight: row.implicitHeight + 2 * 8
+        implicitHeight: row.implicitHeight + 2 * 8 + Style.shadow
 
         Row {
             id: row
             anchors.centerIn: parent
-            spacing: 10
+            anchors.verticalCenterOffset: -Style.shadow / 2
+            spacing: 10 + 2 * Style.shadow
             Repeater {
                 model: [
                     { icon: "󰒮", act: () => dashboard.player.previous() },

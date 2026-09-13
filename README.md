@@ -13,7 +13,7 @@ Welcome to my NixOS configuration.
 - 🏠 **[Home Manager Integration](https://nix-community.github.io/home-manager/)**: Configured for managing the home environment.
 - 🎨 **[Gruvbox Material Theme](https://github.com/sainnhe/gruvbox-material)**: A perfect blend of vibrant and subtle colors.
 - 🕯️ **[Niri](https://github.com/YaLTeR/niri)**: A scrollable-tiling Wayland compositor.
-- 📊 **[Eww](https://github.com/elkowar/eww):** A standalone widget system made.
+- 📊 **[Quickshell](https://quickshell.org/):** A QtQuick-based desktop shell toolkit powering the bar, notifications and theme center.
 - 📨 **[Dunst](https://github.com/dunst-project/dunst):** Lightweight and customizable notification daemon.
 - 🔒 **[Hyprlock](https://hyprland.org/docs/ecosystem/hyprlock/):** The native screen locker for Hyprland, showing a blurred background and the current time.
 - 🚄 **[Alacritty](https://alacritty.org/):** A blazing fast and GPU-accelerated terminal emulator.

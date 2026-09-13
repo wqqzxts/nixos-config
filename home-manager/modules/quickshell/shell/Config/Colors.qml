@@ -58,13 +58,14 @@ Singleton {
     }
 
     function reload() { file.reload() }
+    function ledge(c) { return Qt.darker(c, Style.ledgeDarken) }
 
     function apply(json) {
         let t
         try { t = JSON.parse(json) } catch (e) { console.warn("theme.json unreadable:", e); return }
         if (t.style) style = t.style
         if (t.polarity) polarity = t.polarity
-        if (Array.isArray(t.styles)) styles = t.styles
+        if (Array.isArray(t.styles) && JSON.stringify(t.styles) !== JSON.stringify(styles)) styles = t.styles
         for (const k in (t.colors || {})) {
             if (k in colors && /^base0[0-9A-F]$/.test(k)) colors[k] = t.colors[k]
         }

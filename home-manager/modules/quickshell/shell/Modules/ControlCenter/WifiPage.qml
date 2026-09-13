@@ -68,7 +68,6 @@ Item {
             .filter(n => n.name !== "")
             .sort((a, b) => (b.connected - a.connected)
                 || (b.known - a.known)
-                || (Math.floor(b.signalStrength * 4) - Math.floor(a.signalStrength * 4))
                 || a.name.localeCompare(b.name))
     }
 
@@ -84,10 +83,11 @@ Item {
 
             BarButton {
                 id: back
-                x: 10
+                x: 10 + Style.shadow
                 width: 40
                 hPadding: 0
                 anchors.verticalCenter: parent.verticalCenter
+                anchors.verticalCenterOffset: -Style.shadow / 2
                 text: "󰁍"
                 bg: Colors.base03
                 hoverBg: Colors.base0C
@@ -96,14 +96,16 @@ Item {
             }
             Label {
                 anchors.left: back.right
-                anchors.leftMargin: 10
+                anchors.leftMargin: 10 + Style.shadow
                 anchors.verticalCenter: parent.verticalCenter
+                anchors.verticalCenterOffset: -Style.shadow / 2
                 text: "Wi-Fi"
             }
             BarButton {
                 anchors.right: parent.right
-                anchors.rightMargin: 10
+                anchors.rightMargin: 10 + Style.shadow
                 anchors.verticalCenter: parent.verticalCenter
+                anchors.verticalCenterOffset: -Style.shadow / 2
                 width: 70
                 text: page.wifiOn ? "on" : "off"
                 active: page.wifiOn

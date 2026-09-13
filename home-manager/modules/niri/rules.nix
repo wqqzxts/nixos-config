@@ -57,6 +57,7 @@ in
         matches = [ { app-id = "^ueberzugpp_"; } ];
         border.enable = false;
         focus-ring.enable = false;
+        shadow.enable = false;
       }
     ];
   };

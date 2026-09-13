@@ -26,7 +26,7 @@ let
 
   themeScript = pkgs.writeShellApplication {
     name = "theme";
-    runtimeInputs = with pkgs; [ jq dconf libnotify coreutils findutils procps util-linux neovim-unwrapped ];
+    runtimeInputs = with pkgs; [ jq dconf coreutils findutils procps util-linux neovim-unwrapped ];
     text = ''
       state="$HOME/.config/quickshell/theme.json"
       profiles="$HOME/.local/state/nix/profiles"
@@ -46,7 +46,7 @@ let
       }
 
       activate() {
-        local style="$1" polarity="$2" name="$1-$2" base act
+        local polarity="$2" name="$1-$2" base act
         base=$(base_generation)
         if [ "$name" = "$default_variant" ]; then act="$base/activate"; else act="$base/specialisation/$name/activate"; fi
         [ -x "$act" ] || { echo "theme: unknown variant $name" >&2; exit 1; }
@@ -68,7 +68,6 @@ let
           setsid -f spotify >/dev/null 2>&1 || true
         fi
         shell-ipc transition end >/dev/null 2>&1 || true
-        notify-send -a theme "Theme" "$style $polarity"
       }
 
       case "''${1:-status}" in
@@ -95,6 +94,13 @@ in
   config = {
     theme.style = default.style;
     theme.wallpapers = wallpaperDir default.style default.polarity;
+    lib.theme.ledge = base:
+      let
+        c = config.lib.stylix.colors;
+      in
+      "#" + lib.concatMapStrings (ch:
+        lib.fixedWidthString 2 "0" (lib.toLower (lib.toHexString (builtins.floor (lib.toInt c."${base}-rgb-${ch}" / 1.25))))
+      ) [ "r" "g" "b" ];
     stylix.polarity = default.polarity;
     stylix.base16Scheme = schemeFile styles.${default.style}.${default.polarity};
 

@@ -8,11 +8,12 @@ BarModule {
     background: Colors.base08
     borderColor: Colors.redDark
     menuBorder: false
-    menuGap: Style.spacing
-    menuSpacing: Style.spacing
+    menuGap: Style.spacing + Style.shadow
+    menuSpacing: Style.spacing + Style.shadow
 
     widgetContent: Label {
         anchors.fill: parent
+        font.pointSize: Style.fontSize * 1.25
         text: ""
         color: Colors.base00
     }

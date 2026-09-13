@@ -10,8 +10,8 @@ BarModule {
     background: Colors.base08
     borderColor: Colors.redDark
     menuBorder: false
-    menuGap: Style.spacing
-    menuSpacing: Style.spacing
+    menuGap: Style.spacing + Style.shadow
+    menuSpacing: Style.spacing + Style.shadow
 
     readonly property var device: UPower.displayDevice
     readonly property int capacity: device ? Math.round(device.percentage * 100) : 0
