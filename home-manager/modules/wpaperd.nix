@@ -1,11 +1,11 @@
-{
+{ config, ... }: {
   services.wpaperd = {
     enable = true;
     settings = {
       eDP-1 = {
-        path = ../../assets;
+        path = config.theme.wallpapers;
         duration = "30s";
-        mode = "fit";
+        mode = "center";
         transition-time = 650;
       };
     };

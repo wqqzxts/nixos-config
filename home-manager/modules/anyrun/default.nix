@@ -1,6 +1,9 @@
-{ inputs, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 let
   anyrunPkgs = inputs.anyrun.packages.${pkgs.stdenv.hostPlatform.system};
+  style = pkgs.replaceVars ./style.css {
+    inherit (config.lib.stylix.colors.withHashtag) base00 base03 base05 base08 base0D;
+  };
 in
 {
   programs.anyrun = {
@@ -28,6 +31,6 @@ in
       ];
     };
 
-    extraCss = builtins.readFile ./style.css;
+    extraCss = builtins.readFile style;
   };
 }

@@ -1,5 +1,5 @@
 (defvar languagerev false)
-(defpoll language :initial "" :interval "1s" "~/.config/eww/bar/scripts/get-kb.sh")
+(deflisten language :initial "" "~/.config/eww/bar/scripts/get-kb.sh")
 
 (defwidget widget-language []
   (eventbox

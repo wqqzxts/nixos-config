@@ -12,13 +12,10 @@
           options.silent = true;
         })
         {
-          # add current file
           "<C-e>a" = "function() require'harpoon':list():add() end";
 
-          # open menu
           "<C-e>f" = "function() require'harpoon'.ui:toggle_quick_menu(require'harpoon':list()) end";
 
-          # navigation
           "<leader>1" = "function() require'harpoon':list():select(1) end";
           "<leader>2" = "function() require'harpoon':list():select(2) end";
           "<leader>3" = "function() require'harpoon':list():select(3) end";

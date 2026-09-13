@@ -1,15 +1,36 @@
-{ pkgs, ... }: {
+{ config, lib, pkgs, ... }:
+let
+  colors = config.lib.stylix.colors.withHashtag;
+  baseNames = map (n: "base0${n}") (lib.stringToCharacters "0123456789ABCDEF");
+
+  colorsScss = pkgs.writeText "eww-colors.scss" (
+    lib.concatMapStringsSep "\n" (n: "\$${n}: ${colors.${n}};") baseNames
+    + "\n$red-dark: darken($base08, 10%);\n"
+  );
+
+  configDir = pkgs.runCommand "eww-config" { } ''
+    cp -r ${./.} $out
+    chmod -R u+w $out
+    rm -f $out/default.nix
+    cp ${colorsScss} $out/colors.scss
+  '';
+
+  windows = "ewwbar window-power window-clock window-weather window-cava window-language window-status window-battery";
+in
+{
   programs.eww.enable = true;
 
-  # configDir was removed from home-manager and its replacements (yuckConfig/
-  # scssConfig) can't handle a multi-file config, so link the directory directly
-  xdg.configFile."eww".source = ./.;
+  xdg.configFile."eww".source = configDir;
 
-  # real executable so niri autostart (spawn can't see shell aliases) and the
-  # terminal both work
   home.packages = [
     (pkgs.writeShellScriptBin "ewwbar" ''
-      eww open ewwbar && eww open window-power && eww open window-clock && eww open window-weather && eww open window-cava && eww open window-language && eww open window-status && eww open window-battery
+      eww open-many ${windows}
     '')
   ];
+
+  home.activation.reloadEww = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    if ${config.programs.eww.package}/bin/eww ping >/dev/null 2>&1; then
+      run ${config.programs.eww.package}/bin/eww reload
+    fi
+  '';
 }

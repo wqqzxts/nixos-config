@@ -1,7 +1,6 @@
   programs.firefox = {
     enable = true;
     policies = {
-      # privacy
       DisableEncryptedClientHello = false;
       DisableFirefoxScreenshots = true;
       DisableFirefoxStudies = true;
@@ -23,7 +22,6 @@
       };
       HttpsOnlyMode = "force_enabled";
       Preferences = {
-        # privacy
         "toolkit.crashreporter.infoURL" = "";
         "toolkit.telemetry.bhrPing.enabled" = false;
         "toolkit.telemetry.cachedClientID" = "";
@@ -49,10 +47,6 @@
         "dom.ipc.plugins.flash.subprocess.crashreporter.enabled" = false;
         "dom.ipc.plugins.reportCrashURL" = false;
 
-        /*
-        my own settings (edit with your own needs)
-        source: https://mozilla.github.io/policy-templates/#preferences
-        */
         # "browser.ctrlTab.recentlyUsedOrder" = false;
         # "browser.search.region" = "US";
         # "browser.search.suggest.enabled" = false;
@@ -69,7 +63,6 @@
         # "dom.forms.autocomplete.formautofill" = false;
       };
 
-      # nixos specific settings
       BlockAboutAddons = true;
       BlockAboutConfig = true;
       BlockAboutProfiles = true;
@@ -80,13 +73,8 @@
       DisableSystemAddonUpdate = false;
       ExtensionUpdate = true;
 
-      # convenient stuff
       NoDefaultBookmarks = true;
 
-      /*
-      my own settings (edit with your own needs)
-      source: https://mozilla.github.io/policy-templates/
-      */
       # AutofillAddressEnabled = false;
       # AutofillCreditCardEnabled = false;
       # Bookmarks = [
@@ -172,50 +160,42 @@
       # };
       # TranslateEnabled = false;
 
-      # mozilla addons
       ExtensionSettings = {
-        # ublock
         "uBlock0@raymondhill.net" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
           installation_mode = "force_installed";
           private_browsing = true;
           default_area = "menupanel";
         };
-        # privacy badger
         "jid1-MnnxcxisBPnSXQ@jetpack" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/latest.xpi";
           installation_mode = "force_installed";
           private_browsing = true;
           default_area = "menupanel";
         };
-        # decentraleyes
         "jid1-BoFifL9Vbdl2zQ@jetpack" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/decentraleyes/latest.xpi";
           installation_mode = "force_installed";
           private_browsing = true;
           default_area = "menupanel";
         };
-        # i still don't care about cookies
         "idcac-pub@guus.ninja" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/istilldontcareaboutcookies/latest.xpi";
           installation_mode = "force_installed";
           private_browsing = true;
           default_area = "menupanel";
         };
-        # bitwarden
         "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
           installation_mode = "force_installed";
           default_area = "menupanel";
         };
-        # vimium
         "{d7742d87-e61d-4b78-b8a1-b469842139fa}" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/vimium-ff/latest.xpi";
           installation_mode = "force_installed";
           private_browsing = true;
           default_area = "menupanel";
         };
-        # gruvbox-material theme
         "{1e01c787-99d2-4826-86df-0003da8e88cd}" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/gruvbox-material-theme/latest.xpi";
           installation_mode = "force_installed";

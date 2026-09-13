@@ -1,12 +1,12 @@
 .bar-sts {
-  background-color: #292828;
-  color: #ddc7a1;
-  border: solid 5px #89b482;
+  background-color: $base00;
+  color: $base05;
+  border: solid 5px $base0C;
   padding: 5px 10px;
 }
 
 .sm-ph_sts {
-  border: 5px solid #89b482;
+  border: 5px solid $base0C;
   border-top: 0px;
 }
 
@@ -19,19 +19,19 @@
 }
 
 .sm-el_sts-vol-sldr highlight {
-  background-color: #89b482;
+  background-color: $base0C;
   border-radius: 0px;
   min-height: 10px;
 }
 
 .sm-el_sts-vol-sldr trough {
-  background-color: #665c54;
+  background-color: $base03;
   border-radius: 0px;
   min-height: 10px;
 }
 
 .sm-el_sts-vol-sldr slider {
-  background-color: #a9b665;
+  background-color: $base0B;
   border-radius: 0px;
   min-width: 5px;
   min-height: 20px;
@@ -48,19 +48,19 @@
 }
 
 .sm-el_sts-brt-sldr highlight {
-  background-color: #89b482;
+  background-color: $base0C;
   border-radius: 0px;
   min-height: 10px;
 }
 
 .sm-el_sts-brt-sldr trough {
-  background-color: #665c54;
+  background-color: $base03;
   border-radius: 0px;
   min-height: 10px;
 }
 
 .sm-el_sts-brt-sldr slider {
-  background-color: #a9b665;
+  background-color: $base0B;
   border-radius: 0px;
   min-width: 5px;
   min-height: 20px;
@@ -69,29 +69,39 @@
 }
 
 .sm-ph_sts-set {
-  border-top: 5px solid #89b482;
+  border-top: 5px solid $base0C;
   padding: 10px;
 }
 
-.sm-el_sts-set-btn {
-  background-color: #a9b665;
-  color: #292828;
+.sm-el_sts-set-btn,
+.sm-el_sts-set-btn-active {
+  background-color: $base03;
+  color: $base05;
   border-radius: 0;
   margin-bottom: 5px;
 }
 
-.sm-el_sts-set-btn:first-child {
+.sm-el_sts-set-btn-active {
+  background-color: $base0B;
+  color: $base00;
+}
+
+.sm-el_sts-set-btn:first-child,
+.sm-el_sts-set-btn-active:first-child {
   margin-left: 10px;
   margin-right: 5px;
 }
 
-.sm-el_sts-set-btn:last-child {
+.sm-el_sts-set-btn:last-child,
+.sm-el_sts-set-btn-active:last-child {
   margin-left: 5px;
   margin-right: 10px;
 }
 
-.sm-el_sts-set-btn:hover {
-  background-color: #89b482;
+.sm-el_sts-set-btn:hover,
+.sm-el_sts-set-btn-active:hover {
+  background-color: $base0C;
+  color: $base00;
 }
 
 .sm-el_sts-set-btn-lbl-l {
@@ -99,7 +109,7 @@
 }
 
 .sm-ph_sts-set-tray {
-  border: 5px solid #89b482;
+  border: 5px solid $base0C;
   margin: 10px 10px 20px 10px;
   padding: 10px 5px;
 }

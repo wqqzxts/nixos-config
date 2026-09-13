@@ -1,7 +1,7 @@
 (defvar statusrev false)
-(deflisten network :initial '{"essid": "lo", "signal": ""}' "~/.config/eww/bar/scripts/get-network.sh")
+(deflisten network :initial '{"wifi": "disabled", "wired": false, "essid": "", "signal": 0}' "~/.config/eww/bar/scripts/get-network.sh")
 (deflisten bluetooth :initial '{"status": "off"}' "~/.config/eww/bar/scripts/get-bluetooth.sh")
-(defpoll dnd :initial '{"status": "off"}' :interval "1s" "~/.config/eww/bar/scripts/get-dnd.sh")
+(deflisten dnd :initial '{"status": "off"}' "~/.config/eww/bar/scripts/get-dnd.sh")
 (deflisten volume :initial "0" "~/.config/eww/bar/scripts/get-volume.sh")
 (deflisten brightness :initial "0" "~/.config/eww/bar/scripts/get-brightness.sh")
 (defwidget state-icon [condition text]
@@ -28,19 +28,23 @@
   )
 )
 
-(defwidget widget-network []
-  (state-icon
-    :condition true
+(defwidget network-icon []
+  (label
+    :valign "center"
     :text
       {
-        network.essid == "lo" ? "󰤭" :
-        network.signal == "" ? "󰤩" :
+        network.wired ? "󰈀" :
+        network.wifi != "enabled" ? "󰤮" :
+        network.essid == "" ? "󰤯" :
         network.signal < 25 ? "󰤟" :
         network.signal < 50 ? "󰤢" :
         network.signal < 75 ? "󰤥" :
         "󰤨"
       }
   )
+)
+(defwidget widget-network []
+  (network-icon)
 )
 (defwidget widget-bluetooth []
   (state-icon
@@ -215,9 +219,9 @@
   )
 )
 
-(defwidget button-status-settings [action icon label]
+(defwidget button-status-settings [action icon label active]
   (button
-    :class "sm-el_sts-set-btn"
+    :class "sm-el_sts-set-btn${active ? '-active' : ''}"
     :onclick {action}
     (box
       :orientation "h"
@@ -242,24 +246,31 @@
 
 (defwidget setting-network []
   (button-status-settings
-    :action "nmcli connection down id ${network.essid}"
+    :action "~/.config/eww/bar/scripts/toggle-network.sh"
+    :active {network.wifi == "enabled"}
     :icon
       {
-        network.essid == "lo" ? "󰤭" :
-        network.signal == "" ? "󰤫" :
+        network.wifi != "enabled" ? "󰤮" :
+        network.essid == "" ? "󰤫" :
         network.signal < 25 ? "󰤟" :
         network.signal < 50 ? "󰤢" :
         network.signal < 75 ? "󰤥" :
         "󰤨"
       }
-    :label {network.essid == "lo" ? "not connected" : network.essid}
+    :label
+      {
+        network.wifi != "enabled" ? "Wi-Fi off" :
+        network.essid == "" ? "not connected" :
+        network.essid
+      }
   )
 )
 
 (defwidget setting-bluetooth []
   (button-status-settings
     :action "~/.config/eww/bar/scripts/toggle-bluetooth.sh"
-    :icon "󰂯"
+    :active {bluetooth.status == "on"}
+    :icon {bluetooth.status == "on" ? "󰂯" : "󰂲"}
     :label "Bluetooth"
   )
 )
@@ -267,7 +278,8 @@
 (defwidget setting-dnd []
   (button-status-settings
     :action "~/.config/eww/bar/scripts/toggle-dnd.sh"
-    :icon "󰂛"
+    :active {dnd.status == "on"}
+    :icon {dnd.status == "on" ? "󰂛" : "󰂚"}
     :label "DND"
   )
 )
@@ -275,6 +287,7 @@
 (defwidget setting-hide []
   (button-status-settings
     :action "~/.config/eww/bar/scripts/toggle-ewwbar.sh"
+    :active true
     :icon "󰈉"
     :label "Hide EwwBar"
   )

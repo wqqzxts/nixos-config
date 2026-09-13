@@ -9,7 +9,6 @@
       }
     ];
 
-    # i moved to nvim-tree, but kept the neo-tree config in case you'd like to use neo ^^
     plugins.neo-tree = {
       enable = true;
 
@@ -18,7 +17,7 @@
         window = {
           auto_expand_width = true;
           position = "right";
-          width = 57;
+          width = 30;
           mappings = {
             "h" = "close_node";
             "l" = "open";

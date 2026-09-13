@@ -16,38 +16,29 @@
             {
               "<Space>" = "<NOP>";
 
-              # esc to clear search results
               "<esc>" = ":noh<CR>";
 
-              # fix Y behaviour
               Y = "y$";
 
-              # back and fourth between the two most recent files
               "<C-TAB>" = ":b#<CR>";
 
-              # close by Ctrl+x
               "<C-x>" = ":close<CR>";
 
-              # save by Ctrl+s
               "<C-s>" = ":w<CR>";
 
-              # navigate to left/right window
               "<leader>h" = "<C-w>h";
               "<leader>l" = "<C-w>l";
               "<leader>j" = "<C-w>j";
               "<leader>k" = "<C-w>k";
 
-              # press 'H', 'L' to jump to start/end of a line (first/last character)
               L = "$";
               H = "^";
 
-              # resize with
               "<C-k>" = ":resize -2<CR>";
               "<C-j>" = ":resize +2<CR>";
               "<C-h>" = ":vertical resize +2<CR>";
               "<C-l>" = ":vertical resize -2<CR>";
 
-              # toggle diff mode across windows
               "<leader>dt" = ":lua if vim.wo.diff then vim.cmd('diffoff!') else local cur = vim.api.nvim_get_current_win(); vim.cmd('windo diffthis'); vim.api.nvim_set_current_win(cur) end<CR>";
             };
         visual =
@@ -57,21 +48,17 @@
               inherit action key;
             })
             {
-              # better indenting
               ">" = ">gv";
               "<" = "<gv";
               "<TAB>" = ">gv";
               "<S-TAB>" = "<gv";
 
-              # move selected line / block of text in visual mode
               "K" = ":m '<-2<CR>gv=gv";
               "J" = ":m '>+1<CR>gv=gv";
 
-              # press 'H', 'L' to jump to start/end of a line (first/last character)
               L = "$";
               H = "^";
 
-              # sort
               "<leader>s" = ":sort<CR>";
             };
       in

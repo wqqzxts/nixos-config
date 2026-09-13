@@ -1,42 +1,38 @@
+{ inputs, pkgs, ... }:
 let
-  # hardcoded :<
-  stdinPath = "/nix/store/k73mpyyr2azbdnirb42c9d7xy3wyqv81-stdin-25.12.0/lib/libstdin.so";
+  stdinPath = "${inputs.anyrun.packages.${pkgs.stdenv.hostPlatform.system}.stdin}/lib/libstdin.so";
 in
 {
   programs.niri.settings = {
     binds = {
-      # applications
       "Mod+T" = { action.spawn = [ "alacritty" ]; repeat = false; };
       "Mod+Y" = { action.spawn = [ "alacritty" "-e" "yazi" ]; repeat = false; };
       "Mod+D" = { action.spawn = [ "anyrun" ]; repeat = false; };
       "Mod+V" = { action.spawn = [ "sh" "-c" "cliphist list | anyrun --plugins ${stdinPath} | cliphist decode | wl-copy" ]; repeat = false; };
       "Mod+E" = { action.spawn = [ "sh" "-c" "BEMOJI_PICKER_CMD='anyrun --plugins ${stdinPath}' bemoji -cn" ]; repeat = false; };
 
-      # utilities
       "Mod+P".action.spawn = [ "hyprpicker" "-an" ];
       "Print".action.screenshot = [ ];
       "Shift+Alt+Minus".action.spawn = [ "wtype" "–" ];
 
-      # widgets
-      "Mod+B" = { action.spawn-sh = [ "~/.config/eww/bar/scripts/toggle-ewwbar.sh" ]; repeat = false; };
+      "Mod+B" = { action.spawn = [ "bar-toggle" ]; repeat = false; };
+      "Mod+Shift+T" = { action.spawn = [ "shell-ipc" "theme" "toggle" ]; repeat = false; };
+      "Mod+Shift+Y" = { action.spawn = [ "theme" "next" ]; repeat = false; };
+      "Mod+Shift+D" = { action.spawn = [ "shell-ipc" "dashboard" "cycle" ]; repeat = false; };
       "Mod+Shift+Escape" = { action.spawn = [ "wlogout" ]; repeat = false; };
       "Mod+Escape" = { action.spawn = [ "loginctl" "lock-session" ]; repeat = false; };
 
-      # window management
       "Mod+Q" = { action.close-window = [ ]; repeat = false; };
       "Mod+F" = { action.toggle-window-floating = [ ]; repeat = false; };
 
-      ## window moving
       "Mod+Shift+H" = { action.move-column-left = [ ]; repeat = false; };
       "Mod+Shift+L" = { action.move-column-right = [ ]; repeat = false; };
       "Mod+Shift+J" = { action.move-window-down = [ ]; repeat = false; };
       "Mod+Shift+K" = { action.move-window-up = [ ]; repeat = false; };
 
-      ## column management
       "Super+Shift+Alt+H" = { action.consume-window-into-column = [ ]; repeat = false; };
       "Super+Shift+Alt+L" = { action.expel-window-from-column = [ ]; repeat = false; };
 
-      ## window resizing
       "Mod+Ctrl+H".action.set-column-width = "-10%";
       "Mod+Ctrl+J".action.set-window-height = "-60";
       "Mod+Ctrl+K".action.set-window-height = "+60";
@@ -47,7 +43,6 @@ in
       # "Mod+Ctrl+F".action.spawn-sh = [ "niri msg action fullscreen-window && ~/.config/eww/bar/scripts/toggle-ewwbar.sh" ];
       "Mod+Ctrl+F".action.spawn-sh = [ "niri msg action fullscreen-window" ];
 
-      ## window navigation
       "Mod+H".action.focus-column-left = [ ];
       "Mod+J".action.focus-window-down = [ ];
       "Mod+K".action.focus-window-up = [ ];
@@ -55,7 +50,6 @@ in
 
       "Mod+Tab" = { action.toggle-overview = [ ]; repeat = false; };
 
-      # workspace management
       "Mod+1".action.focus-workspace = 1;
       "Mod+2".action.focus-workspace = 2;
       "Mod+3".action.focus-workspace = 3;
@@ -68,7 +62,6 @@ in
       "Mod+Shift+4".action.move-window-to-workspace = 4;
       "Mod+Shift+5".action.move-window-to-workspace = 5;
 
-      # laptop keys
       "XF86AudioRaiseVolume".action.spawn = [ "wpctl" "set-volume" "-l" "1" "@DEFAULT_AUDIO_SINK@" "5%+" ];
       "XF86AudioLowerVolume".action.spawn = [ "wpctl" "set-volume" "-l" "1" "@DEFAULT_AUDIO_SINK@" "5%-" ];
       "XF86AudioMute".action.spawn = [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle" ];

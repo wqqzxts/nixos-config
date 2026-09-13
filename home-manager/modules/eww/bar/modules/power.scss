@@ -1,18 +1,18 @@
 .bar-pow {
-  background-color: #ea6962;
-  color: #292828;
-  border: solid 5px #e3433b;
+  background-color: $base08;
+  color: $base00;
+  border: solid 5px $red-dark;
 }
 
 .sm-el_pow-btn {
-  color: #ddc7a1;
-  border: solid 5px #e3433b;
+  color: $base05;
+  border: solid 5px $red-dark;
   border-radius: 0;
   margin-top: 5px;
   min-width: 25px;
 }
 
 .sm-el_pow-btn:hover {
-  background-color: #ea6962;
-  color: #292828;
+  background-color: $base08;
+  color: $base00;
 }

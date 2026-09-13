@@ -2,8 +2,7 @@
   imports = [
     ./alacritty.nix
     ./anyrun
-    ./dunst.nix
-    ./eww
+    ./blueman.nix
     ./eza.nix
     ./fastfetch.nix
     ./firefox.nix
@@ -15,15 +14,16 @@
     ./niri
     ./nixvim
     ./qt.nix
+    ./quickshell
     ./spicetify.nix
     ./starship.nix
     ./stylix.nix
-    ./tmux.nix
+    ./theme.nix
     ./wpaperd.nix
     ./xdg.nix
     ./yazi.nix
     ./zathura.nix
-    # ./zellij.nix
+    ./zellij.nix
     ./zsh.nix
   ];
 }

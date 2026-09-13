@@ -8,39 +8,39 @@ window {
   background: transparent;
 }
 text {
-  color: #ddc7a1;
-  background-color: #292828;
-  border: solid 5px #ea6962;
+  color: @base05@;
+  background-color: alpha(@base00@, 0.9);
+  border: solid 5px @base08@;
   padding: 15px;
 }
 
 box.main {
-  background-color: #292828;
-  border: solid 5px #ddc7a1;
+  background-color: alpha(@base00@, 0.9);
+  border: solid 5px @base05@;
   padding: 5px 10px 5px 5px;
-  /* animation: spring 0.45s cubic-bezier(0.55, 0.20, 0.05, 1.00); */
+  animation: spring 0.45s cubic-bezier(0.40, 0.20, 0.05, 1.00);
 }
 box.matches {
-  background-color: #292828;
-  color: #ddc7a1;
+  background-color: alpha(@base00@, 0.9);
+  color: @base05@;
   padding-top: 5px;
 }
 
 label.match {
   background-color: transparent;
-  color: #ddc7a1;
-  /* animation: spring 0.225s cubic-bezier(0.55, 0.20, 0.05, 1.00); */
+  color: @base05@;
+  animation: spring 0.225s cubic-bezier(0.55, 0.20, 0.05, 1.00);
 }
 label.match.description {
-  color: #665c54;
+  color: @base03@;
   font-size: 0px;
 }
 box.match {
   margin: 5px 5px 0px 5px;
 }
 .match:selected {
-  background-color: #7daea3;
-  color: #292828;
+  background-color: @base0D@;
+  color: @base00@;
   transition: background-color 0.225s ease-in-out;
 }
 
@@ -66,4 +66,8 @@ box.match {
   100% {
     opacity: 1;
   }
+}
+
+list, listview, row, scrolledwindow, viewport {
+  background-color: transparent;
 }

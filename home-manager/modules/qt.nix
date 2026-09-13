@@ -6,8 +6,6 @@
     enable = true;
     platformTheme.name = "gtk3";
     style = {
-      # packaged from source: nixpkgs removed gruvbox-material-gtk-theme along
-      # with gtk-engine-murrine, which only the (unused) gtk2 part needed
       package = pkgs.stdenvNoCC.mkDerivation {
         pname = "gruvbox-material-gtk-theme";
         version = "unstable-2025-01-17";

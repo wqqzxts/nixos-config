@@ -53,10 +53,10 @@ in
           "core.dirman" = {
             config = {
               workspaces = {
-                inbox = "~/Neorg/inbox";
-                tasks = "~/Neorg/tasks";
-                projects = "~/Neorg/projects";
-                knowledge = "~/Neorg/knowledge";
+                inbox = "~/personal/neorg/inbox";
+                tasks = "~/personal/neorg/tasks";
+                projects = "~/personal/neorg/projects";
+                knowledge = "~/personal/neorg/knowledge";
               };
               default_workspace = "tasks";
               index = "index.norg";

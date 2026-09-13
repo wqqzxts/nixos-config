@@ -1,59 +1,45 @@
 let
-  # curves (works bad with gestures)
-  # easing like:
-  easeInOut = [ 0.85 0.00 0.25 1.00 ]; # starts very slowly and then incredibly accelerates
-  # spring like:
-  anticipation = [ 0.25 (-0.50) 0.05 1.00 ]; # accumulates at first and then realeases
+  easeInOut = [ 0.85 0.00 0.25 1.00 ];
+  anticipation = [ 0.25 (-0.50) 0.05 1.00 ];
 
-  # animation durations
   candy = 750;
   responsive = 375;
 
-  # dampings
-  jumpy = 0.70; # eye candy
-  tight = 0.75; # responsive feel
+  jumpy = 0.70;
+  tight = 0.75;
 
-  # stiffnesses
-  loStiff = 175; # eye candy
-  hiStiff = 350; # responsive feel
+  loStiff = 175;
+  hiStiff = 350;
 
-  # epsilon
-  e = 0.001; # that value works nice, but you can try out to lower (but values above 0.005 works baad)
+  e = 0.001;
 in
 {
   programs.niri.settings = {
     animations = {
       enable = true;
-      slowdown = 1.0; # bigger value - slower the animations
+      slowdown = 1.0;
 
-      # navigation
-      ## workspaces
       workspace-switch.kind.spring = {
         stiffness = hiStiff;
         damping-ratio = tight;
         epsilon = e;
       };
-      ## windows
       horizontal-view-movement.kind.spring = {
         stiffness = hiStiff;
         damping-ratio = tight;
         epsilon = e;
       };
-      ## overview
       overview-open-close.kind.spring = {
         stiffness = hiStiff;
         damping-ratio = tight;
         epsilon = e;
       };
-      ## recent overview - currently doesn't exist in niri nix
       # recent-windows-close.kind.spring = {
       #   stiffness = hiStiff;
       #   damping-ratio = tight;
       #   epsilon = e;
       # };
 
-      # window management
-      ## control
       window-open.kind.spring = {
         stiffness = hiStiff;
         damping-ratio = tight;
@@ -64,20 +50,17 @@ in
         curve-args = easeInOut;
         duration-ms = responsive;
       };
-      ## window moving
       window-movement.kind.spring = {
         stiffness = hiStiff;
         damping-ratio = tight;
         epsilon = e;
       };
-      ## window resize
       window-resize.kind.easing = {
         curve = "cubic-bezier";
         curve-args = easeInOut;
         duration-ms = responsive;
       };
 
-      # utils
       screenshot-ui-open.kind.easing = {
         curve = "cubic-bezier";
         curve-args = easeInOut;

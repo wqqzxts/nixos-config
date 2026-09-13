@@ -2,16 +2,13 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-    # apps
     # chromium
     imv
     mpv
     nautilus
     pavucontrol
     qbittorrent
-    vscodium
 
-    # wayland
     bemoji
     brightnessctl
     cliphist
@@ -21,19 +18,16 @@
     wtype
     xwayland-satellite
 
-    # multimedia
     ffmpeg
     ffmpegthumbnailer
     mediainfo
     playerctl
     yt-dlp
 
-    # file management
     ntfs3g
     p7zip
     udisks
 
-    # cli utilities
     bc
     bottom
     cifs-utils
@@ -57,14 +51,5 @@
     wf-recorder
     wget
     whois
-
-    # entertainment
-    # asciiquarium
-    cava
-    # cbonsai
-    # era
-    # nitch
-    # pipes-rs
-    # unimatrix
   ];
 }

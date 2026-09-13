@@ -4,7 +4,6 @@
       enable = true;
 
       keymaps = {
-        # Find files using Telescope command-line sugar.
         "<leader>tf" = "find_files";
         "<leader>tg" = "live_grep";
         "<leader>tb" = "buffers";
@@ -26,7 +25,6 @@
       };
     };
 
-    # find TODOs
     keymaps = [
       {
         mode = "n";

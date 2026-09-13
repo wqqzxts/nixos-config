@@ -1,17 +1,12 @@
 #!/bin/sh
-
-#!/bin/sh
-
-get_current_layout() {
-  layout_info=$(niri msg -j keyboard-layouts 2>/dev/null)
-  current_idx=$(echo "$layout_info" | jq -r '.current_idx')
-  layout_name=$(echo "$layout_info" | jq -r ".names[$current_idx]")
-
-  case "$layout_name" in
-    "English (US)") echo "US" ;;
-    "Russian") echo "RU" ;;
-    *) echo "${layout_name:0:2}" ;;
-  esac
-}
-
-get_current_layout
+exec niri msg -j event-stream | jq -n --unbuffered -r '
+  foreach inputs as $e (null;
+    if $e.KeyboardLayoutsChanged then $e.KeyboardLayoutsChanged.keyboard_layouts
+    elif $e.KeyboardLayoutSwitched then .current_idx = $e.KeyboardLayoutSwitched.idx
+    else . end;
+    if ($e.KeyboardLayoutsChanged or $e.KeyboardLayoutSwitched) then
+      .names[.current_idx]
+      | if . == "English (US)" then "US"
+        elif . == "Russian" then "RU"
+        else .[0:2] | ascii_upcase end
+    else empty end)'

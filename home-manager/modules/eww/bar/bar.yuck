@@ -10,11 +10,6 @@
 
 (defvar anim-duration 375)
 
-; module -- each interactive part of status bar
-; widget-<name-of-module> -- the actual ui element on status bar, which responsible for initiate the render of slide-down menus
-; menu-<name-of-module> -- the slide down menu
-
-; just a window to reserve exclusive space at the top of the screen
 (defwindow ewwbar
   :monitor 0
   :geometry (geometry :x 0
@@ -25,32 +20,30 @@
             )
   :stacking "fg"
   :exclusive true
-  :visible ewwbarrev
   (eww-bar-placeholder)
 )
 
-; bar widgets placeholder - each widget in placeholder would create a window with revealer
 (defwidget eww-bar-placeholder []
   (centerbox
     :class "ewwbar-ph"
     (box
       :spacing 5
       :space-evenly false
-      (widget-power) ; ./modules/power.yuck
-      (widget-clock) ; ./modules/clock.yuck
-      (widget-weather) ; ./modules/weather.yuck
+      (widget-power)
+      (widget-clock)
+      (widget-weather)
     )
     (box
       :space-evenly false
-      (widget-cava) ; ./modules/cava.yuck
+      (widget-cava)
     )
     (box
       :spacing 5
       :space-evenly false
       :halign "end"
-      (widget-language) ; ./modules/language.yuck
-      (widget-status) ; ./modules/status.yuck
-      (widget-battery) ; ./modules/battery.yuck
+      (widget-language)
+      (widget-status)
+      (widget-battery)
     )
   )
 )

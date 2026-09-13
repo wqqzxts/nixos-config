@@ -1,21 +1,21 @@
 .bar-lang {
-  background-color: #292828;
-  color: #ddc7a1;
-  border: solid 5px #7daea3;
+  background-color: $base00;
+  color: $base05;
+  border: solid 5px $base0D;
 }
 
 .sm-el_lang-btn {
-  color: #ddc7a1;
-  border: solid 5px #7daea3;
+  color: $base05;
+  border: solid 5px $base0D;
   border-radius: 0;
   margin-top: 5px;
   min-width: 25px;
 }
 
 .sm-el_lang-btn-active {
-  color: #292828;
-  background-color: #ea6962;
-  border: solid 5px #e3433b;
+  color: $base00;
+  background-color: $base08;
+  border: solid 5px $red-dark;
   border-radius: 0;
   margin-top: 5px;
   min-width: 25px;

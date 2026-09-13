@@ -48,7 +48,6 @@
             { name = "luasnip"; }
             {
               name = "buffer";
-              # words from other open buffers can also be suggested.
               option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
             }
             { name = "neorg"; }

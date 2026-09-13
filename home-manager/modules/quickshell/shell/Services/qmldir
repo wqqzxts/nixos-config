@@ -1,0 +1,4 @@
+singleton Notifs 1.0 Notifs.qml
+singleton Niri 1.0 Niri.qml
+singleton SysStats 1.0 SysStats.qml
+NotifEntry 1.0 NotifEntry.qml

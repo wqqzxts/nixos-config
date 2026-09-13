@@ -1,23 +1,30 @@
 #!/bin/sh
+US=$(printf '\037')
+ticker=""
 
-playerctl metadata -F -f '{{position}} {{mpris:length}}' | while read -r line; do
-    position=$(playerctl metadata -f "{{position / 1000000}}" 2>/dev/null)
-    position=$(echo "$position" | tr -d '[:space:]')
-    if [[ -z "$position" ]]; then
-        position="0"
-    elif [[ "$position" =~ ^[0-9]+\.?[0-9]*$ ]]; then
-        position=$(echo "($position + 0.5) / 1" | bc 2>/dev/null || echo "0")
-    else
-        position="0"
+emit() {
+  playerctl metadata -f "{{playerName}}${US}{{position}}${US}{{duration(position)}}" 2>/dev/null \
+  | { IFS="$US" read -r player pos posStr
+      [ -n "$player" ] || exit 0
+      jq -nc --arg player "$player" --arg position "$(( ${pos:-0} / 1000000 ))" --arg positionStr "${posStr:-0:00}" \
+        '{($player): {position: $position, positionStr: $positionStr}}'
+    }
+}
+
+stop_ticker() {
+  [ -n "$ticker" ] && kill "$ticker" 2>/dev/null
+  ticker=""
+}
+
+playerctl metadata -F -f "{{playerName}}${US}{{status}}" 2>/dev/null \
+| {
+  trap 'stop_ticker' EXIT INT TERM
+  while IFS="$US" read -r _ status; do
+    stop_ticker
+    emit
+    if [ "$status" = "Playing" ]; then
+      { while :; do emit; sleep 1; done; } &
+      ticker=$!
     fi
-    positionStr=$(playerctl metadata -f "{{duration(position)}}")
-    player=$(playerctl metadata -f "{{playerName}}")
-    JSON_STRING=$( jq -n \
-                --arg position "$position" \
-                --arg length "$length" \
-                --arg positionStr "$positionStr" \
-                --arg player "$player" \
-                '{$player: {position: $position, positionStr: $positionStr}}' )
-    echo $JSON_STRING
-
-done
+  done
+}

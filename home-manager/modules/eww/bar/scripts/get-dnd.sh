@@ -1,11 +1,14 @@
 #!/bin/sh
-
-get_dnd_status() {
-  if dunstctl is-paused | grep -q "true"; then
+emit() {
+  if [ "$(dunstctl is-paused)" = "true" ]; then
     echo '{"status": "on"}'
   else
     echo '{"status": "off"}'
   fi
 }
 
-get_dnd_status
+emit
+dbus-monitor --session \
+  "type='signal',interface='org.freedesktop.DBus.Properties',member='PropertiesChanged',path='/org/freedesktop/Notifications'" 2>/dev/null \
+  | grep --line-buffered '"paused"' \
+  | while read -r _; do emit; done

@@ -36,13 +36,11 @@
     history.path = "${config.xdg.dataHome}/zsh/history";
 
     initContent = ''
-      # u can uncomment that but i prefer to use tmux without autorun
       # if [ -z "$TMUX" ] && [ -n "$DISPLAY" ]; then
       #   tmux attach-session -t default || tmux new-session -s default
       # fi
     '';
 
-    # maybe cringe
     profileExtra = ''
       if [[ "$(tty)" = "/dev/tty1" ]]; then
         exec niri-session -l

@@ -17,7 +17,6 @@
     };
 
     niri = {
-      # pinned to sodiboo/niri-flake#1850 fork: libdisplay-info_0_2 was removed from nixpkgs
       url = "github:rebizzz/niri-flake/6bb99ff875919f03ea6054026619d999061e1170";
     };
 

@@ -1,3 +1,7 @@
+{ config, ... }:
+let
+  c = config.lib.stylix.colors;
+in
 {
   programs.hyprlock = {
     enable = true;
@@ -12,7 +16,7 @@
         font_family = "IosevkaTerm Nerd Font Mono";
         font_weight = "bold";
         font_size = 160;
-        color = "rgba(221, 199, 161, 1.0)";
+        color = "rgb(${c.base05})";
         halign = "center";
         valign = "center";
 
@@ -33,9 +37,11 @@
           position = "0, -200";
           rounding = 0;
           dots_center = true;
-          font_color = "rgb(221, 199, 161)";
-          inner_color = "rgb(102, 92, 84)";
-          outer_color = "rgb(221, 199, 161)";
+          font_color = "rgb(${c.base05})";
+          inner_color = "rgb(${c.base03})";
+          outer_color = "rgb(${c.base05})";
+          fail_color = "rgb(${c.base08})";
+          check_color = "rgb(${c.base0A})";
           outline_thickness = 5;
           placeholder_text = "not an arch btw";
           shadow_passes = 0;

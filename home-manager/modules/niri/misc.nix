@@ -18,8 +18,6 @@
     };
 
     spawn-at-startup = [
-      { command = [ "eww" "daemon" ]; }
-      { command = [ "ewwbar" ]; }
       { command = [ "hyprlock"]; }
       { command = [ "wl-paste" "--type" "image" "--watch" "cliphist" "store" ]; }
       { command = [ "wl-paste" "--type" "text" "--watch" "cliphist" "store" ]; }

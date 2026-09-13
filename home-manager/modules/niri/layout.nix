@@ -1,7 +1,11 @@
+{ config, ... }:
+let
+  colors = config.lib.stylix.colors.withHashtag;
+in
 {
   programs.niri.settings = {
     layout = {
-      background-color = "#292828";
+      background-color = colors.base00;
       center-focused-column = "never";
       always-center-single-column = true;
       default-column-width = { proportion = 1. / 2.; };
@@ -23,15 +27,15 @@
       focus-ring = {
         enable = false;
         width = 5;
-        active = { color = "#ddc7a1"; };
-        inactive = { color = "#665c54"; };
+        active = { color = colors.base05; };
+        inactive = { color = colors.base03; };
       };
 
       border = {
         enable = true;
         width = 5;
-        active = { color = "#ddc7a1"; };
-        inactive = { color = "#665c54"; };
+        active = { color = colors.base05; };
+        inactive = { color = colors.base03; };
       };
 
       insert-hint.enable = false;

@@ -1,26 +1,30 @@
 { inputs, pkgs, config, ... }:
 let
   spicePkgs = inputs.spicetify.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-  stylixColor = config.lib.stylix.colors;
+  c = config.lib.stylix.colors;
 in
 {
   programs.spicetify = {
     enable = true;
     theme = spicePkgs.themes.text;
-    colorScheme = "Gruvbox";
-    # TODO: fix custom spotify theme (maybe could help: https://github.com/spicetify/spicetify-themes/blob/master/Default/color.ini)
-    # customColorScheme = {
-    #   main               = "${stylixColor.base00}";
-    #   sidebar            = "${stylixColor.base02}";
-    #   player             = "${stylixColor.base02}";
-    #   card               = "${stylixColor.base02}";
-    #   shadow             = "${stylixColor.base02}";
-    #   selected-row       = "${stylixColor.base07}";
-    #   button             = "${stylixColor.base0D}";
-    #   button-active      = "${stylixColor.base08}";
-    #   text               = "${stylixColor.base05}";
-    #   subtext            = "${stylixColor.base04}";
-    # };
+    colorScheme = "custom";
+    customColorScheme = {
+      text               = c.base05;
+      subtext            = c.base04;
+      main               = c.base00;
+      sidebar            = c.base01;
+      player             = c.base01;
+      card               = c.base02;
+      shadow             = c.base00;
+      selected-row       = c.base03;
+      button             = c.base0D;
+      button-active      = c.base0B;
+      button-disabled    = c.base03;
+      tab-active         = c.base02;
+      notification       = c.base02;
+      notification-error = c.base08;
+      misc               = c.base03;
+    };
     enabledExtensions = with spicePkgs.extensions; [
       adblock
       keyboardShortcut

@@ -1,9 +1,25 @@
+{ inputs, options, ... }:
+let
+  kdl = inputs.niri.lib.kdl;
+in
 {
+  programs.niri.config = options.programs.niri.config.default ++ [
+    (kdl.node "blur" [ ] [
+      (kdl.leaf "passes" [ 2 ])
+      (kdl.leaf "offset" [ 3.0 ])
+      (kdl.leaf "noise" [ 0.02 ])
+      (kdl.leaf "saturation" [ 1.0 ])
+    ])
+    (kdl.node "window-rule" [ ] [
+      (kdl.node "background-effect" [ ] [ (kdl.leaf "blur" [ true ]) ])
+    ])
+  ];
+
   programs.niri.settings = {
     window-rules = [
       {
-        # opacity = 0.975;
-        # draw-border-with-background = false;
+        opacity = 0.9;
+        draw-border-with-background = false;
       }
       {
         matches = [
@@ -35,6 +51,12 @@
           { title = "^(Media viewer).*$"; }
         ];
         open-floating = true;
+      }
+
+      {
+        matches = [ { app-id = "^ueberzugpp_"; } ];
+        border.enable = false;
+        focus-ring.enable = false;
       }
     ];
   };
