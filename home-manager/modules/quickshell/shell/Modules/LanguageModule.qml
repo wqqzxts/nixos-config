@@ -8,7 +8,6 @@ import "../Widgets"
 BarModule {
     id: language
     widgetWidth: 85
-    borderColor: Colors.base0D
     menuBorder: false
     menuGap: Style.spacing + Style.shadow
     menuSpacing: Style.spacing + Style.shadow
@@ -37,10 +36,11 @@ BarModule {
             text: language.shortName(modelData)
             active: index === language.current
             bg: Colors.base00
-            borderColor: Colors.base0D
-            activeBg: Colors.base08
+            borderColor: Colors.base05
+            activeBg: Colors.base05
             activeFg: Colors.base00
-            activeBorder: Colors.redDark
+            hoverBg: active ? Colors.base04 : Colors.base02
+            hoverFg: active ? Colors.base00 : Colors.base05
             onClicked: Quickshell.execDetached(["niri", "msg", "action", "switch-layout", String(index)])
         }
     }

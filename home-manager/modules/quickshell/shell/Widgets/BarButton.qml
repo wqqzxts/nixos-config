@@ -8,7 +8,7 @@ Item {
     property bool active: false
     property bool bordered: borderColor.a > 0
     property bool pressable: true
-    property int depth: Style.shadow
+    property real depth: Style.shadow
     property color fg: Colors.base05
     property color bg: "transparent"
     property color borderColor: "transparent"

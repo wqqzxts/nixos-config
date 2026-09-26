@@ -6,7 +6,6 @@ import "../Widgets"
 BarModule {
     id: clock
     widgetWidth: 430
-    borderColor: Colors.base09
     menuPadding: 5
 
     SystemClock {
@@ -50,11 +49,11 @@ BarModule {
                 readonly property bool isToday: d.getDate() === clock.today.getDate() && d.getMonth() === clock.today.getMonth()
                 width: clock.cellWidth
                 height: clock.cellHeight
-                color: isToday ? Colors.base09 : "transparent"
+                color: isToday ? Colors.base05 : "transparent"
                 Label {
                     anchors.fill: parent
                     text: d.getDate()
-                    color: isToday ? Colors.base00 : (d.getMonth() === clock.today.getMonth() ? Colors.base05 : Colors.base0F)
+                    color: isToday ? Colors.base00 : (d.getMonth() === clock.today.getMonth() ? Colors.base05 : Colors.base03)
                 }
             }
         }

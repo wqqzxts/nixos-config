@@ -11,7 +11,7 @@ Item {
     required property NotifEntry entry
     readonly property int frame: 5
     readonly property int pad: 10
-    readonly property int depth: Style.shadow
+    readonly property real depth: Style.shadow
     readonly property int minWidth: 200
     readonly property int maxWidth: 400
     readonly property bool hasIcon: entry.icon !== ""

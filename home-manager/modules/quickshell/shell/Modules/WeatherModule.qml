@@ -7,7 +7,6 @@ import "../Widgets"
 BarModule {
     id: weather
     widgetWidth: 85
-    borderColor: Colors.base0A
     menuBorder: false
     menuGap: Style.spacing + Style.shadow
     menuSpacing: Style.spacing + Style.shadow
@@ -75,7 +74,7 @@ BarModule {
             width: 85
             text: modelData.icon + " " + modelData.value
             bg: Colors.base00
-            borderColor: Colors.base0A
+            borderColor: Colors.base05
             pressable: false
         }
     }

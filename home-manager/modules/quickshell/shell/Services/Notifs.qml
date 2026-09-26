@@ -94,7 +94,7 @@ Singleton {
         switch (urgency) {
         case NotificationUrgency.Critical: return Colors.base08
         case NotificationUrgency.Low: return Colors.base03
-        default: return Colors.base0D
+        default: return Colors.base05
         }
     }
 }

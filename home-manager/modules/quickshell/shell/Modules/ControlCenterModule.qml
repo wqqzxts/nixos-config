@@ -15,13 +15,13 @@ import "ControlCenter"
 BarModule {
     id: controlCenter
     widgetWidth: 430
-    borderColor: Colors.base0C
 
     signal hideRequested()
 
     property string page: "main"
     readonly property bool wantsKeyboard: page === "wifi" && wifiPage.typing
     property bool held: false
+    property var trayItem: null
     pinned: wantsKeyboard || held
     onHoveredChanged: if (!hovered) held = false
     onClosed: page = "main"
@@ -33,6 +33,11 @@ BarModule {
     function closeThemePage() {
         held = false
         if (!hovered) page = "main"
+    }
+    function openTrayMenu(item) {
+        trayItem = item
+        page = "tray"
+        held = true
     }
     function toggleThemePage() {
         if (open && page === "theme") closeThemePage()
@@ -154,12 +159,12 @@ BarModule {
     component SettingButton: BarButton {
         width: (settings.width - 2 * settings.margin - grid.columnSpacing) / 2
         textAlign: Text.AlignLeft
-        bg: Colors.base03
+        bg: Colors.base02
         fg: Colors.base05
-        activeBg: Colors.base0B
+        activeBg: Colors.base05
         activeFg: Colors.base00
-        hoverBg: Colors.base0C
-        hoverFg: Colors.base00
+        hoverBg: active ? Colors.base04 : Colors.base03
+        hoverFg: active ? Colors.base00 : Colors.base05
     }
 
     WifiPage {
@@ -173,6 +178,16 @@ BarModule {
         visible: controlCenter.page === "bt"
         adapter: controlCenter.adapter
         onBackRequested: controlCenter.page = "main"
+    }
+
+    TrayMenuPage {
+        visible: controlCenter.page === "tray"
+        item: controlCenter.trayItem
+        onBackRequested: {
+            controlCenter.held = false
+            controlCenter.page = "main"
+            controlCenter.trayItem = null
+        }
     }
 
     ThemePage {
@@ -208,7 +223,7 @@ BarModule {
         readonly property int margin: 10 + Style.shadow
         implicitHeight: Style.border + 10 + grid.implicitHeight + Style.shadow + 10
 
-        Rectangle { width: parent.width; height: Style.border; color: Colors.base0C }
+        Rectangle { width: parent.width; height: Style.border; color: Colors.base05 }
 
         Grid {
             id: grid
@@ -239,14 +254,10 @@ BarModule {
             }
             SettingButton {
                 text: "󰈉  Hide Bar"
-                bg: Colors.base0B
-                fg: Colors.base00
                 onClicked: controlCenter.hideRequested()
             }
             SettingButton {
                 text: "󰏘  Theme center"
-                bg: Colors.base0B
-                fg: Colors.base00
                 onClicked: controlCenter.page = "theme"
             }
         }
@@ -259,7 +270,7 @@ BarModule {
         height: visible ? implicitHeight : 0
         implicitHeight: Style.border + 10 + histCol.implicitHeight + 10
 
-        Rectangle { width: parent.width; height: Style.border; color: Colors.base0C }
+        Rectangle { width: parent.width; height: Style.border; color: Colors.base05 }
 
         Column {
             id: histCol
@@ -336,7 +347,7 @@ BarModule {
                 Label {
                     anchors.right: parent.right
                     visible: controlCenter.unseen > 0
-                    color: clearMouse.containsMouse ? Colors.base0C : Colors.base05
+                    color: clearMouse.containsMouse ? Colors.base04 : Colors.base05
                     Behavior on color { ColorAnimation { duration: Style.colorDuration; easing.type: Easing.BezierSpline; easing.bezierCurve: Style.closeCurve } }
                     text: "clear"
                     MouseArea {
@@ -366,7 +377,7 @@ BarModule {
             height: 2 * Style.border + 2 * 10 + 24
             color: "transparent"
             border.width: Style.border
-            border.color: Colors.base0C
+            border.color: Colors.base03
 
             Row {
                 anchors.fill: parent
@@ -409,8 +420,7 @@ BarModule {
                             cursorShape: Qt.PointingHandCursor
                             onClicked: mouse => {
                                 if (mouse.button === Qt.RightButton && slot.modelData.hasMenu) {
-                                    const p = slot.mapToItem(null, 0, slot.height)
-                                    slot.modelData.display(QsWindow.window, p.x, p.y)
+                                    controlCenter.openTrayMenu(slot.modelData)
                                 } else if (mouse.button === Qt.MiddleButton) {
                                     slot.modelData.secondaryActivate()
                                 } else {

@@ -8,7 +8,6 @@ import "../Widgets"
 
 BarModule {
     id: dashboard
-    borderColor: Colors.base0E
 
     property string displayMode: "auto"
     readonly property bool playing: player !== null && player.isPlaying
@@ -33,8 +32,7 @@ BarModule {
         return ""
     }
     function tempColor(t) {
-        if (t < 30) return Colors.base0D
-        if (t < 70) return Colors.base0C
+        if (t < 75) return Colors.base05
         if (t < 85) return Colors.base0A
         return Colors.base08
     }
@@ -218,12 +216,11 @@ BarModule {
                 pressable: false
                 anchors.rightMargin: Style.shadow
                 text: dashboard.player ? (dashboard.player.desktopEntry || dashboard.player.identity.toLowerCase()) : ""
-                bg: Colors.base0B
-                fg: Colors.base00
+                bg: Colors.base02
                 visible: dashboard.player !== null
             }
         }
-        Rectangle { anchors.bottom: parent.bottom; width: parent.width; height: Style.border; color: Colors.base0E }
+        Rectangle { anchors.bottom: parent.bottom; width: parent.width; height: Style.border; color: Colors.base05 }
     }
 
     Item {
@@ -239,7 +236,6 @@ BarModule {
             width: parent.width - 20
             max: dashboard.knownLength
             value: dashboard.player ? dashboard.player.position : 0
-            highlight: Colors.base0E
             onMoved: v => { if (dashboard.player) dashboard.player.position = v }
         }
         Item {
@@ -250,7 +246,7 @@ BarModule {
             Label { anchors.left: parent.left; anchors.leftMargin: 10; color: Colors.base03; text: dashboard.fmt(dashboard.player ? dashboard.player.position : 0) }
             Label { anchors.right: parent.right; anchors.rightMargin: 10; color: Colors.base03; text: dashboard.fmt(dashboard.knownLength) }
         }
-        Rectangle { anchors.bottom: parent.bottom; width: parent.width; height: Style.border; color: Colors.base0E }
+        Rectangle { anchors.bottom: parent.bottom; width: parent.width; height: Style.border; color: Colors.base05 }
     }
 
     Item {
@@ -277,9 +273,9 @@ BarModule {
                     height: 70
                     text: index === 1 ? (dashboard.player && dashboard.player.isPlaying ? "󰏤" : "󰐊") : modelData.icon
                     fontSize: 42
-                    bg: Colors.base0B
-                    fg: Colors.base00
-                    hoverBg: Colors.base0E
+                    bg: Colors.base02
+                    fg: Colors.base05
+                    hoverBg: Colors.base03
                     onClicked: if (dashboard.player) modelData.act()
                 }
             }

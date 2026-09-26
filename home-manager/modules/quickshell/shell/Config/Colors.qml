@@ -27,8 +27,6 @@ Singleton {
     property color base0E: "#d3869b"
     property color base0F: "#bd6f3e"
 
-    readonly property color redDark: Qt.hsla(base08.hslHue, base08.hslSaturation, Math.max(0, base08.hslLightness - 0.1), 1)
-
     Behavior on base00 { ColorAnimation { duration: 375; easing.type: Easing.BezierSpline; easing.bezierCurve: [0.85, 0, 0.25, 1, 1, 1] } }
     Behavior on base01 { ColorAnimation { duration: 375; easing.type: Easing.BezierSpline; easing.bezierCurve: [0.85, 0, 0.25, 1, 1, 1] } }
     Behavior on base02 { ColorAnimation { duration: 375; easing.type: Easing.BezierSpline; easing.bezierCurve: [0.85, 0, 0.25, 1, 1, 1] } }

@@ -21,7 +21,7 @@ Item {
             width: graph.barWidth
             height: Math.max(2, Math.round(graph.size * load))
             y: graph.size - height
-            color: load >= 0.9 ? Colors.base08 : (load >= 0.7 ? Colors.base0A : Colors.base0C)
+            color: load >= 0.9 ? Colors.base08 : (load >= 0.7 ? Colors.base0A : Colors.base05)
             Behavior on height { NumberAnimation { duration: Style.colorDuration; easing.type: Easing.BezierSpline; easing.bezierCurve: Style.closeCurve } }
             Behavior on color { ColorAnimation { duration: Style.colorDuration; easing.type: Easing.BezierSpline; easing.bezierCurve: Style.closeCurve } }
         }

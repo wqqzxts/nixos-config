@@ -19,7 +19,7 @@ Rectangle {
         visible: row.highlighted
         width: Style.border
         height: parent.height
-        color: Colors.base0B
+        color: Colors.base05
     }
 
     Label {

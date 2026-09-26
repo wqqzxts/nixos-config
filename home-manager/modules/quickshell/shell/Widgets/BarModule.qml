@@ -26,7 +26,7 @@ Item {
     default property alias menuContent: menuColumn.data
 
     readonly property int menuSide: menuBorder ? Style.border : 0
-    readonly property int menuBleed: menuBorder ? 0 : Style.shadow
+    readonly property real menuBleed: menuBorder ? 0 : Style.shadow
     readonly property int innerWidth: widgetWidth - 2 * (menuSide + menuPadding)
 
     width: widgetWidth

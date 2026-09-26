@@ -26,6 +26,8 @@
 
     ntfs3g
     p7zip
+    unzip
+    zip
     udisks
 
     bc
@@ -33,16 +35,20 @@
     cifs-utils
     claude-code
     dig
+    duf
     fzf
     htop
     inotify-tools
+    file
     jq
+    ncdu
     openssl
     pamixer
     power-profiles-daemon
     pulseaudio
     ripgrep
     samba
+    tree
     tcpdump
     ueberzugpp
     unixtools.netstat

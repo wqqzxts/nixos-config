@@ -5,8 +5,6 @@ import "../Widgets"
 
 BarModule {
     widgetWidth: 55
-    background: Colors.base08
-    borderColor: Colors.redDark
     menuBorder: false
     menuGap: Style.spacing + Style.shadow
     menuSpacing: Style.spacing + Style.shadow
@@ -15,7 +13,6 @@ BarModule {
         anchors.fill: parent
         font.pointSize: Style.fontSize * 1.25
         text: ""
-        color: Colors.base00
     }
 
     Repeater {
@@ -31,9 +28,9 @@ BarModule {
             width: 55
             text: modelData.icon
             bg: Colors.base00
-            borderColor: Colors.redDark
-            hoverBg: Colors.base08
-            hoverFg: Colors.base00
+            borderColor: Colors.base05
+            hoverBg: active ? Colors.base04 : Colors.base02
+            hoverFg: active ? Colors.base00 : Colors.base05
             onClicked: Quickshell.execDetached(modelData.cmd)
         }
     }

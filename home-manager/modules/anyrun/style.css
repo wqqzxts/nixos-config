@@ -10,14 +10,14 @@ window {
 text {
   color: @base05@;
   background-color: alpha(@base00@, 0.9);
-  border: solid 5px @base08@;
+  border: solid 5px @base05@;
   padding: 15px;
 }
 
 box.main {
   background-color: alpha(@base00@, 0.9);
   border: solid 5px @base05@;
-  padding: 5px 10px 5px 5px;
+  padding: 5px;
   margin: 0px 5px 5px 5px;
   box-shadow: 5px 0px 0px 0px @ledge@, -5px 0px 0px 0px @ledge@, 5px 5px 0px 0px @ledge@, -5px 5px 0px 0px @ledge@;
   animation: spring 0.45s cubic-bezier(0.40, 0.20, 0.05, 1.00);
@@ -41,9 +41,15 @@ box.match {
   margin: 5px 5px 0px 5px;
 }
 .match:selected {
-  background-color: @base0D@;
+  background-color: @base05@;
   color: @base00@;
   transition: background-color 0.225s ease-in-out;
+}
+.match:selected label.match {
+  color: @base00@;
+}
+.match:selected label.match.description {
+  color: @base02@;
 }
 
 @keyframes spring {
@@ -58,7 +64,6 @@ box.match {
     transform: scale(1);
     opacity: 1;
   }
-}
 }
 @keyframes fade {
   0% {

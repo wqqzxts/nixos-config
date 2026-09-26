@@ -7,7 +7,7 @@ QtObject {
     readonly property int barHeight: 55
     readonly property int barPadding: 5
     readonly property int border: 5
-    readonly property int shadow: 5
+    readonly property real shadow: border / 2
     readonly property int keyLift: 2
     readonly property real ledgeDarken: 1.25
     readonly property int spacing: 5

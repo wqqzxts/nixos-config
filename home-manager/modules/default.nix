@@ -3,6 +3,7 @@
     ./alacritty.nix
     ./anyrun
     ./blueman.nix
+    ./clashtui.nix
     ./eza.nix
     ./fastfetch.nix
     ./firefox.nix

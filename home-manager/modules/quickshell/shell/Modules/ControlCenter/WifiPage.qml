@@ -75,7 +75,7 @@ Item {
         id: column
         width: parent.width
 
-        Rectangle { width: parent.width; height: Style.border; color: Colors.base0C }
+        Rectangle { width: parent.width; height: Style.border; color: Colors.base05 }
 
         Item {
             width: parent.width
@@ -89,9 +89,9 @@ Item {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.verticalCenterOffset: -Style.shadow / 2
                 text: "󰁍"
-                bg: Colors.base03
-                hoverBg: Colors.base0C
-                hoverFg: Colors.base00
+                bg: Colors.base02
+                hoverBg: active ? Colors.base04 : Colors.base03
+                hoverFg: active ? Colors.base00 : Colors.base05
                 onClicked: page.backRequested()
             }
             Label {
@@ -109,11 +109,11 @@ Item {
                 width: 70
                 text: page.wifiOn ? "on" : "off"
                 active: page.wifiOn
-                bg: Colors.base03
-                activeBg: Colors.base0B
+                bg: Colors.base02
+                activeBg: Colors.base05
                 activeFg: Colors.base00
-                hoverBg: Colors.base0C
-                hoverFg: Colors.base00
+                hoverBg: active ? Colors.base04 : Colors.base03
+                hoverFg: active ? Colors.base00 : Colors.base05
                 onClicked: Networking.wifiEnabled = !Networking.wifiEnabled
             }
         }
@@ -170,7 +170,7 @@ Item {
                 anchors.verticalCenter: parent.verticalCenter
                 color: Qt.alpha(Colors.base01, Style.bgAlpha)
                 border.width: Style.border
-                border.color: Colors.base0D
+                border.color: Colors.base05
 
                 TextInput {
                     id: field
@@ -181,7 +181,7 @@ Item {
                     echoMode: TextInput.Password
                     clip: true
                     color: Colors.base05
-                    selectionColor: Colors.base0D
+                    selectionColor: Colors.base03
                     font.family: Style.fontFamily
                     font.pointSize: Style.fontSize
                     font.bold: true

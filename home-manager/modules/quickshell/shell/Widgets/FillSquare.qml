@@ -8,7 +8,7 @@ Item {
     property int size: 18
     property int stroke: 2
     readonly property int inner: size - 2 * (stroke + 1)
-    readonly property color fillColor: value >= 0.9 ? Colors.base08 : (value >= 0.75 ? Colors.base0A : Colors.base0C)
+    readonly property color fillColor: value >= 0.9 ? Colors.base08 : (value >= 0.75 ? Colors.base0A : Colors.base05)
 
     implicitWidth: size
     implicitHeight: size

@@ -4,19 +4,24 @@
     ./battery.nix
     ./bluetooth.nix
     ./boot.nix
+    ./clashtui.nix
+    ./debug-tools.nix
     ./env.nix
     ./flatpak.nix
+    ./hardware-tools.nix
     ./home-manager.nix
     ./kernel.nix
     ./mount.nix
     ./net.nix
+    ./net-tools.nix
     ./niri.nix
     ./nix.nix
+    ./nix-ld.nix
     ./theme.nix
     ./timezone.nix
     ./upower.nix
     ./user.nix
     ./virtualisation.nix
-    ./zapret.nix
+    ./wireshark.nix
   ];
 }

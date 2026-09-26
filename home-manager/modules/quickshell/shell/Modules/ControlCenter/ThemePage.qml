@@ -23,7 +23,7 @@ Item {
         id: column
         width: parent.width
 
-        Rectangle { width: parent.width; height: Style.border; color: Colors.base0C }
+        Rectangle { width: parent.width; height: Style.border; color: Colors.base05 }
 
         Item {
             width: parent.width
@@ -37,9 +37,9 @@ Item {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.verticalCenterOffset: -Style.shadow / 2
                 text: "󰁍"
-                bg: Colors.base03
-                hoverBg: Colors.base0C
-                hoverFg: Colors.base00
+                bg: Colors.base02
+                hoverBg: active ? Colors.base04 : Colors.base03
+                hoverFg: active ? Colors.base00 : Colors.base05
                 onClicked: page.backRequested()
             }
             Label {
@@ -56,9 +56,9 @@ Item {
                 anchors.verticalCenterOffset: -Style.shadow / 2
                 width: 100
                 text: page.dark ? "󰖔 dark" : "󰖨 light"
-                bg: Colors.base03
-                hoverBg: Colors.base0C
-                hoverFg: Colors.base00
+                bg: Colors.base02
+                hoverBg: active ? Colors.base04 : Colors.base03
+                hoverFg: active ? Colors.base00 : Colors.base05
                 onClicked: page.set(Colors.style, page.dark ? "light" : "dark")
             }
         }
